@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab 05: Configuring Agent Pools and Understanding Pipeline Styles'
-    module: 'Module 5: Configuring Azure Pipelines'
----
-
 # Lab 05: Configuring Agent Pools and Understanding Pipeline Styles
 # Student lab manual
 
@@ -28,25 +22,21 @@ After you complete this lab, you will be able to:
 
 ## Instructions
 
-### Before you start
-
-#### Sign in to the lab virtual machine
-
-Ensure that you're signed in to your Windows 10 computer by using the following credentials:
-    
--   Username: **Student**
--   Password: **Pa55w.rd**
-
-#### Review the installed applications
-
-Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for the applications that you'll use in this lab:
-    
--   Microsoft Edge
--   [Visual Studio Code](https://code.visualstudio.com/). This will be installed as part of prerequisites for this lab.
-
 #### Set up an Azure DevOps organization
 
-If you don't already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at [Create an organization or project collection](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops).
+1. On your lab VM open **Edge Browser** on desktop and navigate to https://dev.azure.com. Then click on **Sign into Azure DevOps** and login with the credentials provided in environment details tab.
+
+    ![Azure DevOps](images/devops.png)
+
+2. On the next page accept defaults and click on continue.
+
+    ![Azure DevOps](images/m1-1.png)
+
+3. On the **Get started with Azure DevOps** page click on **Continue**.
+
+4. On the **Almost Done...** page fill the captcha and click on continue. 
+
+    ![Azure DevOps](images/m1-2.png)
 
 ### Exercise 0: Configure the lab prerequisites
 
@@ -56,11 +46,11 @@ In this exercise, you will set up the prerequisite for the lab, which consists o
 
 In this task, you will use Azure DevOps Demo Generator to generate a new project based on the **PartsUnlimited** template.
 
-1.  On your lab computer, start a web browser and navigate to [Azure DevOps Demo Generator](https://azuredevopsdemogenerator.azurewebsites.net). This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. 
+1.  In a new tab of Edge browser navigate to https://azuredevopsdemogenerator.azurewebsites.net. This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. 
 
     > **Note**: For more information on the site, see https://docs.microsoft.com/en-us/azure/devops/demo-gen.
 
-1.  Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
+1.  Click **Sign in** and if prompted sign with the credentials provided in environment details tab.
 1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
 1.  On the **Create New Project** page, in the **New Project Name** textbox, type **Configuring Agent Pools and Understanding Pipeline Styles**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
 1.  On the **Choose a template** page, click the **PartsUnlimited** template, and then click **Select Template**.
@@ -189,7 +179,6 @@ In this exercise, you will implement self-hosted Azure DevOps agent.
 
 In this task, you will configure the LOD VM as an Azure DevOps self-hosting agent and use it to run a build pipeline.
 
-1.  Within the Lab Virtual machine (Lab VM) or your own computer, start a web browser, navigate to [the Azure DevOps portal](https://dev.azure.com) and sign in by using the Microsoft account associated with your Azure DevOps organization.
 1.  In the Azure DevOps portal, in the upper right corner of the Azure DevOps page, click the **User settings** icon, in the dropdown menu, click **Personal access tokens**, on the **Personal Access Tokens** pane, and click **+ New Token**.
 1.  On the **Create a new personal access token** pane, click the **Show all scopes** link and, specify the following settings and click **Create** (leave all others with their default values):
 
@@ -244,6 +233,7 @@ In this task, you will configure the LOD VM as an Azure DevOps self-hosting agen
     | Enter Perform an unzip for tasks for each step. (press enter for N) | **Enter** |
     | Enter run agent as service? (Y/N) (press enter for N) | **Y** |
     | Enter User account to use for the service (press enter for NT AUTHORITY\NETWORK SERVICE) | **Enter** |
+    | Enter whether to prevent service starting immediately after configuration is finished? (Y/N) (press enter for N) | **Enter** |
 
     > **Note**: You can run self-hosted agent as either a service or an interactive process. You might want to start with the interactive mode, since this simplifies verifying agent functionality. For production use, you should consider either running the agent as a service or as an interactive process with auto-logon enabled, since both persist their running state and ensure that the agent starts automatically if the operating system is restarted.
 
