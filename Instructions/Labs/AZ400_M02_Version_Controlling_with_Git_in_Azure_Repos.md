@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab 02: Version Controlling with Git in Azure Repos'
-    module: 'Module 2: Getting Started with Source Control'
----
-
 # Lab 02: Version Controlling with Git in Azure Repos
 # Student lab manual
 
@@ -34,28 +28,23 @@ After you complete this lab, you will be able to:
 
 ## Instructions
 
-### Before you start
-
-#### Sign in to the lab virtual machine
-
-Ensure that you're signed in to your Windows 10 virtual machine by using the following credentials:
-    
--   Username: **Student**
--   Password: **Pa55w.rd**
-
-#### Review applications required for this lab
-
-Identify the applications that you'll use in this lab:
-    
--   Microsoft Edge
--   [Git for Windows download page](https://gitforwindows.org/). This will be installed as part of prerequisites for this lab.
--   [Visual Studio Code](https://code.visualstudio.com/). This will be installed as part of prerequisites for this lab. 
-
 #### Set up an Azure DevOps organization
 
-If you don't already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at [Create an organization or project collection](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops).
+1. On your lab VM open **Edge Browser** on desktop and navigate to https://dev.azure.com. Then click on **Sign into Azure DevOps** and login with the credentials provided in environment details tab.
 
-### Exercise 0: Configure the lab prerequisites
+    ![Azure DevOps](images/devops.png)
+
+2. On the next page accept defaults and click on continue.
+
+    ![Azure DevOps](images/m1-1.png)
+
+3. On the **Get started with Azure DevOps** page click on **Continue**.
+
+4. On the **Almost Done...** page fill the captcha and click on continue. 
+
+    ![Azure DevOps](images/m1-2.png)
+
+### Exercise 0: Configure the lab VM.
 
 In this exercise, you will set up the prerequisites for the lab, which include the preconfigured Parts Unlimited team project based on an Azure DevOps Demo Generator template and a Visual Studio Code configuration.
 
@@ -63,11 +52,11 @@ In this exercise, you will set up the prerequisites for the lab, which include t
 
 In this task, you will use Azure DevOps Demo Generator to generate a new project based on the **Parts Unlimited** template.
 
-1.  On your lab computer, start a web browser and navigate to [Azure DevOps Demo Generator](https://azuredevopsdemogenerator.azurewebsites.net). This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. 
+1.  In a new tab of Edge browser navigate to https://azuredevopsdemogenerator.azurewebsites.net. This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. 
 
     > **Note**: For more information on the site, see https://docs.microsoft.com/en-us/azure/devops/demo-gen.
 
-1.  Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
+1.  Click **Sign in** and if prompted sign with the credentials provided in environment details tab.
 1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
 1.  On the **Create New Project** page, in the **New Project Name** textbox, type **Version Controlling with Git in Azure Repos**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
 1.  In the list of templates, locate the **PartsUnlimited** template and click **Select Template**.
@@ -77,14 +66,11 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 
 1.  On the **Create New Project** page, click **Navigate to project**.
 
-#### Task 2: Install and configure Git and Visual Studio Code
+#### Task 2: Configure Git and Visual Studio Code
 
-In this task, you will install and configure Git and Visual Studio Code, including configuring the Git credential helper to securely store the Git credentials used to communicate with Azure DevOps. If you have already implemented these prerequisites, you can proceed directly to the next task.
+In this task, you will configure Git and Visual Studio Code, including configuring the Git credential helper to securely store the Git credentials used to communicate with Azure DevOps.
 
-1.  If you don't have Git 2.29.2 or later installed yet, start a web browser, navigate to the [Git for Windows download page](https://gitforwindows.org/) download it, and install it. 
-1.  If you don't have Visual Studio Code installed yet, from the web browser window, navigate to the [Visual Studio Code download page](https://code.visualstudio.com/), download it, and install it. 
-1.  If you don't have Visual Studio C# extension installed yet, in the web browser window, navigate to the [C# extension installation page](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) and install it.
-1.  On the lab computer, open **Visual Studio Code**. 
+1.  On the lab VM, open **Visual Studio Code**. 
 1.  In the Visual Studio Code interface, from the main menu, select **Terminal \| New Terminal** to open the **TERMINAL** pane.
 1.  Make sure that the current Terminal is running **PowerShell** by checking if the drop-down list at the top right corner of the **TERMINAL** pane shows **1: powershell**
 
@@ -95,7 +81,7 @@ In this task, you will install and configure Git and Visual Studio Code, includi
     ```git
     git config --global credential.helper wincred
     ```
-1.  In the **TERMINAL** pane, run the following commands to configure a user name and email for Git commits (replace the placeholders in braces with your preferred user name and email):
+1.  In the **TERMINAL** pane, run the following commands to configure a user name and email for Git commits (replace the placeholders in braces with user name and email from the environment details tab):
 
     ```git
     git config --global user.name "<John Doe>"
@@ -135,8 +121,8 @@ In this task, you will step through the process of cloning a Git repository by u
 
 7.  In the **Provide repository URL or pick a repository source** text box, paste the repo clone URL you copied earlier in this task and press the **Enter** key.
 8.  Within the **Select Folder** dialog box, navigate to the C: drive, create a new folder named **Git**, select it, and then click **Select Repository Location**. 
-9.  When prompted, log in to your Azure DevOps account.
-10. After the cloning process completes, once prompted, in the Visual Studio Code, click **Open** to open the cloned repository. 
+9.  When prompted, log in to your Azure DevOps account with creadentials provided in environment details tab.
+10. After the cloning process completes, once prompted, in the Visual Studio Code, click **Open** to open the cloned repository. If **Do you trust the authors of the files in this folder?** warning prompted click on **Yes**.
 
     > **Note**: You can ignore warnings you might receive regarding problems with loading of the project. The solution may not be in the state suitable for a build, but we're going to focus on working with Git, so building the project is not required.
 
@@ -157,7 +143,12 @@ Git commits consists of the following:
 In this task, you will use Visual Studio Code to commit changes.
 
 1.  In the Visual Studio Code window, at the top of the vertical toolbar, select the **EXPLORER** tab, navigate to the **/PartsUnlimited-aspnet45/src/PartsUnlimitedWebsite/Models/CartItem.cs** file and select it. This will automatically display its content in the details pane.
-1.  Add to the **CartItem.cs** file right above the `[key]` entry an extra line containing the following comment: 
+
+1. When prompted to install recommended extenisions for C# click on install
+
+    ![Azure DevOps](images/m2-1.png)
+
+1.  Switch back to the **CartItem.cs** file and add right above the `[key]` entry an extra line containing the following comment: 
 
     ```csharp
     // My first change
@@ -167,6 +158,9 @@ In this task, you will use Visual Studio Code to commit changes.
 
 1.  Press **Ctrl+S** to save the change.
 1.  In the Visual Studio Code window, select the **SOURCE CONTROL** tab to verify that Git recognized the latest change to the file residing in the local clone of the Git repository.
+
+    ![Azure DevOps](images/m2-2.png)
+
 1.  With the **SOURCE CONTROL** tab selected, at the top of the pane, in the textbox, type **My commit** as the commit message and press **Ctrl+Enter** to commit it locally.
 1.  If prompted whether you would like to automatically stage your changes and commit them directly, click **Always**. 
 
