@@ -108,13 +108,13 @@ In this task, you will create and configure a build pipeline by using a predefin
 
   ![Azure DevOps](images/mod6_7.png)
 
-    > **Note**: Note that there are many options that should cover all of our mainstream scenarios. For our purposes here, we'll just build the project using the baseline ASP.NET template. The process for this build pipeline is easy to follow. After getting the source, Azure DevOps will use NuGet to restore any dependent packages. Then, the project will be built and tested. The results will then be published to the configured target.
+  > **Note**: Note that there are many options that should cover all of our mainstream scenarios. For our purposes here, we'll just build the project using the baseline ASP.NET template. The process for this build pipeline is easy to follow. After getting the source, Azure DevOps will use NuGet to restore any dependent packages. Then, the project will be built and tested. The results will then be published to the configured target.
 
 1.  Select the **Variables** tab and review its content.
 
    ![Azure DevOps](images/mod6_8.png)
 
-    > **Note**: Here you can configure special parameters to be used during the build, such as the configuration or platform.
+   > **Note**: Here you can configure special parameters to be used during the build, such as the configuration or platform.
 
 1.  Select the **Triggers** tab and check the **Enable continuous integration** checkbox. 
 
