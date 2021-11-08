@@ -27,6 +27,21 @@ After you complete this lab, you will be able to:
 
 If you don't already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at [Create an organization or project collection](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops).
 
+1. On your lab VM open **Edge Browser** on desktop and navigate to https://dev.azure.com. Then click on **Sign into Azure DevOps** and login with the credentials provided in environment details tab.
+
+    ![Azure DevOps](images/devops.png)
+
+2. On the next page accept defaults and click on continue.
+
+    ![Azure DevOps](images/m1-1.png)
+
+3. On the **Get started with Azure DevOps** page click on **Continue**.
+
+4. On the **Almost Done...** page fill the captcha and click on continue. 
+
+    ![Azure DevOps](images/m1-2.png)
+
+
 #### Set up a GitHub account
 
 If you don't already have a GitHub account that you can use for this lab, follow instructions available at [Signing up for a new GitHub account](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/signing-up-for-a-new-github-account).
@@ -44,23 +59,38 @@ In this task, you will fork a GitHub repo and install Azure Pipelines in your Gi
     > **Note**: This is the baseline project we will fork and use for this lab.
 
 1.  On the **actionsdemos/calculator site** page, click **Fork**, to fork the repository to your own GitHub account. If prompted, select the account to fork the repository into.
+    
+    ![Azure DevOps](images/mod6_13.png)
+
 1.  On the page displaying the forked repo, at the top menu, click **Marketplace**.
-    > **Note**: The **GitHub Marketplace** provides a variety of tools from Microsoft and 3rd parties that help you extend your project workflows. 
-2.  In the **Search for apps and actions**, type **Azure Pipelines**, press the **Enter** key, and, in the list of results, click **Azure Pipelines**. 
-3.  On the **Azure Pipelines** page, click **Read more** and read through the benefits of Azure Pipelines.
+
+   ![Azure DevOps](images/mod6_14.png)
+   
+   > **Note**: The **GitHub Marketplace** provides a variety of tools from Microsoft and 3rd parties that help you extend your project workflows. 
+1.  In the **Search for apps and actions**, type **Azure Pipelines**, press the **Enter** key, and, in the list of results, click **Azure Pipelines**.
+
+  ![Azure DevOps](images/mod6_15.png)
+
+1.  On the **Azure Pipelines** page, click **Read more** and read through the benefits of Azure Pipelines.
 
     > **Note**: The Azure Pipelines offering is free for anyone to use for public repositories, and free for a single build queue if you're using a private repository. 
 
-4.  On the **Azure Pipelines** page, click **Install it for free**. If you have multiple **GitHub** accounts, select the one you forked the calculator to from the **Switch billing account** dropdown.
-5.  On the **Review your order** page, click **Complete order and begin installation**.
-6.  On the **Install Azure Pipelines** page, use the default option **All repositories** and click **Install**.
+1.  On the **Azure Pipelines** page, click **Install it for free**. If you have multiple **GitHub** accounts, select the one you forked the calculator to from the **Switch billing account** dropdown.
+
+  ![Azure DevOps](images/mod6_16.png)
+1.  On the **Review your order** page, click **Complete order and begin installation**.
+
+   ![Azure DevOps](images/mod6_17.png)
+1.  On the **Install Azure Pipelines** page, use the default option **All repositories** and click **Install**.
+
+   ![Azure DevOps](images/mod6_18.png)
 
     > **Note**: You have the option to specify repositories to include, but for the purposes of this lab, just include all of them. Note that Azure DevOps requires the listed set of permissions to fulfill its services. 
 
-7.  If prompted, authenticate with your GitHub password to continue.
-8.  When prompted, on the **Setup your Azure Pipelines project** page, in the **Select your Azure DevOps organization** dropdown list, select your Azure DevOps account and click **Create a new project**.
-9.  When prompted, on the **Setup your Azure Pipelines project** page, in the **Project name** textbox, type **Integrating External Source Control with Azure Pipelines**, leave the **Project visibility** set to **Private**, and click **Continue**.
-10. On the **Azure Pipelines by Microsoft would like permission to** page, click **Authorize Azure Pipelines**.
+1.  If prompted, authenticate with your GitHub password to continue.
+1.  When prompted, on the **Setup your Azure Pipelines project** page, in the **Select your Azure DevOps organization** dropdown list, select your Azure DevOps account and click **Create a new project**.
+1.  When prompted, on the **Setup your Azure Pipelines project** page, in the **Project name** textbox, type **Integrating External Source Control with Azure Pipelines**, leave the **Project visibility** set to **Private**, and click **Continue**.
+1. On the **Azure Pipelines by Microsoft would like permission to** page, click **Authorize Azure Pipelines**.
 
 ### Task 2: Configuring your Azure Pipelines project
 
@@ -74,17 +104,21 @@ In this task, you will configure the Azure Pipelines project based on the fork o
 
 1.  On the **Select a repository** pane of the **Pipelines** view in the Azure DevOps portal, select the fork of the GitHub calculator repository you created in the previous task.
 
-    > **Note**: Azure Pipelines will analyze your project in an attempt to determine if any existing templates would be a good fit. In this case, the recommended template is for **Node.js**, which is perfect for our needs. Some alternative templates are also suggested, although the recommended one is the best for this lab. 
+   > **Note**: Azure Pipelines will analyze your project in an attempt to determine if any existing templates would be a good fit. In this case, the recommended template is for **Node.js**, which is perfect for our needs. Some alternative templates are also suggested, although the recommended one is the best for this lab. 
 1.  On the **Configure your pipeline**, select **Node.js**.
 
-    > **Note**: The build pipeline is defined as **YAML**, a markup syntax well-suited to defining processes like this because it allows you to manage the configuration of the pipeline like any other file in the repo. It's a pretty simple template that identifies the pool to pull a VM from for building, the process to install Node.js for building, and the actual build itself. 
+  ![Azure DevOps](images/mod6_19.png)
+
+   > **Note**: The build pipeline is defined as **YAML**, a markup syntax well-suited to defining processes like this because it allows you to manage the configuration of the pipeline like any other file in the repo. It's a pretty simple template that identifies the pool to pull a VM from for building, the process to install Node.js for building, and the actual build itself. 
 
 1.  On the **Review your pipeline YAML**, click **Save and run** to save the pipeline and queue a new build.
 1.  On the **Save and run** pane, accept the default settings and click **Save and run**.
 
-    > **Note**: For the purposes of this lab, you can commit this new file directly to the master branch. 
+  ![Azure DevOps](images/mod6_20.png)
 
-    > **Note**: It will take a moment for the pipeline to complete. During this time it will configure the build agent, pull in the source from GitHub, and build it according to the pipeline definition.
+   > **Note**: For the purposes of this lab, you can commit this new file directly to the master branch. 
+
+   > **Note**: It will take a moment for the pipeline to complete. During this time it will configure the build agent, pull in the source from GitHub, and build it according to the pipeline definition.
 
 1.  On the **Summary** tab of the build job's pane, verify that the build completed successfully.
 
