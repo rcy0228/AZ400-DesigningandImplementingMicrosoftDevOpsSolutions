@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab 06a: Enabling Continuous Integration with Azure Pipelines'
-    module: 'Module 6: Implementing Continuous Integration using Azure Pipelines'
----
-
 # Lab 06a: Enabling Continuous Integration with Azure Pipelines
 # Student lab manual
 
@@ -25,24 +19,21 @@ After you complete this lab, you will be able to:
 
 ## Instructions
 
-### Before you start
-
-#### Sign in to the lab virtual machine
-
-Ensure that you're signed in to your Windows 10 virtual machine by using the following credentials:
-    
--   Username: **Student**
--   Password: **Pa55w.rd**
-
-#### Review applications required for this lab
-
-Identify the applications that you'll use in this lab:
-    
--   Microsoft Edge
-
 #### Set up an Azure DevOps organization. 
 
-If you don't already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at [Create an organization or project collection](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops).
+1. On your lab VM open **Edge Browser** on desktop and navigate to https://dev.azure.com. Then click on **Sign into Azure DevOps** and login with the credentials provided in environment details tab.
+
+    ![Azure DevOps](images/devops.png)
+2. On the next page accept defaults and click on continue.
+
+    ![Azure DevOps](images/m1-1.png)
+
+3. On the **Get started with Azure DevOps** page click on **Continue**.
+
+4. On the **Almost Done...** page fill the captcha and click on continue. 
+
+    ![Azure DevOps](images/m1-2.png)
+
 
 ### Exercise 0: Configure the lab prerequisites
 
@@ -57,14 +48,20 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
     > **Note**: For more information on the site, see https://docs.microsoft.com/en-us/azure/devops/demo-gen.
 
 1.  Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
+
+     ![Azure DevOps Generator website. Clik on "Sign In" option](images/m1/demo_signin_v1.png)
 1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
 1.  On the **Create New Project** page, in the **New Project Name** textbox, type **Enabling Continuous Integration with Azure Pipelines**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
 1.  In the list of templates, locate the **PartsUnlimited** template and click **Select Template**.
+
+    ![Azure DevOps Generator website. On the choose template window, select "PartsUnlimited"](images/m1/pu_template_v1.png)
 1.  Back on the **Create New Project** page, click **Create Project**
 
     > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your DevOps organization, delete the project, and try again.
 
 1.  On the **Create New Project** page, click **Navigate to project**.
+
+    ![Azure DevOps Generator website. Clik on "Navigate to Project"](images/m1/navigate_project_v1.png)
 
 ### Exercise 1: Introduction to Azure DevOps Build 
 
@@ -76,49 +73,74 @@ In this task, you will create and configure a build pipeline by using a predefin
 
 1.  In the web browser displaying your Azure DevOps organization with the **Enabling Continuous Integration with Azure Pipelines** project you generated in the previous exercise, in the vertical navigational pane, select the **Pipelines** section and ensure that the **Pipelines** view is displayed.
 
+      ![Azure DevOps](images/mod6_1.png)
+
     > **Note**: Alternatively, you can access the project page directly by navigating to the [https://dev.azure.com/`<your-Azure-DevOps-account-name>`/Enabling%20Continuous%20Integration%20with%20Azure%20Pipelines) URL, where the `<your-Azure-DevOps-account-name>` placeholder, represents your account name. 
 
 1.  On the **Pipelines** pane, hover the mouse pointer over the entry representing the existing **PartsUnlimitedE2E** pipeline to reveal the ellipsis symbol on the right side.
 1.  Click the ellipsis and, in the dropdown menu, click **Edit**.
 
-    > **Note**: In order to avoid two pipelines being triggered later in the lab, start by disabling the CI trigger for the pipeline created by the template.
+    ![Azure DevOps](images/mod6_2.png)
+
+   > **Note**: In order to avoid two pipelines being triggered later in the lab, start by disabling the CI trigger for the pipeline created by the template.
 
 1.  On the **Tasks** tab of the **PartsUnlimitedE2E** pane, click the **Triggers** tab, clear the checkbox **Enable continuous integration**, click **Save & queue** and then click **Save**.
+  
+    ![Azure DevOps](images/mod6_3.png)
+
 1.  To create a new pipeline, navigate back to the **Pipelines** view by selecting **Pipelines** in the vertical navigational pane in the Azure DevOps portal.
 1.  Back on the **Pipelines** pane, click **New pipeline** to create a new build pipeline.
 
-    > **Note**: The default option for build pipelines involves the use of YAML. For this lab, you will use the classic editor. 
+   ![Azure DevOps](images/mod6_4.png)
+
+> **Note**: The default option for build pipelines involves the use of YAML. For this lab, you will use the classic editor. 
 
 1.  On the **Where is your code>?** pane, click the **Use the classic editor** link at the bottom of the page.
 
-    > **Note**: You need to start by configuring the source repository. Every major platform is available, but the default options are all we need here. This build will use the **master** branch of the **PartsUnlimited** repo. 
+   ![Azure DevOps](images/mod6_5.png)
+
+ > **Note**: You need to start by configuring the source repository. Every major platform is available, but the default options are all we need here. This build will use the **master** branch of the **PartsUnlimited** repo. 
 
 1.  Ensure that the **Azure Repos Git** option with the **PartsUnlimited** repository and **master** branch entries are selected, and click **Continue**.
+
+  ![Azure DevOps](images/mod6_6.png)
 1.  On the **Choose a template** pane, in the **Search** text box, type **ASP.NET**, in the list of results, select the **ASP.NET** template and click **Apply** to apply this template to the build definition. 
+
+  ![Azure DevOps](images/mod6_7.png)
 
     > **Note**: Note that there are many options that should cover all of our mainstream scenarios. For our purposes here, we'll just build the project using the baseline ASP.NET template. The process for this build pipeline is easy to follow. After getting the source, Azure DevOps will use NuGet to restore any dependent packages. Then, the project will be built and tested. The results will then be published to the configured target.
 
 1.  Select the **Variables** tab and review its content.
 
+   ![Azure DevOps](images/mod6_8.png)
+
     > **Note**: Here you can configure special parameters to be used during the build, such as the configuration or platform.
 
 1.  Select the **Triggers** tab and check the **Enable continuous integration** checkbox. 
+
+   ![Azure DevOps](images/mod6_9.png)
 
     > **Note**: This automatically invokes the build whenever source changes are committed. Triggers allow you to automatically invoke builds on a schedule, when another build completes, or when changes are made to the source.
 
 1.  Select the **Options** tab and review its content.
 
-    > **Note**: This section includes a wide variety of options related to the build workflow. Note that you'll generally configure options for specific build tasks on the configuration views of the tasks themselves.
+  ![Azure DevOps](images/mod6_10.png)
+
+ > **Note**: This section includes a wide variety of options related to the build workflow. Note that you'll generally configure options for specific build tasks on the configuration views of the tasks themselves.
 
 1.  Select the **History** tab. 
 
-    > **Note**: At this point, the tab does not contain any entries, but it will show a history of changes you make to the build definition.
+![Azure DevOps](images/mod6_11.png)
+
+   > **Note**: At this point, the tab does not contain any entries, but it will show a history of changes you make to the build definition.
 
 1.  Select the **Save & Queue** tab header and, in the dropdown menu, select **Save & Queue** entry to save and queue a new build.
 
     > **Note**: You can define the retention time for pipeline artifacts from **Project Settings** > **Settings** > **Retention policy**. These settings enable you to configure which pipeline runs are retained and for how long. 
 
 1.  In the **Run pipeline** pane, accept the default options and click **Save and run**. This will automatically display the **Summary** tab of the pipeline run job, with the **Queued** status.
+
+![Azure DevOps](images/mod6_12.png)
 
 #### Task 2: Tracking and reviewing a build
 
