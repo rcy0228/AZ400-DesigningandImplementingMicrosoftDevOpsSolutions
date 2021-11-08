@@ -95,7 +95,7 @@ In this task, you will create and configure a build pipeline by using a predefin
 
 > **Note**: The default option for build pipelines involves the use of YAML. For this lab, you will use the classic editor. 
 
-1.  On the **Where is your code>?** pane, click the **Use the classic editor** link at the bottom of the page.
+1.  On the **Where is your code ?** pane, click the **Use the classic editor** link at the bottom of the page.
 
    ![Azure DevOps](images/mod6_5.png)
 
