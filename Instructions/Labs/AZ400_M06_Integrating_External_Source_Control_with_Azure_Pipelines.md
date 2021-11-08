@@ -58,13 +58,11 @@ If you don't already have an Azure DevOps organization that you can use for this
  
 1. Provide the password and enter the valid username and click on continue.
 
-  ![Github](images/mod6_24.png)
+  ![Github](images/mod6_26.png)
 
 1. Provide the confirmation and verify your account and click on create account. This would take 2 minutes to create.
 
  ![Github](images/mod6_25.png)
-
-
 
 ### Exercise 1: Getting started with Azure Pipelines
 
