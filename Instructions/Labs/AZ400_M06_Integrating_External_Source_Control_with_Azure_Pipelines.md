@@ -85,7 +85,7 @@ In this task, you will fork a GitHub repo and install Azure Pipelines in your Gi
 
    ![Azure DevOps](images/mod6_18.png)
 
-    > **Note**: You have the option to specify repositories to include, but for the purposes of this lab, just include all of them. Note that Azure DevOps requires the listed set of permissions to fulfill its services. 
+   > **Note**: You have the option to specify repositories to include, but for the purposes of this lab, just include all of them. Note that Azure DevOps requires the listed set of permissions to fulfill its services. 
 
 1.  If prompted, authenticate with your GitHub password to continue.
 1.  When prompted, on the **Setup your Azure Pipelines project** page, in the **Select your Azure DevOps organization** dropdown list, select your Azure DevOps account and click **Create a new project**.
