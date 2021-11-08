@@ -44,7 +44,27 @@ If you don't already have an Azure DevOps organization that you can use for this
 
 #### Set up a GitHub account
 
-If you don't already have a GitHub account that you can use for this lab, follow instructions available at [Signing up for a new GitHub account](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/signing-up-for-a-new-github-account).
+1. If you already have a GitHub account that you can use for this lab, follow instructions available at [Signing up for a new GitHub account](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/signing-up-for-a-new-github-account).
+
+1. If you are not having Github account, follow the instructions to create an account.
+
+1. Navigate to the [Github account](https://github.com/) Click on create an account.
+
+   ![Github](images/mod6_21.png)
+   
+1. Provide the email address and click on continue.
+
+ ![Github](images/mod6_22.png)
+ 
+1. Provide the password and enter the valid username and click on continue.
+
+  ![Github](images/mod6_24.png)
+
+1. Provide the confirmation and verify your account and click on create account. This would take 2 minutes to create.
+
+ ![Github](images/mod6_25.png)
+
+
 
 ### Exercise 1: Getting started with Azure Pipelines
 
