@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab 06b: Integrating External Source Control with Azure Pipelines'
-    module: 'Module 6: Implementing Continuous Integration using Azure Pipelines'
----
-
 # Lab 06b: Integrating External Source Control with Azure Pipelines
 # Student lab manual
 
@@ -28,21 +22,6 @@ After you complete this lab, you will be able to:
 -   Estimated time: **60 minutes**
 
 ## Instructions
-
-### Before you start
-
-#### Sign in to the lab virtual machine
-
-Ensure that you're signed in to your Windows 10 virtual machine by using the following credentials:
-    
--   Username: **Student**
--   Password: **Pa55w.rd**
-
-#### Review applications required for this lab
-
-Identify the applications that you'll use in this lab:
-    
--   Microsoft Edge
 
 #### Set up an Azure DevOps organization
 
