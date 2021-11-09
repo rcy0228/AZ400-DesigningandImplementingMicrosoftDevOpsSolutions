@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab 13: Azure Deployments Using Resource Manager Templates'
-    module: 'Module 13: Managing Infrastructure and Configuration using Azure Tools'
----
-
 # Lab 13: Azure Deployments Using Resource Manager Templates
 # Student lab manual
 
@@ -27,22 +21,6 @@ After you complete this lab, you will be able to:
 -   Estimated time: **60 minutes**
 
 ## Instructions
-
-### Before you start
-
-#### Sign in to the lab virtual machine
-
-Ensure that you're signed in to your Windows 10 virtual machine by using the following credentials:
-    
--   Username: **Student**
--   Password: **Pa55w.rd**
-
-#### Review applications required for this lab
-
-Identify the applications that you'll use in this lab:
-    
--   Microsoft Edge
--   [Visual Studio Code](https://code.visualstudio.com/). This will be installed as part of prerequisites for this lab. 
 
 #### Prepare an Azure subscription
 
@@ -68,6 +46,10 @@ In this lab, you will create an Azure Resource manager template and modularize i
 In this task, you will use Visual Studio Code to create a Resource Manager template
 
 1.  From your lab computer, start Visual Studio Code, in Visual Studio Code, click the **File** top level menu, in the dropdown menu, select **Preferences**, in the cascading menu, select **Extensions**, in the **Search Extensions** textbox, type **Azure Resource Manager (ARM) Tools**, select the corresponding search result, and click **Install** to install the Azure Resource Manager Tools
+
+ ![visual studio"](images/mod13_1.png)
+ ![visual studio"](images/mod13_2.png)
+
 1.  In a web browser, connect to **https://github.com/Azure/azure-quickstart-templates/blob/master/quickstarts/microsoft.compute/vm-simple-windows/azuredeploy.json**. Click on **Raw** option for the file. Copy the contents of the code window and paste it into Visual Studio Code editor.
 
     > **Note**: Rather than creating a template from scratch we will use one of the [Azure Quickstart Templates](https://azure.microsoft.com/en-us/resources/templates/) named **Deploy a simple Windows template VM**. The templates are downloadable the templates from GitHub - [vm-simple-windows](https://github.com/Azure/azure-quickstart-templates/blob/master/quickstarts/microsoft.compute/vm-simple-windows).
@@ -255,7 +237,7 @@ In this task, you will upload the linked template you created in the previous ta
 
 1.  If prompted to select either **Bash** or **PowerShell**, select **PowerShell**. 
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
+1.  When prompted, select **Show advanced settings** and then select **Use existing** and choose existing resource group. Then select **Create new** against Storage account as well as File Share and provide a unique value in both of the fields and then click on **Create storage**, and wait for the Azure Cloud Shell to initialize. 
 
 1.  From a **PowerShell** session in the Cloud Shell pane, run the following to create a blob storage container, upload the template file you created in the previous task, and generate a SAS token that you will reference in the main template to access the linked template.
 1.  First, copy and paste the following lines of code to set a value for the Azure region you want to deploy to. The command will wait for your input as shown in the prompt.
@@ -460,30 +442,8 @@ In this task, you will modify the main template to account for remaining depende
 
 > **Note**: If you are not planning on using the deployed resources, you should delete them to avoid associated charges. You can do so simply by deleting the resource group **az400m13l01-RG**.
 
-### Exercise 2: Remove the Azure lab resources
 
-In this exercise, you will remove the Azure resources provisione in this lab to eliminate unexpected charges. 
-
->**Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
-
-#### Task 1: Remove the Azure lab resources
-
-In this task, you will use Azure Cloud Shell to remove the Azure resources provisioned in this lab to eliminate unnecessary charges. 
-
-1.  In the Azure portal, open the **Bash** shell session within the **Cloud Shell** pane.
-1.  List all resource groups created throughout the labs of this module by running the following command:
-
-    ```bash
-    az group list --query "[?starts_with(name,'az400m13l01-RG')].name" --output tsv
     ```
-
-1.  Delete all resource groups you created throughout the labs of this module by running the following command:
-
-    ```bash
-    az group list --query "[?starts_with(name,'az400m13l01-RG')].[name]" --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-    ```
-
-    >**Note**: The command executes asynchronously (as determined by the --nowait parameter), so while you will be able to run another Azure CLI command immediately afterwards within the same Bash session, it will take a few minutes before the resource groups are actually removed.
 
 ## Review
 
