@@ -442,9 +442,6 @@ In this task, you will modify the main template to account for remaining depende
 
 > **Note**: If you are not planning on using the deployed resources, you should delete them to avoid associated charges. You can do so simply by deleting the resource group **az400m13l01-RG**.
 
-
-    ```
-
 ## Review
 
 In this lab, you learned how to create an Azure Resource manager template, modularize it by using a linked template, modify the main deployment template to call the linked template and updated dependencies, and finally deploy the templates to Azure.
