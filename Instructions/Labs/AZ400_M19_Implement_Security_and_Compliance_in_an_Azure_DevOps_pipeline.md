@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab 19: Implement Security and Compliance in an Azure DevOps pipeline'
-    module: 'Module 19: Implementing Security in DevOps Projects'
----
-
 # Lab 19: Implement Security and Compliance in an Azure DevOps pipeline
 # Student lab manual
 
@@ -35,24 +29,21 @@ After you complete this lab, you will be able to:
 
 ## Instructions
 
-### Before you start
-
-#### Sign in to the lab virtual machine
-
-Ensure that you're signed in to your Windows 10 computer by using the following credentials:
-    
--   Username: **Student**
--   Password: **Pa55w.rd**
-
-#### Review applications required for this lab
-
-Identify the applications that you'll use in this lab:
-    
--   Microsoft Edge
-
 #### Set up an Azure DevOps organization. 
 
-If you don't already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at [Create an organization or project collection](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops).
+1. On your lab VM open **Edge Browser** on desktop and navigate to https://dev.azure.com. Then click on **Sign into Azure DevOps** and login with the credentials provided in environment details tab.
+
+    ![Azure DevOps](images/devops.png)
+
+2. On the next page accept defaults and click on continue.
+
+    ![Azure DevOps](images/m1-1.png)
+
+3. On the **Get started with Azure DevOps** page click on **Continue**.
+
+4. On the **Almost Done...** page fill the captcha and click on continue. 
+
+    ![Azure DevOps](images/m1-2.png)
 
 ### Exercise 0: Configure the lab prerequisites
 
@@ -62,16 +53,21 @@ In this exercise, you will set up the prerequisites for the lab, which consist o
 
 In this task, you will use Azure DevOps Demo Generator to generate a new project based on the [WhiteSource-Bolt template](https://azuredevopsdemogenerator.azurewebsites.net/?name=WhiteSource-Bolt&templateid=77362)
 
-1.  On your lab computer, start a web browser and navigate to [Azure DevOps Demo Generator](https://azuredevopsdemogenerator.azurewebsites.net). This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. 
+1.  In a new tab of Edge browser navigate to [Azure DevOps Demo Generator](https://azuredevopsdemogenerator.azurewebsites.net). This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. 
 
     > **Note**: For more information on the site, see https://docs.microsoft.com/en-us/azure/devops/demo-gen.
 
 1.  Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
+
+    ![Azure DevOps Generator website. Clik on "Sign In" option](images/m1/demo_signin_v1.png)
 1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
 1.  On the **Create New Project** page, in the **New Project Name** textbox, type **WhiteSource Bolt**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
 1.  In the list of templates, in the toolbar, click **DevOps Labs**, select the **WhiteSource Bolt** template and click **Select Template**.
-1.  Back on the **Create New Project** page, if prompted to install a missing extension, select the checkbox below the **WhiteSource Bolt** and click **Create Project**.
+ 
+     ![Azure DevOps](images/mod19_1.png)
+3.  Back on the **Create New Project** page, if prompted to install a missing extension, select the checkbox below the **WhiteSource Bolt** and click **Create Project**.
 
+    ![Azure DevOps](images/mod19_6.png)
     > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your DevOps organization, delete the project, and try again.
 
 1.  On the **Create New Project** page, click **Navigate to project**.
@@ -85,7 +81,9 @@ In this exercise, leverage WhiteSource Bolt to scan the project code for securit
 In this task, you will activate WhiteSource Bolt in the newly generated Azure Devops project.
 
 1.  On your lab computer, in the web browser window displaying the Azure DevOps portal with the **WhiteSource Bolt** project open, **in the vertical menu bar** at the far left of the Azure DevOps portal, click **Pipelines**  section and  **WhiteSource Bolt** option (in the vertical menu bar under "Deployment Groups" option).
-1.  On the **You're almost there** pane, provide your **Work Email** and **Company Name**, in the **Country** dropdown list, select the entry representing your country, and click *Get Started* button to start using the *Free* version of WhiteSource Bolt. This will automatically open a new browser tab displaying the **Get Started With Bolt** page. 
+1.  On the **You're almost there** pane, provide your **Work Email** and **Company Name**, in the **Country** dropdown list, select the entry representing your country, and click *Get Started* button to start using the *Free* version of WhiteSource Bolt. This will automatically open a new browser tab displaying the **Get Started With Bolt** page.
+
+![Azure DevOps](images/mod19_2.png)
 1.  Switch back to the web browser tab displaying the Azure DevOps portal and verify that the **You are using a FREE version of WhiteSource Bolt** is displayed.
 
 #### Task 2: Trigger a build
@@ -93,6 +91,8 @@ In this task, you will activate WhiteSource Bolt in the newly generated Azure De
 In this task, you will trigger a build within your Java code-based Azure DevOps project. You will use **WhiteSource Bolt** extension to identify vulnerable components present in this code.
 
 1.  On your lab computer, in the vertical menu bar on the left side, navigate to the **Pipelines** section, click **WhileSourceBolt**, click **Run pipeline** and then, on the **Run pipeline** pane, click **Run**.
+
+![Azure DevOps](images/mod19_3.png)
 1.  On the **Summary** tab of the build pane, in the **Jobs** section, click **Phase 1** and monitor the progress of the build process.
 
     > **Note**: The build may take a few minutes to complete. The build definition consists of the following tasks:
@@ -116,8 +116,11 @@ In this task, you will review the WhiteSource Bolt build report.
 1.  While on the **WhiteSource Bolt Build Report** tab, review the Security dashboard, displaying the vulnerabilities discovered during the build.
 
     > **Note**: The report displays the list of all vulnerable open source components, including **Vulnerability Score**, **Vulnerable Libraries**, and **Severity Distribution**. You can identify the opensource license distribution by leveraging a detailed view of all components and links to their metadata and licensed references.
+    ![Azure DevOps](images/mod19_4.png)
 
 1.  While on the **WhiteSource Bolt Build Report** tab, scroll down to the **Outdated Libraries** section and review its content.
+
+    ![Azure DevOps](images/mod19_5.png)
 
     > **Note**: WhiteSource Bolt tracks outdated libraries in the project, providing library details, links to newer versions, and remediation recommendations.
 
