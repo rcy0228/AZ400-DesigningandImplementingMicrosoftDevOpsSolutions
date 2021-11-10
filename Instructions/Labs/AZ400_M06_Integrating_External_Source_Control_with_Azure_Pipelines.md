@@ -44,9 +44,7 @@ If you don't already have an Azure DevOps organization that you can use for this
 
 #### Set up a GitHub account
 
-1. If you already have a GitHub account that you can use for this lab, else follow the instructions available at [Signing up for a new GitHub account](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/signing-up-for-a-new-github-account).
-
-1. If you are not having Github account, follow the instructions to create an account.
+1. If you already have a GitHub account that you can use for this lab, else follow the instructions to create an account.
 
 1. Navigate to the [Github account](https://github.com/) Click on create an account.
 
