@@ -20,19 +20,17 @@ After you complete this lab, you will be able to:
 
 #### Prepare a GitHub account
 
-1. If you already have a GitHub account that you can use for this lab, else follow the instructions available at [Signing up for a new GitHub account](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/signing-up-for-a-new-github-account).
-
 1. If you are not having Github account, follow the instructions to create an account.
 
 1. Navigate to the [Github account](https://github.com/) Click on create an account.
 
    ![Github](images/mod6_21.png)
    
-1. Provide the email address and click on continue.
+1. Provide user name as email address and click on continue. Username can be obtained from environment details page.
 
  ![Github](images/mod6_22.png)
  
-1. Provide the password and enter the valid username and click on continue.
+1. Provide the password and enter the username as odl{deploymentID} and click on continue. Deployment ID and Password can be obtained from environment details page, Replace Deployment ID with its value.s
 
   ![Github](images/mod6_26.png)
 
@@ -99,6 +97,24 @@ In this task, you will create an Azure DevOps Starter project that automatically
 In this task, you will review the results of creating the DevOps Starter project.
 
 1.  In the web browser window displaying the Azure portal, on the **az400m08l01** blade, review the **GitHub Workflow** section and verify that the **build**, **deploy**, and **Functional tests** jobs completed successfully.
+
+    > **Note**: If you get below error while running deploy section follow below steps
+
+    `
+    Error:
+    ERROR: Could not retrieve credential from local cache for service principal 63e0c73b-c825-42f3-a6f5-6009fade2956. Run az login for this service principal.
+    Error: Error: az cli script failed.
+    `
+
+    Solution:
+    - Switch to browser tab where you created or logged into git hub https://github.com/, Go to repositories search and select the repo **az400m08l01**. Click on **Actions** from the menu.
+    ![Github](images/git1.png) 
+    - In the **All Workflows** section on the available workflow with error go to options by clicking on 3 dots at the right side and select **View workflow file**.   
+    ![Github](images/git2.png)
+    - Click on edit icon to start editing the file, On the Edit file page go to section **- name: Deploy ARM Template** and add **azcliversion: 2.29.2** as shown in below image
+    ![Github](images/git2.png)
+    - Click on **start commits** and select **commit changes**. This will automatically start rebuild process switch to azure portal and wait for the the task to get completed.
+
 1.  On the **az400m08l01** blade, review the **Azure resources** section and verify that they include an App Service web app instance and the corresponding Application Insights resource.
 1.  At the top of the **az400m08l01** blade, note the link to the **Workflow file** and the GitHub repository you created in the previous task.
 1.  At the top of the **az400m08l01** blade, click the link to the GitHub repository. 
