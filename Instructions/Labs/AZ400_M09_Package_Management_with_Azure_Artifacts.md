@@ -71,7 +71,7 @@ In this task, you will configure Visual Studio to prepare for the lab.
 1.  If prompted whether to proceed, click **Open**. 
 1.  If prompted, sign in with the user account you used to set up your Azure DevOps organization. Username and password can be obtained from the environmental details page.
 1.  Within the Visual Studio interface, in the **Azure DevOps** pop-up window, accept the default local path and click **Clone**. This will automatically import the project into Visual Studio. Make a note of local path you will need it in further tasks.
-1.  After import is completed in lab VM go to start menu search for **Visual Studio Installer** and open it. Click on modify and under workloads select **ASP<nolink>.NET and web development**, **Azure development**, and **.NET cross-platform development** then click on modify.
+1.  After import is completed in lab VM go to start menu search for **Visual Studio Installer** and open it. Click on modify and under workloads verify if **ASP<nolink>.NET and web development**, **Azure development**, and **.NET cross-platform development** already selected else select them and click on modify.
 1.  Installation will take some time meanwhile minimise visualstudio and continue next task. After installation is completed it will restart Visual studio automatically.
 
     > **Note**: If you get before we get started window click on continue.
