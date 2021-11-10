@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab 09: Package Management with Azure Artifacts'
-    module: 'Module 9: Designing and Implementing a Dependency Management Strategy'
----
-
 # Lab 09: Package Management with Azure Artifacts
 # Student lab manual
 
@@ -26,25 +20,21 @@ After you complete this lab, you will be able to:
 
 ## Instructions
 
-### Before you start
-
-#### Sign in to the lab virtual machine
-
-Ensure that you're signed in to your Windows 10 virtual machine by using the following credentials:
-    
--   Username: **Student**
--   Password: **Pa55w.rd**
-
-#### Review applications required for this lab
-
-Identify the applications that you'll use in this lab:
-    
--   Microsoft Edge
--   Visual Studio 2019 Community Edition available from [Visual Studio Downloads page](https://visualstudio.microsoft.com/downloads/). Visual Studio 2019 installation should include **ASP<nolink>.NET and web development**, **Azure development**, and **.NET Core cross-platform development** workloads. This is already preinstalled on your lab computer.
-
 #### Set up an Azure DevOps organization
 
-If you don't already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at [Create an organization or project collection](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops).
+1. On your lab VM open **Edge Browser** on desktop and navigate to https://dev.azure.com. Then click on **Sign into Azure DevOps** and login with the credentials provided in environment details tab.
+
+    ![Azure DevOps](images/devops.png)
+
+2. On the next page accept defaults and click on continue.
+
+    ![Azure DevOps](images/m1-1.png)
+
+3. On the **Get started with Azure DevOps** page click on **Continue**.
+
+4. On the **Almost Done...** page fill the captcha and click on continue. 
+
+    ![Azure DevOps](images/m1-2.png)
 
 ### Exercise 0: Configure the lab prerequisites
 
@@ -54,11 +44,11 @@ In this exercise, you will set up the prerequisites for the lab, which include t
 
 In this task, you will use Azure DevOps Demo Generator to generate a new project based on the **PartsUnlimited** template.
 
-1.  On your lab computer, start a web browser and navigate to [Azure DevOps Demo Generator](https://azuredevopsdemogenerator.azurewebsites.net). This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. 
+1.  In a new tab of Edge browser navigate to https://azuredevopsdemogenerator.azurewebsites.net. This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. 
 
     > **Note**: For more information on the site, see https://docs.microsoft.com/en-us/azure/devops/demo-gen.
 
-1.  Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
+1.  Click **Sign in** and if prompted sign with the credentials provided in environment details tab.
 1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
 1.  On the **Create New Project** page, in the **New Project Name** textbox, type **Package Management with Azure Artifacts**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
 1.  On the **Choose a template** page, in the list of templates, click the **PartsUnlimited** template, and then click **Select Template**.
@@ -79,13 +69,12 @@ In this task, you will configure Visual Studio to prepare for the lab.
 1.  In the vertical menu on the left side of the **Package Management with Azure Artifacts** pane, click **Repos**.
 1.  On the **Files** pane, click **Clone**, click **Clone in VS Code**, and, in the dropdown menu, select **Visual Studio**.
 1.  If prompted whether to proceed, click **Open**. 
-1.  If prompted, sign in with the user account you used to set up your Azure DevOps organization.
-1.  Within the Visual Studio interface, in the **Azure DevOps** pop-up window, accept the default local path and click **Clone**. This will automatically import the project into Visual Studio and open a new web browser tab displaying the Migration Report page.
+1.  If prompted, sign in with the user account you used to set up your Azure DevOps organization. Username and password can be obtained from the environmental details page.
+1.  Within the Visual Studio interface, in the **Azure DevOps** pop-up window, accept the default local path and click **Clone**. This will automatically import the project into Visual Studio. Make a note of local path you will need it in further tasks.
+1.  After import is completed in lab VM go to start menu search for **Visual Studio Installer** and open it. Click on modify and under workloads select **ASP<nolink>.NET and web development**, **Azure development**, and **.NET cross-platform development** then click on modify.
+1.  Installation will take some time meanwhile minimise visualstudio and continue next task. After installation is completed it will restart Visual studio automatically.
 
-    > **Note**: In the **Review Project and Solution Changes** dialog box, review the warnings about unsupported project types and click **OK**. 
-
-1.  Close the web browser tab displaying the Migration Report page.
-1.  Leave Visual Studio window open for use in your lab.
+    > **Note**: If you get before we get started window click on continue.
 
 ### Exercise 1: Working with Azure Artifacts
 
@@ -111,7 +100,7 @@ In this task, you will create and connect to a feed.
 
 1.  Back on the **Artifacts** hub, click **Connect to feed**.
 1.  On the **Connect to feed** pane, in the **NuGet** section, select **Visual Studio** and, on the **Visual Studio** pane, copy the **Source** url. 
-1.  Switch back to the **Visual Studio** window.
+1.  Switch back to the **Visual Studio** window and wait for the installation to be get completed. 
 1.  In the Visual Studio window, click **Tools** menu header, in the dropdown menu, select **NuGet Package Manager** and, in the cascading menu, select **Package Manager Settings**.
 1.  In the **Options** dialog box, click **Package Sources** and click the plus sign to add a new package source.
 1.  At the bottom of the dialog box, in the **Name** textbox, replace **Package source** with **PartsUnlimitedShared** and, in the **Source** textbox, paste the URL you copied in the Azure DevOps portal. 
@@ -155,7 +144,7 @@ In this task, you will create and publish a NuGet package.
 1.  On the **Get the tools** pane, click the **Download the latest NuGet** link. This will automatically open another browser tab displaying the **Available NuGet Distribution Versions** page.
 1.  On the **Available NuGet Distribution Versions** page, select nuget.exe version **v5.5.1** and download the executable to the local **Downloads** folder.
 1.  Switch to the **Visual Studio** window. In the **Solution Explorer** pane, right-click the **PartsUnlimited.Shared** project node and, in the right-click menu, select **Open Folder in File Explorer**.
-1.  Within the File Explorer window, move the downloaded **nuget.exe** file from the **Downloads** folder into the folder containing the **.csproj** file.
+1.  Within the File Explorer window, move the downloaded **nuget.exe** file from the **Downloads** folder into the folder containing the **PartsUnlimited.Shared** file.
 1.  In the same File Explorer window, select the **File** menu header, in the dropdown menu, select **Open Windows PowerShell**, and, in the cascading menu, click **Open Windows PowerShell as administrator**. 
 1.  In the **Administrator: Windows PowerShell** window, run the following to create a **.nupkg** file from the project. 
 
@@ -191,13 +180,11 @@ In this task, you will create and publish a NuGet package.
 
 In this task, you will import a NuGet package.
 
-1.  Switch to the **Visual Studio** window displaying the **Parts Unlimited** solution.
+1.  In your lab VM open file explorer and navigate to the location where you cloned repo usally it is in **C:\Users\azureuser\source\repos**. In repos directory navigate to **PartsUnlimited\PartsUnlimited-aspnet45** and open **PartsUnlimited.sln**. This will open PartsUnlimited project in new visual studio window.
 1.  In the **Solution Explorer** pane, right-click the **References** node under the **PartsUnlimitedWebsite** project and, in the right-click menu, select **Manage NuGet Packages**. This will open the **NuGet: PartsUnlimitedWebsite** tab in the central pane of the window.
 1.  In the **NuGet: PartsUnlimitedWebsite** pane, click the **Browse** tab and, in the **Package source** drop-down list in the upper right corner of the pane, select **PartsUnlimitedShared**. 
 
-    > **Note**: The list of packages will consist only of the single package you just added.
-
-1.  Select the package and, in the **PartsUnlimited.Shared** pane, click **Install** to add it to the project.
+1.  Search and select the package **PartsUnlimited.Shared** and, in the **PartsUnlimited.Shared** pane, click **Install** to add it to the project.
 1.  When prompted, in the **Preview Changes** dialog box, click **OK**.
 1.  Press **Ctrl+Shift+B** to build the project and verify that the build completed successfully. 
 
