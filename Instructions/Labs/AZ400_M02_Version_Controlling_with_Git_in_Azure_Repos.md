@@ -144,7 +144,7 @@ In this task, you will use Visual Studio Code to commit changes.
 
 1.  In the Visual Studio Code window, at the top of the vertical toolbar, select the **EXPLORER** tab, navigate to the **/PartsUnlimited-aspnet45/src/PartsUnlimitedWebsite/Models/CartItem.cs** file and select it. This will automatically display its content in the details pane.
 
-1. When prompted to install recommended extenisions for C# click on install
+    > **Note**: If prompted to install recommended extenisions for C# click on install
 
     ![Azure DevOps](images/m2-1.png)
 
