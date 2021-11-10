@@ -56,7 +56,7 @@ In this exercise, you will use DevOps Starter to facilitate provisioning of a nu
 
 In this task, you will create an Azure DevOps Starter project that automatically sets up a GitHub repository, as well as creates and triggers a GitHub workflow that deploys an Azure web app, based on the content of the GitHub repository.
 
-1.  From the lab VM, open Edge browser, navigate to the [**Azure Portal**](https://portal.azure.com), and sign in with the credentials provided in environmental details page.
+1.  From the lab VM, open Edge browser, navigate to the https://portal.azure.com, and sign in with the credentials provided in environmental details page.
 1.  In the Azure portal, search for and select the **DevOps Starter** resource type and, on the **DevOps Starter** blade, click either **+ Add**, **+ New**, or **+ Create**.
 1.  On the **Start fresh with a new application** page of the **DevOps Starter** blade, click the **here** link in the **Setting up DevOps starter with GitHub, click here** text. 
 
@@ -82,10 +82,10 @@ In this task, you will create an Azure DevOps Starter project that automatically
     | Organization | the name of GitHub account |
     | Repository | **az400m08l01** |
     | Subscription | the name of the Azure subscription you are using for this lab |
-    | Web app name | any valid, globally unique host name in the **azurewebsites.net** DNS namespace |
+    | Web app name | az400m08l01{DeploymentID} |
     | Location | the name of any Azure region in which you can provision an Azure web app |
 
-    > **Note**: Wait for the provisioning to complete. This should take about 1 minute.
+    > **Note**: Replace Deployment ID with its value from environment details page. Wait for the provisioning to complete. This should take about 1 minute.
 
 1.  On the **Deploy_DevOps_Project_az400m08l01 \| Overview** blade, click **Go to Resource**.
 1.  On the **az400m08l01** blade, on the **GitHub Workflow** tile, click **Authorize**. 
