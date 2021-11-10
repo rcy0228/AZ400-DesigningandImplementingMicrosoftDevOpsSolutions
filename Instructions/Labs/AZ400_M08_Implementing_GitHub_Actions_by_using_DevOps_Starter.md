@@ -20,17 +20,17 @@ After you complete this lab, you will be able to:
 
 #### Prepare a GitHub account
 
-1. If you are not having Github account, follow the instructions to create an account.
+1. If you already have a GitHub account that you can use for this lab, else follow the instructions to create an account.
 
 1. Navigate to the [Github account](https://github.com/) Click on create an account.
 
    ![Github](images/mod6_21.png)
    
-1. Provide user name as email address and click on continue. Username can be obtained from environment details page.
+1. Provide the email address and click on continue.
 
  ![Github](images/mod6_22.png)
  
-1. Provide the password and enter the username as odl{deploymentID} and click on continue. Deployment ID and Password can be obtained from environment details page, Replace Deployment ID with its value.s
+1. Provide the password and enter the valid username and click on continue.
 
   ![Github](images/mod6_26.png)
 
