@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab 08: Implementing GitHub Actions by using DevOps Starter'
-    module: 'Module 8: Implementing Continuous Integration with GitHub Actions'
----
-
 # Lab 08: Implementing GitHub Actions by using DevOps Starter
 # Student lab manual
 
@@ -24,29 +18,27 @@ After you complete this lab, you will be able to:
 
 ## Instructions
 
-### Before you start
-
-#### Sign in to the lab virtual machine
-
-Ensure that you're signed in to your Windows 10 virtual machine by using the following credentials:
-    
--   Username: **Student**
--   Password: **Pa55w.rd**
-
-#### Review applications required for this lab
-
-Identify the applications that you'll use in this lab:
-  
--   Microsoft Edge
-
-#### Prepare an Azure subscription
-
--   Identify an existing Azure subscription or create a new one.
--   Verify that you have a Microsoft account or an Azure AD account with the Contributor or the Owner role in the Azure subscription. For details, refer to [List Azure role assignments using the Azure portal](https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-list-portal) and [View and assign administrator roles in Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/roles/manage-roles-portal#view-my-roles).
-
 #### Prepare a GitHub account
 
-If you don't already have a GitHub account that you can use for this lab, follow instructions available at [Signing up for a new GitHub account](https://github.com/join) to create one.
+1. If you already have a GitHub account that you can use for this lab, else follow the instructions available at [Signing up for a new GitHub account](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/signing-up-for-a-new-github-account).
+
+1. If you are not having Github account, follow the instructions to create an account.
+
+1. Navigate to the [Github account](https://github.com/) Click on create an account.
+
+   ![Github](images/mod6_21.png)
+   
+1. Provide the email address and click on continue.
+
+ ![Github](images/mod6_22.png)
+ 
+1. Provide the password and enter the valid username and click on continue.
+
+  ![Github](images/mod6_26.png)
+
+1. Provide the confirmation and verify your account and click on create account. This would take 2 minutes to create.
+
+ ![Github](images/mod6_25.png)
 
 ### Exercise 1 : Create a DevOps Starter project
 
@@ -64,7 +56,7 @@ In this exercise, you will use DevOps Starter to facilitate provisioning of a nu
 
 In this task, you will create an Azure DevOps Starter project that automatically sets up a GitHub repository, as well as creates and triggers a GitHub workflow that deploys an Azure web app, based on the content of the GitHub repository.
 
-1.  From the lab computer, start a web browser, navigate to the [**Azure Portal**](https://portal.azure.com), and sign in with the user account that has at least the Contributor role in the Azure subscription you are using in this lab.
+1.  From the lab VM, open Edge browser, navigate to the [**Azure Portal**](https://portal.azure.com), and sign in with the credentials provided in environmental details page.
 1.  In the Azure portal, search for and select the **DevOps Starter** resource type and, on the **DevOps Starter** blade, click either **+ Add**, **+ New**, or **+ Create**.
 1.  On the **Start fresh with a new application** page of the **DevOps Starter** blade, click the **here** link in the **Setting up DevOps starter with GitHub, click here** text. 
 
