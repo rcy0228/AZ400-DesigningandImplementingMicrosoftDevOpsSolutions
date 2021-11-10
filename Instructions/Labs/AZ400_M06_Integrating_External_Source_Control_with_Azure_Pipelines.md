@@ -25,8 +25,6 @@ After you complete this lab, you will be able to:
 
 #### Set up an Azure DevOps organization
 
-If you don't already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at [Create an organization or project collection](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops).
-
 1. On your lab VM open **Edge Browser** on desktop and navigate to https://dev.azure.com. Then click on **Sign into Azure DevOps** and login with the credentials provided in environment details tab.
 
     ![Azure DevOps](images/devops.png)
@@ -46,7 +44,7 @@ If you don't already have an Azure DevOps organization that you can use for this
 
 1. If you already have a GitHub account that you can use for this lab, else follow the instructions to create an account.
 
-1. Navigate to the [Github account](https://github.com/) Click on create an account.
+1. Navigate to the https://github.com/ Click on Signup.
 
    ![Github](images/mod6_21.png)
    
@@ -70,7 +68,7 @@ In this exercise, you will integrate a GitHub project with Azure DevOps by using
 
 In this task, you will fork a GitHub repo and install Azure Pipelines in your GitHub account.
 
-1.  On your lab computer, start a web browser, navigate to the [GitHub actionsdemos/calculator site](https://github.com/actionsdemos/calculator) and, if you're not already signed in to GitHub, sign in now.
+1.  On your lab computer, start a web browser, navigate to the https://github.com/actionsdemos/calculator and, if you're not already signed in to GitHub, sign in now.
 
     > **Note**: This is the baseline project we will fork and use for this lab.
 
