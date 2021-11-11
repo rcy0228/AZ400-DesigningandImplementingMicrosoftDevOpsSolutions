@@ -214,30 +214,19 @@ In this task, you will query release information via REST API by using Postman
 
 1.  Review the output listed on the **Body** tab in the lower right section of the app window and verify that it includes only the failed deployment you initiated in the previous exercise of this lab.
 
-### Exercise 3: Remove the Azure lab resources
+### Exercise 3: Remove the Azure DevOps billing
 
-In this exercise, you will remove the Azure resources provisione in this lab to eliminate unexpected charges. 
+In this exercise, you will remove the Azure DevOps billing enabled in this lab to eliminate unexpected charges.
 
->**Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+#### Task 1: Remove the Azure DevOps billing
 
-#### Task 1: Remove the Azure lab resources
+In this task, you will remove pipeline billing to eliminate unnecessary charges.
 
-In this task, you will use Azure Cloud Shell to remove the Azure resources provisioned in this lab to eliminate unnecessary charges. 
+1. On the lab computer, switch to the browser window displaying Azure DevOps organization homepage and select **Organization Settings** at bottom left corner.
 
-1.  In the Azure portal, open the **Bash** shell session within the **Cloud Shell** pane.
-1.  List all resource groups created throughout the labs of this module by running the following command:
+1. Under **Organization Settings** select **Billing** and click on **Change billing** button to open Change billing pane.
 
-    ```sh
-    az group list --query "[?starts_with(name,'az400m10l02-rg')].name" --output tsv
-    ```
-
-1.  Delete all resource groups you created throughout the labs of this module by running the following command:
-
-    ```sh
-    az group list --query "[?starts_with(name,'az400m10l02-rg')].[name]" --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-    ```
-
-    >**Note**: The command executes asynchronously (as determined by the --nowait parameter), so while you will be able to run another Azure CLI command immediately afterwards within the same Bash session, it will take a few minutes before the resource groups are actually removed.
+1. In the **Change billing** pane, select **Remove billing** setting and click on Save.
 
 #### Review
 
