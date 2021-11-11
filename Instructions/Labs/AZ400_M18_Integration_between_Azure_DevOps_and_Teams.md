@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab 18: Integration between Azure DevOps and Teams'
-    module: 'Module 18: Implementing System Feedback Mechanisms'
----
-
 # Lab 18: Integration between Azure DevOps and Teams
 # Student lab manual
 
@@ -31,31 +25,21 @@ After you complete this lab, you will be able to:
 
 ## Instructions
 
-### Before you start
-
-#### Sign in to the lab virtual machine
-
-Ensure that you're signed in to your Windows 10 computer by using the following credentials:
-    
--   Username: **Student**
--   Password: **Pa55w.rd**
-
-#### Review applications required for this lab
-
-Identify the applications that you'll use in this lab:
-    
--   Microsoft Edge
--   Microsoft Teams. This will be installed as part of prerequisites for this lab.
-
-#### Set up an Office 365 subscription 
-
-Create a free trial subscription from [Microsoft Teams sign up page](https://teams.microsoft.com/start). 
-
 #### Set up an Azure DevOps organization. 
 
-Follow instructions available at [Create an organization or project collection](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops). When creating the Azure DevOps organization, sign in with the same user account you used to set up the Office 365 subscription.
+1. On your lab VM open **Edge Browser** on desktop and navigate to https://dev.azure.com. Then click on **Sign into Azure DevOps** and login with the credentials provided in environment details tab.
 
-> **Note**: Your Office 365 subscription and the Azure DevOps organization must share the same Azure Active Directory (Azure AD) tenant.
+    ![Azure DevOps](images/devops.png)
+
+2. On the next page accept defaults and click on continue.
+
+    ![Azure DevOps](images/m1-1.png)
+
+3. On the **Get started with Azure DevOps** page click on **Continue**.
+
+4. On the **Almost Done...** page fill the captcha and click on continue. 
+
+    ![Azure DevOps](images/m1-2.png)
 
 ### Exercise 0: Configure the lab prerequisites
 
@@ -65,11 +49,11 @@ In this exercise, you will set up the prerequisites for the lab, which consist o
 
 In this task, you will use Azure DevOps Demo Generator to generate a new project based on the **Tailwind Traders** template.
 
-1.  On your lab computer, start a web browser and navigate to [Azure DevOps Demo Generator](https://azuredevopsdemogenerator.azurewebsites.net). This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. 
+1.  In a new tab of Edge browser navigate to https://azuredevopsdemogenerator.azurewebsites.net. This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. 
 
     > **Note**: For more information on the site, see https://docs.microsoft.com/en-us/azure/devops/demo-gen.
 
-1.  Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
+1.  Click **Sign in** and if prompted sign with the credentials provided in environment details tab.
 1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
 1.  On the **Create New Project** page, click **Choose template**.
 1.  In the list of templates, in the toolbar, click **Private**, ensure that the **Local Drive** option is selected, click **Choose File**, in the **Open File**, navigate to the location of labfiles, in the **Allfiles\\18** folder, select **Tailwind Traders.zip**, click open, and then click **Submit**.
