@@ -84,9 +84,21 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 
     ```powershell
     cd \
+    ```
+    
+    ```powershell
     mkdir agent ; cd agent
+    ```
+    
+    ```powershell
     $TARGET = Get-ChildItem "$Home\Downloads\vsts-agent-win-x64-*.zip"
+    ```
+    
+    ```powershell
     Add-Type -AssemblyName System.IO.Compression.FileSystem
+    ```
+    
+    ```powershell
     [System.IO.Compression.ZipFile]::ExtractToDirectory($TARGET, "$PWD")
     ```
 
@@ -240,7 +252,7 @@ In this task, you will add a YAML build definition to the existing project.
 
 In this task, you will add continuous delivery to the YAML-based definition of the pipeline you created in the previous task.
 
-> **Note**: Now that the build and test processes are successful, we can now add delivery to the YAML definition. 
+> **Note**: Now that the build and test processes are successful but takes some time to finish the build, we can continue without waiting for build to be finished and now we can add delivery to the YAML definition. 
 
 1.  On the pipeline run pane, click the ellipsis symbol in the upper right corner and, in the dropdown menu, click **Edit pipeline**.
 1.  On the pane displaying the content of the **azure-pipelines.yaml** file, in line **8**, following the `trigger` section, add the following content to define the **Build** stage in the YAML pipeline. 
@@ -390,34 +402,23 @@ In this task, you will add continuous delivery to the YAML-based definition of t
 
 #### Task 4: Review the deployed site
 
-1.  Switch back to web browser window displaying the Azure portal and navigate to the blade displaying the properties of the Azure web app.
+1.  Switch back to web browser window displaying the Azure portal and navigate to the resource group **az400m11l01-RG** open Azure web app blade displaying the properties of the Azure web app.
 1.  On the Azure web app blade, click **Overview** and, on the overview blade, click **Browse** to open your site in a new web browser tab.
 1.  Verify that the deployed site loads as expected in the new browser tab.
 
-### Exercise 2: Remove the Azure lab resources
+### Exercise 2: Remove the Azure DevOps billing
 
-In this exercise, you will remove the Azure resources provisione in this lab to eliminate unexpected charges. 
+In this exercise, you will remove the Azure DevOps billing enabled in this lab to eliminate unexpected charges. 
 
->**Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
-
-#### Task 1: Remove the Azure lab resources
-
-In this task, you will use Azure Cloud Shell to remove the Azure resources provisioned in this lab to eliminate unnecessary charges. 
-
-1.  In the Azure portal, open the **Bash** shell session within the **Cloud Shell** pane.
-1.  List all resource groups created throughout the labs of this module by running the following command:
-
-    ```sh
-    az group list --query "[?starts_with(name,'az400m11l01-RG')].name" --output tsv
-    ```
-
-1.  Delete all resource groups you created throughout the labs of this module by running the following command:
-
-    ```sh
-    az group list --query "[?starts_with(name,'az400m11l01-RG')].[name]" --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-    ```
-
-    >**Note**: The command executes asynchronously (as determined by the --nowait parameter), so while you will be able to run another Azure CLI command immediately afterwards within the same Bash session, it will take a few minutes before the resource groups are actually removed.
+#### Task 1: Remove the Azure DevOps billing 
+    
+In this task, you will remove pipeline billing to eliminate unnecessary charges.
+    
+1.  On the lab computer, switch to the browser window displaying Azure DevOps organization homepage and select **Organization Settings** at bottom left corner.
+    
+1.  Under **Organization Settings** select **Billing** and click on **Change billing** button to open Change billing pane.
+    
+1.  In the **Change billing** pane, select **Remove billing** setting and click on Save.
 
 ## Review
 
