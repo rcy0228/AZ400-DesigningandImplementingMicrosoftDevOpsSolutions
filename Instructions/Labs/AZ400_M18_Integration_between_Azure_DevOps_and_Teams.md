@@ -41,6 +41,26 @@ After you complete this lab, you will be able to:
 
     ![Azure DevOps](images/m1-2.png)
 
+#### Set up a GitHub account
+
+1. If you already have a GitHub account that you can use for this lab, else follow the instructions to create an account.
+
+1. Navigate to the https://github.com/ Click on Signup.
+
+   ![Github](images/mod6_21.png)
+   
+1. Provide the email address and click on continue.
+
+ ![Github](images/mod6_22.png)
+ 
+1. Provide the password and enter the valid username and click on continue.
+
+  ![Github](images/mod6_26.png)
+
+1. Provide the confirmation and verify your account and click on create account. This would take 2 minutes to create.
+
+ ![Github](images/mod6_25.png)
+
 ### Exercise 0: Configure the lab prerequisites
 
 In this exercise, you will set up the prerequisites for the lab, which consist of the preconfigured **Tailwind Traders** team project based on an Azure DevOps Demo Generator template and a team created in Microsoft Teams.
@@ -56,7 +76,7 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 1.  Click **Sign in** and if prompted sign with the credentials provided in environment details tab.
 1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
 1.  On the **Create New Project** page, click **Choose template**.
-1.  In the list of templates, in the toolbar, click **Private**, ensure that the **Local Drive** option is selected, click **Choose File**, in the **Open File**, navigate to the location of labfiles, in the **Allfiles\\18** folder, select **Tailwind Traders.zip**, click open, and then click **Submit**.
+1.  In the list of templates, in the toolbar, click **Private**, ensure that the **Local Drive** option is selected, click **Choose File**, in the **Open File**, navigate to the location of labfiles, in the **C:\AllFiles\AZ400-DesigningandImplementingMicrosoftDevOpsSolutions-prod\Allfiles\Labs\18** folder, select **Tailwind Traders.zip**, click open, and then click **Submit**.
 1.  Back on the **Create New Project** page, in the **New Project Name** textbox, type **Tailwind Traders** and, in the **Select organization** dropdown list, select your Azure DevOps organization.
 1.  On the **Create New Project** page, select the **Yes, I want to fork this repository**, click **Authorize**, when prompted, authenticate using your GitHub credentials, click **Authorize azuredevops-generator-bot**, if prompted to install a missing extension, select the checkbox below the **ARM Outputs** and click **Create Project**.
 
