@@ -27,7 +27,7 @@ After you complete this lab, you will be able to:
 
 1.  In the web browser to navigate to the LaunchDarkly trial registration page https://launchdarkly.com/start-trial?ref=hp-trial%2F.
 
-1.  Provide **Firstname**, **Last Name**,  your **email address**, **company name** and **Password** to create a trial account. 
+1.  Provide **First Name**, **Last Name**,  your **Email Address**, **Company name** and **Password** to create a trial account. 
 
 1.  After registring your trail account you will recive an verification mail to your email address open the mail and click on **VERIFY EMAIL** link to activate your trail account.
 
