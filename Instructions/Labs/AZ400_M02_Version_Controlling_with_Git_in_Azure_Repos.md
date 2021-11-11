@@ -57,9 +57,13 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
     > **Note**: For more information on the site, see https://docs.microsoft.com/en-us/azure/devops/demo-gen.
 
 1.  Click **Sign in** and if prompted sign with the credentials provided in environment details tab.
+
 1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
+
 1.  On the **Create New Project** page, in the **New Project Name** textbox, type **Version Controlling with Git in Azure Repos**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
+
 1.  In the list of templates, locate the **PartsUnlimited** template and click **Select Template**.
+
 1.  Back on the **Create New Project** page, click **Create Project**
 
     > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your Azure DevOps organization, delete the project, and try again.
@@ -67,6 +71,7 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 1.  On the **Create New Project** page, click **Navigate to project**.
 
 1.  In the Azure DevOps portal, in the upper right corner of the Azure DevOps page, click the **User settings** icon, in the dropdown menu, click **Personal access tokens**, on the **Personal Access Tokens** pane, and click **+ New Token**.
+
 1.  On the **Create a new personal access token** pane, click the **Show all scopes** link and, specify the following settings and click **Create** (leave all others with their default values):
 
     | Setting | Value |
@@ -101,7 +106,7 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 
     | Setting | Value |
     | ------- | ----- |
-    | Enter server URL | the URL of your Azure DevOps organization, in the format **https://dev.azure.com/`<organization_name>`**, where `<organization_name>` represents the name of your Azure DevOps organization |
+    | Enter server URL | the URL of your Azure DevOps organization, in the format **https://dev.azure.com/<organization_name>**, where `<organization_name>` represents the name of your Azure DevOps organization |
     | Enter authentication type (press enter for PAT) | **Enter** |
     | Enter personal access token | The access token you recorded earlier in this task |
     | Enter agent pool (press enter for default) | **Enter** |
@@ -116,7 +121,9 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 In this task, you will configure Git and Visual Studio Code, including configuring the Git credential helper to securely store the Git credentials used to communicate with Azure DevOps.
 
 1.  On the lab VM, open **Visual Studio Code**. 
+
 1.  In the Visual Studio Code interface, from the main menu, select **Terminal \| New Terminal** to open the **TERMINAL** pane.
+
 1.  Make sure that the current Terminal is running **PowerShell** by checking if the drop-down list at the top right corner of the **TERMINAL** pane shows **1: powershell**
 
     > **Note**: To change the current Terminal shell to **PowerShell** click the drop-down list at the top right corner of the **TERMINAL** pane and click **Select Default Shell**. At the top of the Visual Studio Code window select your preferred terminal shell **Windows PowerShell** and click the plus sign on the right-hand side of the drop-down list to open a new terminal with the selected default shell.
@@ -126,7 +133,7 @@ In this task, you will configure Git and Visual Studio Code, including configuri
     ```git
     git config --global credential.helper wincred
     ```
-1.  In the **TERMINAL** pane, run the following commands to configure a user name and email for Git commits (replace the placeholders in braces with user name and email from the environment details tab):
+1.  In the **TERMINAL** pane, run the following commands to configure a user name and email for Git commits (replace the placeholders in braces with user name: **ODL_USER_DeploymentID** where Deploymentid and email provided from the environment details tab):
 
     ```git
     git config --global user.name "<John Doe>"
@@ -210,6 +217,7 @@ In this task, you will use Visual Studio Code to commit changes.
 1.  If prompted whether you would like to automatically stage your changes and commit them directly, click **Always**. 
 
     > **Note**: We will discuss **staging** later in the lab.
+    > **Note**: Ignore the failed pipelines and it will not impact the remaining tasks.
 
 1.  In the lower left corner of the Visual Studio Code window, to the right of the **master** label, note the **Synchronize Changes** icon of a circle with two vertical arrows pointing in the opposite directions and the number **1** next to the arrow pointing up. Click the icon and, if prompted, whether to proceed, click **OK** to push and pull commits to and from **origin/master**. 
 
@@ -237,6 +245,7 @@ In this task, you will explore the use of staging changes by using Visual Studio
 1.  In the Visual Studio Code window, switch to the **SOURCE CONTROL** tab, hover the mouse pointer over the **CartItem.cs** entry, and click the plus sign on the right side of that entry. 
 
     > **Note**: This stages the change to the **CartItem.cs** file only, preparing it for commit without **Category.cs**.
+    > **Note**: Ignore the failed pipelines and it will not impact the remaining tasks.
 
 1.  With the **SOURCE CONTROL** tab selected, at the top of the pane, in the textbox, type **Added comments** as the commit message.
 1.  At the top of the **SOURCE CONTROL** tab, click the ellipsis symbol, in the drop-down menu, select **Commit** and, in the cascading menu, select **Commit Staged**. 
@@ -293,22 +302,35 @@ In this task, you will use the Visual Studio Code to work with a branch created 
 Git keeps track of which branch you are working on and makes sure that, when you check out a branch, your files match the most recent commit on that branch. Branches let you work with multiple versions of the source code in the same local Git repository at the same time. You can use Visual Studio Code to publish, check out and delete branches.
 
 1.  In the **Visual Studio Code** window, with the **SOURCE CONTROL** tab selected, in the lower left corner of the Visual Studio Code window, click the **Publish changes** icon (directly to the right of the **dev** label representing your newly created branch).
+
 1.  Switch to the web browser window displaying the **Commits** pane of the **Azure DevOps** portal and select **Branches**.
+
 1.  On the **Mine** tab of the **Branches** pane, verify that the list of branches includes **dev**.
+
 1.  Hover the mouse pointer over the **dev** branch entry to reveal the ellipsis symbol on the right side.
+
 1.  Click the ellipsis, in the pop-up menu, select **Delete branch**, and, when prompted for confirmation, click **Delete**.
+
 1.  Switch back to the **Visual Studio Code** window and, with the **SOURCE CONTROL** tab selected, in the lower left corner of the Visual Studio Code window, click the **dev** entry. This will display the existing branches in the upper portion of the Visual Studio Code window.
+
 1.  Verify that now there are two **dev** branches listed. 
 
     > **Note**: The local (**dev**) branch is listed because it's existence is not affected by the deletion of the branch in the remote repository. The server (**origin/dev**) is listed because it hasn't been pruned. 
 
 1.  In the list of branches select the **master** branch to check it out.
+
 1.  Press **Ctrl+Shift+P** to open the **Command Palette**.
+
 1.  At the **Command Palette** prompt, start typing **Git: Delete** and select **Git: Delete Branch** when it becomes visible.
+
 1.  Select the **dev** entry in the list of branches to delete.
+
 1.  In the lower left corner of the Visual Studio Code window, click the **master** entry again. This will display the existing branches in the upper portion of the Visual Studio Code window.
+
 1.  Verify that the local **dev** branch no longer appears in the list, but the remote **origin/dev** is still there.
+
 1.  Press **Ctrl+Shift+P** to open the **Command Palette**.
+
 1.  At the **Command Palette** prompt, start typing **Git: Fetch** and select **Git: Fetch (Prune)** when it becomes visible. 
 
     > **Note**: This command will update the origin branches in the local snapshot and delete those that are no longer there.
@@ -316,6 +338,7 @@ Git keeps track of which branch you are working on and makes sure that, when you
     > **Note**: You can check in on exactly what these tasks are doing by selecting the **Output** window in the lower right part bottom of the Visual Studio Code window. If you don't see the Git logs in the output console, make sure to select **Git** as the source.
 
 1.  In the lower left corner of the Visual Studio Code window, click the **master** entry again.
+
 1.  Verify that the **origin/dev** branch no longer appears in the list of branches.
 
 #### Review
