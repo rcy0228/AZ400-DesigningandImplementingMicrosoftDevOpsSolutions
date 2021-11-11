@@ -105,31 +105,18 @@ In this task, you will integrate LaunchDarkly in your Web application.
     > **Note**: In case the repo is empty, in the **Import a repository** section, select **Import**, on the **Import a Git repository** pane, in the **Clone URL** text box, enter `https://github.com/hsachinraj/PartsUnlimited.git`, and click **Import**.
 
 1.  On the **Files** pane, click **Clone**.
-3.  Close the **Clone Repository** panel.
-4.  Switch to **Visual Studio Code** running on your lab computer. 
-5.  Click the **View** menu header and, in the drop-down menu, click **Command Palette**. 
-
-    > **Note**: The Command Palette provides an easy and convenient way to access a wide variety of tasks, including those implemented as 3rd party extensions. You can use the keyboard shortcut **Ctrl+Shift+P** or **F1** to open it.
-
-6.  At the Command Palette prompt, run the **Git: Clone** command. 
-
-    > **Note**: To see all relevant commands, you can start by typing **Git**.
-7.  In the **Provide repository URL or pick a repository source** text box, paste the repo clone URL you copied earlier in this task and press the **Enter** key.
-8.  Within the **Select Folder** dialog box, navigate to the C: drive, create a new folder named **Git**, select it, and then click **Select Repository Location**. 
-9.  When prompted, log in to your Azure DevOps account with creadentials provided in environment details tab.
-10. After the cloning process completes, once prompted, in the Visual Studio Code, click **Open** to open the cloned repository. If **Do you trust the authors of the files in this folder?** warning prompted click on **Yes**.
-
-    > **Note**: You can ignore warnings you might receive regarding problems with loading of the project. The solution may not be in the state suitable for a build, but we're going to focus on working with Git, so building the project is not required.
-1.  Within the Visual Studio window, click the top level **View** menu and, in the dropdown menu, click **SCM**. 
-1.  Within the Visual Studio window, at the bottom left of the **Git Changes** pane, click on **master** checkout branch then at the top in the dropdown list, in the drop-down dialog box, in the list of remote branches, select **origin/launch-darkly**. 
+1.  On the **Clone Repository** pane, in the **IDE** drop-down list, select **Visual Studio**. If prompted, select **Open Microsoft Visual Studio Web Protocol Handler Selector**. This will automatically launch Visual Studio. 
+1.  Within the Visual Studio window, in the **Azure DevOps** dialog box, click **Clone** and, if prompted, sign in using the Microsoft account associated with your Azure DevOps subscription. 
+1.  Within the Visual Studio window, click the top level **Git** menu, click **Local repositories**, click **Folder**, in the **Select Folder**, navigate to the local folder into which you cloned the LaunchDarkly repository, and click **Select Folder**.
+1.  Within the Visual Studio window, click the top level **View** menu and, in the dropdown menu, click **Git Changes**. 
+1.  Within the Visual Studio window, at the top of the **Git Changes** pane, in the **master** dropdown list, click the down-pointing arrow head, in the drop-down dialog box, click **Remotes**, and, in the list of remote branches, select **origin/launch-darkly**.
 
     > **Note**: This will automatically check out the **launch-darkly** branch. 
 
 1.  Within the Visual Studio window, switch to the **Solution Explorer** window, and double-click **PartsUnlimited.sln** file to open the solution. 
 
     > **Note**: To integrate **LaunchDarkly** with .NET applications you need to install the NuGet package with the **LaunchDarkly client**. In the current project, that package has already been added for the ease of use.
-
-1.  In the **Solution Explorer** pane, under **src** expand the **PartsUnlimitedWebsite** node, right-click the **Dependencies** subnode, and, in the right-click menu, select the **Manage NuGet Packages** entry.
+1.  In the **Solution Explorer** pane, expand the **PartsUnlimitedWebsite** node, right-click the **Dependencies** subnode, and, in the right-click menu, select the **Manage NuGet Packages** entry.
 1.  In the **NuGet: PartsUnlimitedWebsite** pane, note that **LaunchDarkly.Client** is already installed.
 1.  In the Visual Studio interface, in the top menu, click **IIS Express** to launch the application locally. 
 1.  Verify that the application launches successfully in the local browser session and that the **Member Portal** section is present in the upper right corner of the web interface.
