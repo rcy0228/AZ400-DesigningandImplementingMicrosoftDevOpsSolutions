@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab 15: Deploying Docker containers to Azure App Service web apps'
-    module: 'Module 15: Managing Containers using Docker'
----
-
 # Lab 15: Deploying Docker containers to Azure App Service web apps
 # Student lab manual
 
@@ -23,31 +17,21 @@ After you complete this lab, you will be able to:
 
 -   Estimated time: **60 minutes**
 
-## Instructions
+### Set up an Azure DevOps organization
 
-### Before you start
+1. On your lab VM open **Edge Browser** on desktop and navigate to https://dev.azure.com. Then click on **Sign into Azure DevOps** and login with the credentials provided in environment details tab.
 
-#### Sign in to the lab virtual machine
+    ![Azure DevOps](images/devops.png)
 
-Ensure that you're signed in to your Windows 10 virtual machine by using the following credentials:
-    
--   Username: **Student**
--   Password: **Pa55w.rd**
+2. On the next page accept defaults and click on continue.
 
-#### Review applications required for this lab
+    ![Azure DevOps](images/m1-1.png)
 
-Identify the applications that you'll use in this lab:
-  
--   Microsoft Edge
+3. On the **Get started with Azure DevOps** page click on **Continue**.
 
-#### Prepare an Azure subscription
+4. On the **Almost Done...** page fill the captcha and click on continue. 
 
--   Identify an existing Azure subscription or create a new one.
--   Verify that you have a Microsoft account or an Azure AD account with the Contributor or the Owner role in the Azure subscription. For details, refer to [List Azure role assignments using the Azure portal](https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-list-portal) and [View and assign administrator roles in Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/roles/manage-roles-portal#view-my-roles).
-
-#### Set up an Azure DevOps organization
-
-If you don't already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at [Create an organization or project collection](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops).
+    ![Azure DevOps](images/m1-2.png)
 
 ### Exercise 1: Configure the lab prerequisites
 
