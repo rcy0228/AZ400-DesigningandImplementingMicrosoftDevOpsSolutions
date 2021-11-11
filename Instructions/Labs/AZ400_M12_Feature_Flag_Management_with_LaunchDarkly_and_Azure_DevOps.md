@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab 12: Feature Flag Management with LaunchDarkly and Azure DevOps'
-    module: 'Module 12: Implementing an Appropriate Deployment Pattern'
----
-
 # Lab 12: Feature Flag Management with LaunchDarkly and Azure DevOps
 # Student lab manual
 
@@ -29,32 +23,26 @@ After you complete this lab, you will be able to:
 
 ### Before you start
 
-#### Sign in to the lab virtual machine
-
-Ensure that you're signed in to your Windows 10 virtual machine by using the following credentials:
-    
--   Username: **Student**
--   Password: **Pa55w.rd**
-
-#### Review applications required for this lab
-
-Identify the applications that you'll use in this lab:
-    
--   Microsoft Edge
--   Visual Studio 2019 Community Edition available from [Visual Studio Downloads page](https://visualstudio.microsoft.com/vs). Visual Studio 2019 installation should include **ASP.NET and web development**, **Azure development**, and **.NET Core cross-platform development** workloads. This is already preinstalled on your lab computer.
-
 #### Set up a LaunchDarkly trial account
 
 Use a web browser to navigate to the [LaunchDarkly web site](https://launchdarkly.com/) and create a trial account. 
 
-#### Set up an Azure DevOps organization.
+#### Set up an Azure DevOps organization
 
-Follow instructions available at [Create an organization or project collection](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops).
+1. On your lab VM open **Edge Browser** on desktop and navigate to https://dev.azure.com. Then click on **Sign into Azure DevOps** and login with the credentials provided in environment details tab.
 
-#### Prepare an Azure subscription
+    ![Azure DevOps](images/devops.png)
 
--   Identify an existing Azure subscription or create a new one.
--   Verify that you have a Microsoft account or an Azure AD account with the Owner role in the Azure subscription and the Global Administrator role in the Azure AD tenant associated with the Azure subscription. For details, refer to [List Azure role assignments using the Azure portal](https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-list-portal) and [View and assign administrator roles in Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/roles/manage-roles-portal#view-my-roles).
+2. On the next page accept defaults and click on continue.
+
+    ![Azure DevOps](images/m1-1.png)
+
+3. On the **Get started with Azure DevOps** page click on **Continue**.
+
+4. On the **Almost Done...** page fill the captcha and click on continue. 
+
+    ![Azure DevOps](images/m1-2.png)
+
 
 ### Exercise 0: Configure the lab prerequisites
 
@@ -64,7 +52,7 @@ In this exercise, you will set up the prerequisites for the lab, which consist o
 
 In this task, you will use Azure DevOps Demo Generator to generate a new project based on the **Parts Unlimited** template.
 
-1.  On your lab computer, start a web browser and navigate to [Azure DevOps Demo Generator](https://azuredevopsdemogenerator.azurewebsites.net). This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. 
+1.  In a new tab of Edge browser navigate to https://azuredevopsdemogenerator.azurewebsites.net. This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. 
 
     > **Note**: For more information on the site, see https://docs.microsoft.com/en-us/azure/devops/demo-gen.
 
