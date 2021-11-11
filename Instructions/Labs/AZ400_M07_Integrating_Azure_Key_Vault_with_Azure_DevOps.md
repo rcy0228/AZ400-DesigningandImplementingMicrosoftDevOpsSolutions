@@ -177,7 +177,7 @@ In this task, you will configure the Azure Pipeline to retrieve the secret from 
 1.  On your lab VM, In Edge browser switch to the Azure DevOps project **Integrating Azure Key Vault with Azure DevOps** tab.
 1.  In the vertical navigational pane of the of the Azure DevOps portal, select **Pipelines** and verify that the **Pipelines** pane is displayed.
 1.  On the **Pipelines** pane, click the entry representing the **SmartHotel-CouponManagement-CI** pipeline. Click on **Edit**.
-1.  On the pipeline definition, modify the **Pipeline** > **Agent Specification** to **ubuntu 18.04**. Click **Save and Queue** > **Save and Run** to trigger a build.
+1.  On the pipeline definition, modify the **Pipeline** > **Agent Specification** to **ubuntu 18.04**. Click **Save and Queue** > **Save and Run** to trigger a build. If it is already selected then click on **Queue** then click on **run**.
 1.  In the vertical navigational pane of the of the Azure DevOps portal, in the **Pipelines** section, select **Releases**. 
 1.  On the **SmartHotel-CouponManagement-CD** pane, click **Edit** in the upper right corner.
 1.  On the **All pipelines > SmartHotel-CouponManagement-CD** pane, select the **Task** tab and, in the dropdown menu, select **Dev**.
@@ -225,40 +225,6 @@ This will open another browser tab displaying the **Service connections** pane i
 
 1. Make sure your pipeline runs successfully and once finished, review the created resources by opening the resource group **az400m07l01-RG** in the Azure Portal . Open the **App Service** and browse it **(Overview -> Browse)**, to see the published website.
 
-### Exercise 2: Remove the Azure lab resources
-
-In this exercise, you will remove the Azure resources provisione in this lab to eliminate unexpected charges. 
-
->**Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
-
-#### Task 1: Remove the Azure lab resources
-
-In this task, you will use Azure Cloud Shell to remove the Azure resources provisioned in this lab to eliminate unnecessary charges. 
-
-1.  In the Azure portal, open the **Bash** shell session within the **Cloud Shell** pane.
-1.  List all resource groups created throughout the labs of this module by running the following command:
-
-    ```sh
-    az group list --query "[?starts_with(name,'az400m07l01-RG')].name" --output tsv
-    ```
-
-1.  Delete all resource groups you created throughout the labs of this module by running the following command:
-
-    ```sh
-    az group list --query "[?starts_with(name,'az400m07l01-RG')].[name]" --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-    ```
-
-    >**Note**: The command executes asynchronously (as determined by the --nowait parameter), so while you will be able to run another Azure CLI command immediately afterwards within the same Bash session, it will take a few minutes before the resource groups are actually removed.
-
-#### Review
-
-In this lab, you integrated Azure Key Vault with an Azure DevOps pipeline by using the following steps:
-
-- created an Azure Key vault to store a MySQL server password as a secret.
-- created an Azure service principal to provide access to secrets in the Azure Key vault.
-- configured permissions to allow the service principal to read the secret.
-- configured pipeline to retrieve the password from the Azure Key vault and pass it on to subsequent tasks.
-
 ### Exercise 2: Remove the Azure DevOps billing
 
 In this exercise, you will remove the Azure DevOps billing enabled in this lab to eliminate unexpected charges.
@@ -272,3 +238,12 @@ In this task, you will remove pipeline billing to eliminate unnecessary charges.
 1. Under **Organization Settings** select **Billing** and click on **Change billing** button to open Change billing pane.
 
 1. In the **Change billing** pane, select **Remove billing** setting and click on Save.
+
+#### Review
+
+In this lab, you integrated Azure Key Vault with an Azure DevOps pipeline by using the following steps:
+
+- created an Azure Key vault to store a MySQL server password as a secret.
+- created an Azure service principal to provide access to secrets in the Azure Key vault.
+- configured permissions to allow the service principal to read the secret.
+- configured pipeline to retrieve the password from the Azure Key vault and pass it on to subsequent tasks.
