@@ -55,72 +55,13 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 
 1.  Click **Sign in** and if prompted sign with the credentials provided in environment details tab.
 1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
-1.  On the **Create New Project** page, in the **New Project Name** textbox, type **Version Controlling with Git in Azure Repos**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
+1.  On the **Create New Project** page, in the **New Project Name** textbox, type **Configuring Pipelines as Code with YAML**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
 1.  In the list of templates, locate the **PartsUnlimited** template and click **Select Template**.
 1.  Back on the **Create New Project** page, click **Create Project**
 
     > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your Azure DevOps organization, delete the project, and try again.
 
 1.  On the **Create New Project** page, click **Navigate to project**.
-
-1.  In the Azure DevOps portal, in the upper right corner of the Azure DevOps page, click the **User settings** icon, in the dropdown menu, click **Personal access tokens**, on the **Personal Access Tokens** pane, and click **+ New Token**.
-1.  On the **Create a new personal access token** pane, click the **Show all scopes** link and, specify the following settings and click **Create** (leave all others with their default values):
-
-    | Setting | Value |
-    | --- | --- |
-    | Name | **Agent** |
-    | Scope (custom defined) | **Agent Pools** (show more scopes option below if needed)|
-    | Permissions | **Read and manage** |
-
-1.  On the **Success** pane, copy the value of the personal access token to Clipboard.
-
-    > **Note**: Make sure you copy the token. You will not be able to retrieve it once you close this pane. 
-
-1.  On the **Success** pane, click **Close**.
-
-1.  In a new tab of Edge browser navigate to https://vstsagentpackage.azureedge.net/agent/2.182.1/vsts-agent-win-x64-2.182.1.zip and download the agent zip file to downloads folder.
-
-1.  In the Lab VM Start Windows PowerShell as administrator and in the **Administrator: Windows PowerShell** console run the following lines to create the **C:\\agent** directory and extract the content of the downloaded archive into it. 
-
-    ```powershell
-    cd \
-    ```
-    
-    ```powershell
-    mkdir agent ; cd agent
-    ```
-    
-    ```powershell
-    $TARGET = Get-ChildItem "$Home\Downloads\vsts-agent-win-x64-*.zip"
-    ```
-    
-    ```powershell
-    Add-Type -AssemblyName System.IO.Compression.FileSystem
-    ```
-    
-    ```powershell
-    [System.IO.Compression.ZipFile]::ExtractToDirectory($TARGET, "$PWD")
-    ```
-
-1.  In the same **Administrator: Windows PowerShell** console, run the following to configure the agent:
-
-    ```powershell
-    .\config.cmd
-    ```
-
-1.  When prompted, specify the values of the following settings:
-
-    | Setting | Value |
-    | ------- | ----- |
-    | Enter server URL | the URL of your Azure DevOps organization, in the format **https://dev.azure.com/`<organization_name>`**, where `<organization_name>` represents the name of your Azure DevOps organization |
-    | Enter authentication type (press enter for PAT) | **Enter** |
-    | Enter personal access token | The access token you recorded earlier in this task |
-    | Enter agent pool (press enter for default) | **Enter** |
-    | Enter agent name | **Enter** |
-    | Enter work folder (press enter for _work) | **Enter** |
-    | Enter Perform an unzip for tasks for each step. (press enter for N) | **Enter** |
-    | Enter run agent as service? (Y/N) (press enter for N) | **Y** |
-    | Enter User account to use for the service (press enter for NT AUTHORITY\NETWORK SERVICE) | **Enter** |
 
 #### Task 2: Create Azure resources
 
