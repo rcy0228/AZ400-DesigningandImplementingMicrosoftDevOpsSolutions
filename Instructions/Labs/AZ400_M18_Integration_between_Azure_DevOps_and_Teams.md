@@ -88,12 +88,11 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 
 In this task, you will create a team in Microsoft Teams.
 
-1.  On the lab computer, start a web browser, navigate to the [Microsoft Teams download page](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/download-app), and, from there, download and install Microsoft Teams with the default settings. 
-1.  On the lab computer, launch **Microsoft Teams** by using the desktop app.
+1.  On the lab VM, launch **Microsoft Teams** by using the desktop app.
 
     > **Note**: Alternatively, you can use a web browser and navigate to the [Microsoft Teams launch page](https://teams.microsoft.com/dl/launcher/launcher.html?url=/_%23/l/home/0/0&type=home)
 
-1.  When prompted to sign in, sign in with a user account that is part of the Office 365 subscription and has access to your Azure DevOps organization.
+1.  When prompted to sign in, sign with the credentials provided in environment details tab.
 1.  In Microsoft Teams, in the toolbar on the left side of the page, click **Teams** and then, at the bottom of the teams list, click **Join or create a team**.
 
     >**Note**: A team is a collection of people who gather together around a common goal. 
