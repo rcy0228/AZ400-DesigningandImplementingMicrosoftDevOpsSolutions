@@ -1,21 +1,23 @@
----
-lab:
-    title: 'Lab 11a: Configuring Pipelines as Code with YAML'
-    module: 'Module 11: Implementing Continuous Deployment using Azure Pipelines'
----
-
 # Lab 11a: Configuring Pipelines as Code with YAML
 # Student lab manual
 
 ## Lab overview
 
-Many teams prefer to define their build and release pipelines using YAML. This allows them to access the same pipeline features as those using the visual designer, but with a markup file that can be managed like any other source file. YAML build definitions can be added to a project by simply adding the corresponding files to the root of the repository. Azure DevOps also provides default templates for popular project types, as well as a YAML designer to simplify the process of defining build and release tasks.
+Azure DevOps supports two types of version control, Git and Team Foundation Version Control (TFVC). Here is a quick overview of the two version control systems:
+
+- **Team Foundation Version Control (TFVC)**: TFVC is a centralized version control system. Typically, team members have only one version of each file on their dev machines. Historical data is maintained only on the server. Branches are path-based and created on the server.
+
+- **Git**: Git is a distributed version control system. Git repositories can live locally (such as on a developer's machine). Each developer has a copy of the source repository on their dev machine. Developers can commit each set of changes on their dev machine and perform version control operations such as history and compare without a network connection.
+
+Git is the default version control provider for new projects. You should use Git for version control in your projects unless you have a specific need for centralized version control features in TFVC.
+
+In this lab, you will learn how to establish a local Git repository, which can easily be synchronized with a centralized Git repository in Azure DevOps. In addition, you will learn about Git branching and merging support. You will use Visual Studio Code, but the same processes apply for using any Git-compatible client.
 
 ## Objectives
 
 After you complete this lab, you will be able to:
 
-- configure CI/CD pipelines as code with YAML in Azure DevOps
+-   configure CI/CD pipelines as code with YAML in Azure DevOps
 
 ## Lab duration
 
@@ -23,51 +25,88 @@ After you complete this lab, you will be able to:
 
 ## Instructions
 
-### Before you start
+#### Set up an Azure DevOps organization
 
-#### Sign in to the lab virtual machine
+1. On your lab VM open **Edge Browser** on desktop and navigate to https://dev.azure.com. Then click on **Sign into Azure DevOps** and login with the credentials provided in environment details tab.
 
-Ensure that you're signed in to your Windows 10 virtual machine by using the following credentials:
-    
--   Username: **Student**
--   Password: **Pa55w.rd**
+    ![Azure DevOps](images/devops.png)
 
-#### Review applications required for this lab
+2. On the next page accept defaults and click on continue.
 
-Identify the applications that you'll use in this lab:
-    
--   Microsoft Edge
+    ![Azure DevOps](images/m1-1.png)
 
-#### Set up an Azure DevOps organization. 
+3. On the **Get started with Azure DevOps** page click on **Continue**.
 
-If you don't already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at [Create an organization or project collection](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops).
+4. On the **Almost Done...** page fill the captcha and click on continue. 
 
-#### Prepare an Azure subscription
+    ![Azure DevOps](images/m1-2.png)
 
--   Identify an existing Azure subscription or create a new one.
--   Verify that you have a Microsoft account or an Azure AD account with the Owner role in the Azure subscription and the Global Administrator role in the Azure AD tenant associated with the Azure subscription. For details, refer to [List Azure role assignments using the Azure portal](https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-list-portal) and [View and assign administrator roles in Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/roles/manage-roles-portal#view-my-roles).
+### Exercise 0: Configure the lab VM.
 
-### Exercise 0: Configure the lab prerequisites
+In this exercise, you will set up the prerequisites for the lab, which include the preconfigured Parts Unlimited team project based on an Azure DevOps Demo Generator template and a Visual Studio Code configuration.
 
-In this exercise, you will set up the prerequisites for the lab, which consist of the preconfigured Parts Unlimited team project based on an Azure DevOps Demo Generator template and Azure resources, including an Azure web app and an Azure SQL database. 
+#### Task 1: Configure the Parts Unlimited team project and add a self hosted agent
 
-#### Task 1: Configure the team project
+In this task, you will use Azure DevOps Demo Generator to generate a new project based on the **Parts Unlimited** template.
 
-In this task, you will use Azure DevOps Demo Generator to generate a new project based on the **PartsUnlimited-YAML** template.
+1.  In a new tab of Edge browser navigate to https://azuredevopsdemogenerator.azurewebsites.net. This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. 
 
-1.  On your lab computer, start a web browser and navigate to [Azure DevOps Demo Generator](https://azuredevopsdemogenerator.azurewebsites.net). This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. 
+    > **Note**: For more information on the site, see https://docs.microsoft.com/en-us/azure/devops/demo-gen.
 
-    > **Note**: For more information on the site, see [What is the Azure DevOps Services Demo Generator?](https://docs.microsoft.com/en-us/azure/devops/demo-gen).
-
-1.  Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
+1.  Click **Sign in** and if prompted sign with the credentials provided in environment details tab.
 1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
-1.  On the **Create New Project** page, in the **New Project Name** textbox, type **Configuring Pipelines as Code with YAML**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
-1.  In the list of templates, in the toolbar, click **General**, select the **PartsUnlimited-YAML** template and click **Select Template**.
+1.  On the **Create New Project** page, in the **New Project Name** textbox, type **Version Controlling with Git in Azure Repos**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
+1.  In the list of templates, locate the **PartsUnlimited** template and click **Select Template**.
 1.  Back on the **Create New Project** page, click **Create Project**
 
-    > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your DevOps organization, delete the project, and try again.
+    > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your Azure DevOps organization, delete the project, and try again.
 
 1.  On the **Create New Project** page, click **Navigate to project**.
+
+1.  In the Azure DevOps portal, in the upper right corner of the Azure DevOps page, click the **User settings** icon, in the dropdown menu, click **Personal access tokens**, on the **Personal Access Tokens** pane, and click **+ New Token**.
+1.  On the **Create a new personal access token** pane, click the **Show all scopes** link and, specify the following settings and click **Create** (leave all others with their default values):
+
+    | Setting | Value |
+    | --- | --- |
+    | Name | **Agent** |
+    | Scope (custom defined) | **Agent Pools** (show more scopes option below if needed)|
+    | Permissions | **Read and manage** |
+
+1.  On the **Success** pane, copy the value of the personal access token to Clipboard.
+
+    > **Note**: Make sure you copy the token. You will not be able to retrieve it once you close this pane. 
+
+1.  On the **Success** pane, click **Close**.
+
+1.  In the Lab VM Start Windows PowerShell as administrator and in the **Administrator: Windows PowerShell** console run the following lines to create the **C:\\agent** directory and extract the content of the downloaded archive into it. 
+
+    ```powershell
+    cd \
+    mkdir agent ; cd agent
+    $TARGET = Get-ChildItem "$Home\Downloads\vsts-agent-win-x64-*.zip"
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
+    [System.IO.Compression.ZipFile]::ExtractToDirectory($TARGET, "$PWD")
+    ```
+
+1.  In the same **Administrator: Windows PowerShell** console, run the following to configure the agent:
+
+    ```powershell
+    .\config.cmd
+    ```
+
+1.  When prompted, specify the values of the following settings:
+
+    | Setting | Value |
+    | ------- | ----- |
+    | Enter server URL | the URL of your Azure DevOps organization, in the format **https://dev.azure.com/`<organization_name>`**, where `<organization_name>` represents the name of your Azure DevOps organization |
+    | Enter authentication type (press enter for PAT) | **Enter** |
+    | Enter personal access token | The access token you recorded earlier in this task |
+    | Enter agent pool (press enter for default) | **Enter** |
+    | Enter agent name | **Enter** |
+    | Enter work folder (press enter for _work) | **Enter** |
+    | Enter Perform an unzip for tasks for each step. (press enter for N) | **Enter** |
+    | Enter run agent as service? (Y/N) (press enter for N) | **Y** |
+    | Enter User account to use for the service (press enter for NT AUTHORITY\NETWORK SERVICE) | **Enter** |
 
 #### Task 2: Create Azure resources
 
