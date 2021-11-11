@@ -113,17 +113,14 @@ In this task, you will install and configure Azure Boards app in the newly creat
 1.  In the Microsoft Teams window, in the lower left corner, click the **Apps** icon. This will open the **Apps** pane.
 1.  On the **Apps** pane, in the **Search all apps** textbox, type **Azure Boards** and, in the list of apps, click **Azure Boards**.
 1.  On the **Azure Boards** panel, click **Add**.
-1.  In the **Azure Boards** dropdown list at the top of the Microsoft Teams window, click **Search work items**. This will display the **Azure Boards** pane.
-1.  On the **Azure Boards** panel, click the **sign in** link.
+1.  On the popup window of **Azure Boards** click on signin and sign in with credentials provided in environmental details page.
 1.  When prompted to grant **Work items (full)**, **Project and team (read)**, and **Teams Integration** permissions, in the **Azure Boards Microsoft Teams Integration by Azure DevOps** dialog box, click **Accept**.
-1.  Back on the **Azure Boards** panel, click the **set up** link. This will display the **Microsoft Azure DevOps Services - Profile 1** window.
-1.  In the **Microsoft Azure DevOps Services - Profile 1** window, in the **Organization** dropdown list, select your Azure DevOps organization and click **Continue**.
-1.  In the **Microsoft Azure DevOps Services - Profile 1** window, in the **Project** dropdown list, select **Tailwind Traders** and click **Continue**.
+1.  Back on the **Azure Boards** panel, click the **set up** link. In the **Organization** dropdown list, select your Azure DevOps organization and click **Continue**.
+1.  In the **Project** dropdown list, select **Tailwind Traders** and click **Continue**.
  
     >**Note**: This will display the list of existing work items in the **Tailwind Traders** Azure DevOps project.
 
-1.  Scroll through the list of work items, select any of them, and click on the work item name. You will be prompted to select the app to open the corresponding work item. In the list of apps, select Microsoft Edge and click **OK**. This will automatically open a new web browser window and display the work item details in the Azure DevOps portal.
-1.  Close the new browser window to return to Microsoft Teams.
+1.  Scroll through the list of work items
 
     >**Note**: You also have the ability to create work items directly from the Microsoft Teams interface by selecting the **+ Create work item** option.
 
@@ -136,17 +133,6 @@ In this task, you will install and configure Azure Boards app in the newly creat
     Sign in to your Azure Boards account with: @Azure Boards signin
     To see what else you can do, type @Azure Boards help
     ```
-1.  In the list of posts in the **General** channel of the **Tailwind Traders** team, select the post titled **Azure Boards**, press the **Enter** key, and review additional messages posted by the bot:
-
-    ```
-    link [project url] - Link to a project to create work items and receive notifications
-    subscriptions - Add or remove subscriptions for this channel
-    addAreapath [area path] - Add an area path from your project to this channel
-    signin - Sign in to your Azure Boards account
-    signout - Sign out from your Azure Boards account
-    unlink - Unlink a project from this channel
-    feedback - Report a problem or suggest a feature
-    ```
 
 #### Task 2: Add Azure Boards Kanban boards to Microsoft Teams
 
@@ -154,7 +140,7 @@ In this task, you will add Azure Boards Kanban boards to tabs in Microsoft Teams
 
 > **Note**: Kanban board turns your backlog into an interactive signboard, providing a visual flow of work. As work progresses from idea to completion, you update the items on the board. Each column represents a work stage, and each card represents a user story (blue cards) or a bug (red cards) at that stage of work. You can bring in your teams kanban board or favorite dashboard directly into Microsoft Teams by using Tabs. **Tabs** allow team members to access your service on a dedicated canvas, within a channel or in user's personal app space. You can leverage your existing web app to create a great tab experience within Teams.
 
-1.  On your lab computer, switch to the web browser displaying the **Tailwind Traders** project in the Azure DevOps portal, in the vertical menu bar at the far left of the Azure DevOps portal, click **Boards**, and, in the **Boards** section, click **Boards**.
+1.  On your lab VM, switch to the web browser displaying the **Tailwind Traders** project in the Azure DevOps portal, in the vertical menu bar at the far left of the Azure DevOps portal, click **Boards**, and, in the **Boards** section, click **Boards**.
 1.  On the **Boards** pane, in the **My team boards (1)** section, click **Tailwind Traders Team boards** entry. 
 1.  While on the **Tailwind Traders Team** pane, in the web browser window, copy its URL into Clipboard.
 1.  Switch to the Microsoft Teams window, ensure that the **General** channel of the newly created team **Tailwind Traders** is selected, and, in the upper section of the **General** pane, click the plus sign. This will display the **Add a tab** panel.
@@ -175,7 +161,7 @@ In this task, you will install and configure Azure Pipelines app in the designat
 
 1.  In the Microsoft Teams window, in the lower left corner, click the **Apps** icon. This will open the **Apps** pane.
 1.  On the **Apps** pane, in the **Search all apps** textbox, type **Azure Pipelines** and, in the list of apps, click **Azure Pipelines**.
-1.  On the **Azure Pipelines** panel, click the down facing arrowhead directly to the right of the **Open** button and, in the dropdown list, click the **Add to a team** entry.
+1.  On the **Azure Pipelines** panel, click the down facing arrowhead directly to the right of the **Add** button and, in the dropdown list, click the **Add to a team** entry.
 1.  On the **Set up Azure Pipelines for a team** panel, in the **Search** text box, type **Tailwind Traders**, in the list of results, select the **Tailwind Traders > General** entry, and click **Set up a bot**. You will be redirected automatically to the post view in the **General** channel of the **Tailwind Traders** team.
 1.  In the list of posts in the **General** channel of the **Tailwind Traders** team, review the messages posted by the bot, including:
 
