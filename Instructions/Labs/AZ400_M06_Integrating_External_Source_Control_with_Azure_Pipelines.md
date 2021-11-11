@@ -223,6 +223,20 @@ In this task, you will add a build status badge to your GitHub repo.
 
     > **Note**: You now have a dynamic build status badge on your project's front page that allows everyone to know that you're effectively managing your project.
 
+### Exercise 2: Remove the Azure DevOps billing
+
+In this exercise, you will remove the Azure DevOps billing enabled in this lab to eliminate unexpected charges.
+
+#### Task 1: Remove the Azure DevOps billing
+
+In this task, you will remove pipeline billing to eliminate unnecessary charges.
+
+1. On the lab computer, switch to the browser window displaying Azure DevOps organization homepage and select **Organization Settings** at bottom left corner.
+
+1. Under **Organization Settings** select **Billing** and click on **Change billing** button to open Change billing pane.
+
+1. In the **Change billing** pane, select **Remove billing** setting and click on Save.
+
 #### Review
 
 In this lab, you integrated a GitHub project with Azure DevOps by using the new Azure Pipelines integration from the Marketplace.
