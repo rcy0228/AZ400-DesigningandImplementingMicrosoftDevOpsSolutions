@@ -23,23 +23,6 @@ After you complete this lab, you will be able to:
 
 ## Instructions
 
-#### Set up an Azure DevOps organization
-
-1. On your lab VM open **Edge Browser** on desktop and navigate to https://dev.azure.com. Then click on **Sign into Azure DevOps** and login with the credentials provided in environment details tab.
-
-    ![Azure DevOps](images/devops.png)
-
-2. On the next page accept defaults and click on continue.
-
-    ![Azure DevOps](images/m1-1.png)
-
-3. On the **Get started with Azure DevOps** page click on **Continue**.
-
-4. On the **Almost Done...** page fill the captcha and click on continue. 
-
-    ![Azure DevOps](images/m1-2.png)
-
-
 #### Set up a GitHub account
 
 1. If you already have a GitHub account that you can use for this lab, else follow the instructions to create an account.
