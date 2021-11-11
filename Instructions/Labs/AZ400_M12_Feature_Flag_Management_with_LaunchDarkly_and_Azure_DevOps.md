@@ -31,6 +31,30 @@ After you complete this lab, you will be able to:
 
 1.  After registring your trail account you will recive an verification mail to your email address open the mail and click on **VERIFY EMAIL** link to activate your trail account.
 
+#### Set up Git and Visual Studio in the lab VM
+
+1.  On the lab VM, open **Windows PowerShell** from start menu.
+
+1.  In the **Windows PowerShell** window, run the following command below to configure the git.
+
+    ```powershell
+    choco install git.install
+    ```
+    
+1.  In the **Windows PowerShell** window, run the following command below to configure the Visual Studio.
+
+    ```powershell
+    choco install visualstudio2019community
+    ```
+    
+1.  In the **Windows PowerShell** window, run the following command below to configure the Visual Studio supporting tools.
+
+    ```powershell
+    choco install visualstudio2019-workload-netweb
+    choco install visualstudio2019-workload-azure
+    choco install visualstudio2019-workload-netcoretools
+    ```
+
 #### Set up an Azure DevOps organization
 
 1. On your lab VM open **Edge Browser** on desktop and navigate to https://dev.azure.com. Then click on **Sign into Azure DevOps** and login with the credentials provided in environment details tab.
@@ -259,19 +283,19 @@ In this task, you will configure automatic roll out of the LaunchDarkly feature 
 - **Custom targeting rules**: In addition to targeting individual users, LaunchDarkly allows you to target segments of users by constructing custom rules. In other words, you can create custom rules to target users based on any attributes you specify. 
 - **Projects and environments to manage your development process**: [Projects](https://docs.launchdarkly.com/docs/projects) allow you to manage multiple different software projects under one LaunchDarkly account. [Environments](https://docs.launchdarkly.com/docs/environments) allow you to manage your feature flags throughout your entire development lifecycle — from local development to QA, staging, and production. 
 
-### Exercise 2: Remove the Azure lab resources
+### Exercise 2: Remove the Azure DevOps billing
 
-In this exercise, you will remove the Azure resources provisione in this lab to eliminate unexpected charges. 
+In this exercise, you will remove the Azure DevOps billing enabled in this lab to eliminate unexpected charges. 
 
->**Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
-
-#### Task 1: Remove the Azure lab resources
-
-In this task, you will use the Azure portal to remove the Azure resources provisioned in this lab to eliminate unnecessary charges. 
-
-1.  In the Azure portal, navigate to the App Service instance you deployed earlier in this lab. 
-1.  On the App Service instance blade, click the link representing the name of the resource group containing the App Service instance.
-1.  On the blade of the resource group containing the App Service instance, click **Delete resource group**, when prompted, provide the name of the resource group, and click **Delete**.
+#### Task 1: Remove the Azure DevOps billing 
+    
+In this task, you will remove pipeline billing to eliminate unnecessary charges.
+    
+1.  On the lab computer, switch to the browser window displaying Azure DevOps organization homepage and select **Organization Settings** at bottom left corner.
+    
+1.  Under **Organization Settings** select **Billing** and click on **Change billing** button to open Change billing pane.
+    
+1.  In the **Change billing** pane, select **Remove billing** setting and click on Save.
 
 ## Review
 
