@@ -78,6 +78,8 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 
 1.  On the **Success** pane, click **Close**.
 
+1.  In a new tab of Edge browser navigate to https://vstsagentpackage.azureedge.net/agent/2.182.1/vsts-agent-win-x64-2.182.1.zip and download the agent zip file to downloads folder.
+
 1.  In the Lab VM Start Windows PowerShell as administrator and in the **Administrator: Windows PowerShell** console run the following lines to create the **C:\\agent** directory and extract the content of the downloaded archive into it. 
 
     ```powershell
