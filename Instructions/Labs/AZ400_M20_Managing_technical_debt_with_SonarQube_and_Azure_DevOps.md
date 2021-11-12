@@ -310,7 +310,7 @@ In this exercise, you will analyze SonarCloud reports.
 
 In this task, you will analyze SonarCloud reports.
 
-1.  On the **Overview** tab of the SonarCloud project, in the **Reliability Measures** section, note that there is a single bug entry.
+1.  On the **Overview** tab of the SonarCloud project, click on **see Full Analysis**.
 
     > **Note**: The page has other metrics such as **Code Smells**, **Coverage**, **Duplications**, and **Size** (lines of code). The following table briefly explains each of these terms.
 
