@@ -141,6 +141,7 @@ In this task, you will install and configure Ansible on the Azure VM you deploye
 
     ```bash
     curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+    sudo apt-get install azure-cli=2.29.2-1~bionic
     ```
 
 #### Task 3: Download Ansible configuration and sample playbook files
@@ -276,7 +277,7 @@ In this task, you will create an Azure VM hosting a web server by using an Ansib
 
     >**Note**: Make sure that this region matches the Azure region where you created the **az400m14l03rg** resource group.
 
-1.  In the nano editor, change the value of `vm_size` entry from `Standard_A0` to `Standard_DS1_v2`.
+1.  In the nano editor, change the value of `vm_size` entry from `Standard_A0` to `Standard_B2s`.
 1.  In the nano editor, locate the SSH string towards the end of the file, in the `key_data` entry, delete the existing key value and replace it with the key value that you recorded earlier in this task. 
 
     >**Note**: Make sure that the value of `admin_username` entry that is included in the file matches the user name you used to sign in to the Azure VM hosting the Ansible control system (**azureuser**). The same user name must be used in the `path` entry of `ssh_public_keys` section.
@@ -351,7 +352,7 @@ In this task, you will create an Azure VM hosting a web server by using an Ansib
     sudo ansible --user azureuser --private-key=/home/azureuser/.ssh/id_rsa all -m ping -i ./myazure_rm.yml
     ```
 
-1.  When prompted whether you want to continue connecting, type **yes** and press the **Enter** key.
+1.  If prompted whether you want to continue connecting, type **yes** and press the **Enter** key.
 
     >**Note**: The output should resemble the following:
 
@@ -425,31 +426,6 @@ In this task, you will run another Ansible playbook, this time to configure the 
          </body>
      </html>
     ```
-
-### Exercise 2: Remove the Azure lab resources
-
-In this exercise, you will remove the Azure resources provisioned in this lab to eliminate unexpected charges. 
-
->**Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
-
-#### Task 1: Remove the Azure lab resources
-
-In this task, you will use Azure Cloud Shell to remove the Azure resources provisioned in this lab to eliminate unnecessary charges. 
-
-1.  In the Azure portal, open the **Bash** shell session within the **Cloud Shell** pane.
-1.  List all resource groups created throughout the labs of this module by running the following command:
-
-    ```sh
-    az group list --query "[?starts_with(name,'az400m14l03')].name" --output tsv
-    ```
-
-1.  Delete all resource groups you created throughout the labs of this module by running the following command:
-
-    ```sh
-    az group list --query "[?starts_with(name,'az400m14l03')].[name]" --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-    ```
-
-    >**Note**: The command executes asynchronously (as determined by the --nowait parameter), so while you will be able to run another Azure CLI command immediately afterwards within the same Bash session, it will take a few minutes before the resource groups are actually removed.
 
 ## Review
 
