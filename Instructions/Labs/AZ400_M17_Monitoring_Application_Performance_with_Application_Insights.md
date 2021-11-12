@@ -39,6 +39,19 @@ After you complete this lab, you will be able to:
 
     ![Azure DevOps](images/m1-2.png)
 
+5. On the Azure Devops page click on **Azure DevOps** located at top left corner and then click on **Organization Setting** at the left down corner
+
+    ![Azure DevOps](images/agent1.png)
+
+6. In the **Organization Setting** window on the left menu click on **Billing** and select **Setup Billing** then click on save.
+
+    ![Azure DevOps](images/agent3.png)
+    ![Azure DevOps](images/agent4.png)    
+
+7. On the **MS Hosted CI/CD** section under **Paid parallel jobs** enter value **1** and at the end of the page click on **Save**.
+
+    ![Azure DevOps](images/agent2.png)
+
 ### Exercise 0: Configure the lab prerequisites
 
 In this exercise, you will set up the prerequisites for the lab, which consist of the preconfigured Parts Unlimited team project based on an Azure DevOps Demo Generator template and Azure resources, including an Azure web app and an Azure SQL database. 
@@ -441,6 +454,16 @@ In this task, you will use Azure Cloud Shell to remove the Azure resources provi
     ```
 
     >**Note**: The command executes asynchronously (as determined by the --nowait parameter), so while you will be able to run another Azure CLI command immediately afterwards within the same Bash session, it will take a few minutes before the resource groups are actually removed.
+
+#### Task 2: Remove the Azure DevOps billing
+
+In this task, you will remove pipeline billing to eliminate unnecessary charges.
+
+1. On the lab computer, switch to the browser window displaying Azure DevOps organization homepage and select **Organization Settings** at bottom left corner.
+
+1. Under **Organization Settings** select **Billing** and click on **Change billing** button to open Change billing pane.
+
+1. In the **Change billing** pane, select **Remove billing** setting and click on Save.
 
 ## Review
 
