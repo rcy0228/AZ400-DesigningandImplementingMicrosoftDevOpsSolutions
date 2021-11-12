@@ -51,7 +51,7 @@ After you complete this lab, you will be able to:
 
     ![Azure DevOps](images/agent2.png)
 
-    
+
 ### Exercise 0: Configure the lab prerequisites
 
 In this exercise, you will set up the prerequisites for the lab, which consist of the preconfigured Parts Unlimited team project based on an Azure DevOps Demo Generator template. 
@@ -123,7 +123,7 @@ In this task, you will create Azure resources using Terraform as part of your de
 1.  In the Azure DevOps portal, in the vertical menu bar at the left of the Azure DevOps portal, in the **Pipelines** section, click **Releases**, ensure that the **Terraform-CD** entry is selected, and click **Edit**.
 1.  On the **All pipelines > Terraform-CD** pane, in the rectangle representing the **Dev** stage, click the **1 job, 8 tasks** link.
 1.  In the list of tasks of the **Dev** stage, select the **Azure CLI to deploy required Azure resources** task. 
-1.  On the **Azure CLI** pane, in the **Azure subscription** dropdown list, select the entry representing your Azure subscription and then click **Authorize** to configure the corresponding service connection. When prompted, sign in using the account with the Owner role in the Azure subscription and the Global Administrator role in the Azure AD tenant associated with the Azure subscription.
+1.  On the **Azure CLI** pane, in the **Azure subscription** dropdown list, select the entry representing your Azure subscription and then click **Authorize** to configure the corresponding service connection. When prompted, sign in with the credentials provided in environment details page
 
     > **Note**: By default, Terraform stores state locally in a file named terraform.tfstate. When working with Terraform in a team, use of a local file makes Terraform usage complicated. Terraform supports a remote data store, that facilitates state sharing. In this case, we are using the **Azure CLI** task to create an Azure storage account and a blob container to store Terraform state. For more information regarding Terraform remote state, refer to [Terraform documentation](https://www.terraform.io/docs/state/remote.html)
 
