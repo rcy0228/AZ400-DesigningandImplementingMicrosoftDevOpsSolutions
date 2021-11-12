@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab 14a: Ansible with Azure'
-    module: 'Module 14: Third party Infrastructure as Code Tools Available with Azure'
----
-
 # Lab 14a: Ansible with Azure
 # Student lab manual
 
@@ -44,26 +38,6 @@ After you complete this lab, you will be able to:
 -   Estimated time: **90 minutes**
 
 ## Instructions
-
-### Before you start
-
-#### Sign in to the lab virtual machine
-
-Ensure that you're signed in to your Windows 10 computer by using the following credentials:
-    
--   Username: **Student**
--   Password: **Pa55w.rd**
-
-#### Review applications required for this lab
-
-Identify the applications that you'll use in this lab:
-    
--   Microsoft Edge
-
-#### Prepare an Azure subscription
-
--   Identify an existing Azure subscription or create a new one.
--   Verify that you have a Microsoft account or an Azure AD account with the Owner role in the Azure subscription and the Global Administrator role in the Azure AD tenant associated with the Azure subscription. For details, refer to [List Azure role assignments using the Azure portal](https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-list-portal) and [View and assign administrator roles in Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/roles/manage-roles-portal#view-my-roles).
 
 ### Exercise 1: Deploy, configure, and manage Azure VMs by using Ansible
 
