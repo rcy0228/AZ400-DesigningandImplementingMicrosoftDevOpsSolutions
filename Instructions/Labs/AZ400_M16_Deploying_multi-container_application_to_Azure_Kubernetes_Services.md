@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab 16: Deploying a multi-container application to Azure Kubernetes Services'
-    module: 'Module 16: Create and Manage Kubernetes Service Infrastructure'
----
-
 # Lab 16: Deploying a multi-container application to Azure Kubernetes Services
 # Student lab manual
 
@@ -28,30 +22,22 @@ After you complete this lab, you will be able to:
 
 ## Instructions
 
-### Before you start
-
-#### Sign in to the lab virtual machine
-
-Ensure that you're signed in to your Windows 10 computer by using the following credentials:
-    
--   Username: **Student**
--   Password: **Pa55w.rd**
-
-#### Review applications required for this lab
-
-Identify the applications that you'll use in this lab:
-    
--   Microsoft Edge
-
 #### Set up an Azure DevOps organization. 
 
-If you don't already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at [Create an organization or project collection](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops).
+1. On your lab VM open **Edge Browser** on desktop and navigate to https://dev.azure.com. Then click on **Sign into Azure DevOps** and login with the credentials provided in environment details tab.
 
-#### Prepare an Azure subscription
+    ![Azure DevOps](images/devops.png)
 
--   Identify an existing Azure subscription or create a new one.
--   Verify that you have a Microsoft account or an Azure AD account with the Owner role in the Azure subscription and the Global Administrator role in the Azure AD tenant associated with the Azure subscription. For details, refer to [List Azure role assignments using the Azure portal](https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-list-portal) and [View and assign administrator roles in Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/roles/manage-roles-portal#view-my-roles).
+2. On the next page accept defaults and click on continue.
 
+    ![Azure DevOps](images/m1-1.png)
+
+3. On the **Get started with Azure DevOps** page click on **Continue**.
+
+4. On the **Almost Done...** page fill the captcha and click on continue. 
+
+    ![Azure DevOps](images/m1-2.png)
+    
 ### Exercise 0: Configure the lab prerequisites
 
 In this exercise, you will set up the prerequisites for the lab, which consist of a preconfigured team project based on an Azure DevOps Demo Generator template. 
@@ -284,31 +270,6 @@ In this task, you will trigger the build and release pipelines and validate thei
 1.  Note the value of the IP address in the **External-IP** column in the output of the command, open a new web browser tab, browse to that IP address, and verify that the **MyHealthClinic** application is running.
 
     >**Note**: Kubernetes includes a web dashboard that can be used for basic management operations. This dashboard lets you view basic health status and metrics for your applications, create and deploy services, and edit existing applications. Follow [Microsoft Docs](https://docs.microsoft.com/en-us/azure/aks/kubernetes-dashboard) to access the Kubernetes web dashboard in Azure Kubernetes Service (AKS).
-
-### Exercise 2: Remove the Azure lab resources
-
-In this exercise, you will remove the Azure resources provisioned in this lab to eliminate unexpected charges. 
-
->**Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
-
-#### Task 1: Remove the Azure lab resources
-
-In this task, you will use Azure Cloud Shell to remove the Azure resources provisioned in this lab to eliminate unnecessary charges. 
-
-1.  In the Azure portal, open the **Bash** shell session within the **Cloud Shell** pane.
-1.  List all resource groups created throughout the labs of this module by running the following command:
-
-    ```sh
-    az group list --query "[?starts_with(name,'az400m16l01a-RG')].name" --output tsv
-    ```
-
-1.  Delete all resource groups you created throughout the labs of this module by running the following command:
-
-    ```sh
-    az group list --query "[?starts_with(name,'az400m16l01a-RG')].[name]" --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-    ```
-
-    >**Note**: The command executes asynchronously (as determined by the --nowait parameter), so while you will be able to run another Azure CLI command immediately afterwards within the same Bash session, it will take a few minutes before the resource groups are actually removed.
 
 ## Review
 
