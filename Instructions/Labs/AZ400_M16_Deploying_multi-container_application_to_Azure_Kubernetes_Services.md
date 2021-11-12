@@ -138,9 +138,9 @@ In this task, you will use Azure CLI to perform deployment of the Azure resource
 1.  From the **Bash** session in the Cloud Shell pane, run the following to create the Azure SQL database you will be using in this lab:
 
 
-    ```bash
-    az sql db create --resource-group $RGNAME --server $SQLNAME --name mhcdb --service-objective S0 --no-wait
-    ```
+     ```bash
+     az sql db create --resource-group $RGNAME --server $SQLNAME --name mhcdb --service-objective S0 --no-wait
+     ```
 
 1.  From the **Bash** session in the Cloud Shell pane, run the following to create the Azure Container registry you will be using in this lab:
 
