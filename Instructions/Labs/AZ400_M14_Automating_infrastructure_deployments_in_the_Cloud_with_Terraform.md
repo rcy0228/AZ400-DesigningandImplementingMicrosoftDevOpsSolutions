@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab 14b: Automating infrastructure deployments in the Cloud with Terraform and Azure Pipelines'
-    module: 'Module 14: Third party Infrastructure as Code Tools Available with Azure'
----
-
 # Lab 14b: Automating infrastructure deployments in the Cloud with Terraform and Azure Pipelines
 # Student lab manual
 
@@ -28,29 +22,21 @@ After you complete this lab, you will be able to:
 
 ## Instructions
 
-### Before you start
-
-#### Sign in to the lab virtual machine
-
-Ensure that you're signed in to your Windows 10 virtual machine by using the following credentials:
-    
--   Username: **Student**
--   Password: **Pa55w.rd**
-
-#### Review applications required for this lab
-
-Identify the applications that you'll use in this lab:
-    
--   Microsoft Edge
-
 #### Set up an Azure DevOps organization. 
 
-If you don't already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at [Create an organization or project collection](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops).
+1. On your lab VM open **Edge Browser** on desktop and navigate to https://dev.azure.com. Then click on **Sign into Azure DevOps** and login with the credentials provided in environment details tab.
 
-#### Prepare an Azure subscription
+    ![Azure DevOps](images/devops.png)
 
--   Identify an existing Azure subscription or create a new one.
--   Verify that you have a Microsoft account or an Azure AD account with the Owner role in the Azure subscription and the Global Administrator role in the Azure AD tenant associated with the Azure subscription.
+2. On the next page accept defaults and click on continue.
+
+    ![Azure DevOps](images/m1-1.png)
+
+3. On the **Get started with Azure DevOps** page click on **Continue**.
+
+4. On the **Almost Done...** page fill the captcha and click on continue. 
+
+    ![Azure DevOps](images/m1-2.png)
 
 ### Exercise 0: Configure the lab prerequisites
 
