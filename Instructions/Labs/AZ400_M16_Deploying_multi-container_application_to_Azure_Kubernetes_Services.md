@@ -193,9 +193,13 @@ In this task, you will configure the build and release pipelines in the Azure De
 1.  On the **Dockerfile** pane, click **Edit**, replace line **1** that references the base Docker image with `FROM az400mp/aspnetcore1.0:1.0.4`, select **Commit** and, when prompted for confirmation, click **Commit** again. 
 1.  In the web browser window displaying the Azure DevOps portal with the **Deploying a multi-container application to AKS** project open, in the vertical menu bar at the far left of the Azure DevOps portal, click **Pipelines**.
 
+    ![Azure DevOps](images/module16_3.png)
+
     >**Note**: You will now modify the build pipeline.
 
 1.  On the **Pipelines** pane, click the entry representing the **MyHealth.AKS.build** pipeline and, on the **MyHealth.AKS.build** pane, click **Edit**.
+ 
+     ![Azure DevOps](images/module16_2.png)
 
 1.  On the **MyHealth.AKS.build** pipeline pane, ensure that the **Pipeline** entry is selected and, in the **Agent Specifications** drop-down list, select **ubuntu-18.04**.
 1.  In the list of tasks of the pipeline, click the **Replace tokens in appsettings.json** task, in the **Token pattern** dropdown list select ```__...__``` . 
