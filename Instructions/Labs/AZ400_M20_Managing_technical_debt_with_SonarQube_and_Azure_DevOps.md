@@ -62,7 +62,7 @@ In this task, you will create a new Azure DevOps project based on the [Sonar Sca
 
 1.  In the **Azure DevOps portal**, in the upper right corner, click **+ New project**. 
 
-1.  On the **Create new project** pane, in the **Project name** textbox, type **SonarExamples**, in the **Visibility** section, click **Public**, and then click **Create**. 
+1.  On the **Create new project** pane, in the **Project name** textbox, type **SonarExamples**, in the **Visibility** section, click **Public**, and then click **+Create**. 
    
     > **Note**: Unless you intend to sign up for a paid plan with SonarCloud, make sure that you set your Azure DevOps project to be public. If you *do* intend to sign up for a paid plan, then you can create a private project.
 
@@ -268,12 +268,13 @@ In this task, you will create a pipeline by using the classic editor.
     > **Note**: The template contains all of the necessary tasks and most of the required settings. You will need to provide the remaining ones.
 
 1.  On the **Tasks** tab of the build pipeline definition, ensure that the **Pipeline** entry is selected, on the right side, in the **Agent pool** dropdown list, select the **Azure Pipelines** entry and, in the **Agent Specification** dropdown list, select the **vs2017-win2016** entry.
-1.  In the list of pipeline tasks, select the **Prepare analysis on SonarCloud** task and click **+New**.
+1.  In the list of pipeline tasks, select the **Prepare analysis on SonarCloud** task and click **+New**, ignore this and next step, if performed Exercise 1 Task 2 Steps 3 and 4.
 1.  On the **New service connection** pane, in the **SonarCloud Token** textbox, paste the value of the token you recorded earlier in this lab, click **Verify** to validate it, in the **Service connection name** textbox, type **SC** and click **Verify and save**. 
 1.  Back on the **Prepare Analysis Configuration** pane, in the **Organization** dropdown list, select the name of your SonarCloud organization. 
+1. On the **Prepare Analysis Configuration** pane, in the **SonarCloud Service Endpoint**, select the SC connection name.
 1.  On the **Prepare Analysis Configuration** pane, in the **Project Key** text box, type the name of the project key you recorded earlier in this lab.
 1.  On the **Prepare Analysis Configuration** pane, in the **Project Name** text box, type the name of the project name you recorded earlier in this lab (`SonarExamples`).
-1.  Optionally, you can disable the Publish Quality Gate Result, in the list of pipeline tasks, select the **Publish Quality Gate Result** task, on the **Publish Quality Gate Result** pane, expand the **Control Options** section and clear the **Enabled** checkbox. 
+1.  Optionally, On the **Prepare Analysis Configuration** pane, expand the **Control Options** section and clear the **Enabled** checkbox. 
 
     > **Note**: This task is not required unless you want to use the pre-deployment gate along with Release Pipelines.
 
