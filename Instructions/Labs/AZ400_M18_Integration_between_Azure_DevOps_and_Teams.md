@@ -194,11 +194,11 @@ In this task, you will subscribe to the Azure Pipeline notifications in Microsof
 
 1.  On your lab computer, switch to the web browser displaying the **Tailwind Traders** project in the Azure DevOps portal, in the vertical menu bar at the far left of the Azure DevOps portal, click **Pipelines**, on the **Pipelines** pane, click the **Website-CI** entry, and, while on the **Website-CI** pane, in the web browser window, copy its URL into Clipboard.
 
-    >**Note**: The URL will be in the format `https://dev.azure.com/<organization_name>liveid2530565/Tailwind%20Traders/_build?definitionId=6`, where the `<organization_name>` is the placeholder representing the name of your DevOps organization.
+    >**Note**: The URL will be in the format `https://dev.azure.com/<organization_name>liveid2530565/Tailwind%20Traders/_build?definitionId=2`, where the `<organization_name>` is the placeholder representing the name of your DevOps organization.
 
     >**Note**: The pipeline URL can be to any page within your pipeline that has a *definitionId* or *buildId/releaseId* present in the URL.
 
-1.  With the **Posts** tab selected, in the **General** channel of the **Tailwind Traders** team, post `@Azure Pipelines subscribe https://dev.azure.com/<organization_name>/Tailwind%20Traders/_build?definitionId=6` to subscribe to the build pipeline (make sure to replace the `<organization_name>` placeholder with the name of your DevOps organization).
+1.  With the **Posts** tab selected, in the **General** channel of the **Tailwind Traders** team, post `@Azure Pipelines subscribe https://dev.azure.com/<organization_name>/Tailwind%20Traders/_build?definitionId=2` to subscribe to the build pipeline (make sure to replace the `<organization_name>` placeholder with the name of your DevOps organization).
 1.  Wait for the confirmation that the subscription has been successfully created.
  
     >**Note**: For Build pipelines, the channel is subscribed to the **Run stage state changed** and **Run stage waiting for approval** notifications.
@@ -253,7 +253,7 @@ In this task, you will step through the process of creating channels in Microsof
 >**Note**: **Channels** are dedicated sections within a team to keep conversations organized by specific topics, projects, disciplines, based on your preferences. Team channels are places where everyone on the team can openly have conversations. Private chats are only visible to those people in the chat. Channels provide most benefits when supplemented by apps, such as tabs, connectors, and bots.
 
 1.  In the Microsoft Teams window, locate the **Tailwind Traders** team you created earlier in this lab, click the ellipsis symbol on its right side, and, in the dropdown menu, click **Add channel**.
-1.  In the **Create a channel for "Tailwind Traders" team** pop-up window, in the **Channel name** textbox, type **DevOps posts**, leave the **Description (optional)** textbox blank, in the **Privacy** dropdown list, select **Standard - Accessible to everyone on the team** and click **Next**.
+1.  In the **Create a channel for "Tailwind Traders" team** pop-up window, in the **Channel name** textbox, type **DevOps posts**, leave the **Description (optional)** textbox blank, in the **Privacy** dropdown list, select **Standard - Everyone on the team has access** and click **Add**.
 
 #### Task 3: Share content in Microsoft Teams
 
