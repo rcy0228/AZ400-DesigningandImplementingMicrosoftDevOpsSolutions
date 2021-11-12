@@ -281,7 +281,7 @@ In this task, you will create a pipeline by using the classic editor.
 
 In this task, you will check pipeline results.
 
-1.  On the build run pane (either YAML or Classic one created before) , review the content of the **Summary** tab and then click the **Extensions** tab header.
+1.  On the build run pane (Classic one created before) , review the content of the **Summary** tab and then click the **Extensions** tab header.
 
     > **Note**: If you left the **Publish Quality Gate Result** task enabled, the **Extension** tab includes the summary of the SonarCloud analysis report.
 
