@@ -150,8 +150,8 @@ In this task, you will query release information via REST API by using Postman
 
     > **Note**: You will receive an email from Postman to activate your Postman account to complete the process of account provisioning.
 
-1.  Once you signed in, within the Postman desktop app window, in the upper left corner, click **+New**, on the **Create New** pane, click **Request**, in the **SAVE REQUEST** pane, in the **Request name** text box, type **Get-Releases**, click **+ Create Collection**, in the **Name your collection** text box, type **Azure DevOps az400m10l02 queries**, click the check mark on the right side, and then click the button **Save to Azure DevOps az400m10l02 queries**.
-1.  Open another web browser window and navigate to [the **Releases - List** Microsoft Docs page](https://docs.microsoft.com/en-us/rest/api/azure/devops/release/releases/list?view=azure-devops-rest-6.0) and review its content. 
+1.  Once you signed in, within the Postman desktop app window, Select **Workspaces** and click on **My Workspace**(if there is no workspace precreated you can create one.), in the upper left corner, click **+New**, on the **Create New** pane, click **Collection**, in the **Name your collection** text box, type **Azure DevOps az400m10l02 queries**, right click the collection which you created and click on **Add request**. In the **New Request** text box enter **Get-Releases** and click on **Save**.
+1.  Open another web browser window and navigate to https://docs.microsoft.com/en-us/rest/api/azure/devops/release/releases/list?view=azure-devops-rest-6.0 and review its content. 
 1.  Switch back to the Postman desktop app, in the Launchpad pane in the upper right section of the app window, click the **Authorization** tab header, in the **TYPE** dropdown list, select the **Basic Auth** entry and, in the **Password** textbox, paste the value of the token you copied in the previous task (do not set the value of the **Username** text box).
 1.  In the Launchpad pane in the upper right section of the app window, ensure that **GET** appears in the dropdown list, in the **Enter request URL** textbox, type the following and click **Send** (replace the value of the `<organization_name>` with the name of your Azure DevOps organization) in order to list all releases:
 
@@ -160,7 +160,7 @@ In this task, you will query release information via REST API by using Postman
     ```
 
 1.  Review the output listed on the **Body** tab in the lower right section of the app window and verify that it includes the listing of the releases you created in the previous exercise of this lab.
-1.  Switch to the web browser window displaying the content of Microsoft Docs and navigate to [the **Deployments - List** Microsoft Docs page](https://docs.microsoft.com/en-us/rest/api/azure/devops/release/deployments/list?view=azure-devops-rest-6.0) and review its content. 
+1.  Switch to the web browser window displaying the content of Microsoft Docs and navigate to https://docs.microsoft.com/en-us/rest/api/azure/devops/release/deployments/list?view=azure-devops-rest-6.0 and review its content. 
 1.  In the Launchpad pane in the upper right section of the app window, ensure that **GET** appears in the dropdown list, in the **Enter request URL** textbox, type the following and click **Send** (replace the value of the `<organization_name>` with the name of your Azure DevOps organization) in order to list all deployments:
 
     ```url
