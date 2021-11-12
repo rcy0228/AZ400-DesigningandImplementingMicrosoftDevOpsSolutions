@@ -270,8 +270,8 @@ In this task, you will create a pipeline by using the classic editor.
 1.  On the **Tasks** tab of the build pipeline definition, ensure that the **Pipeline** entry is selected, on the right side, in the **Agent pool** dropdown list, select the **Azure Pipelines** entry and, in the **Agent Specification** dropdown list, select the **vs2017-win2016** entry.
 1.  In the list of pipeline tasks, select the **Prepare analysis on SonarCloud** task and click **+New**, ignore this and next step, if performed Exercise 1 Task 2 Steps 3 and 4.
 1.  On the **New service connection** pane, in the **SonarCloud Token** textbox, paste the value of the token you recorded earlier in this lab, click **Verify** to validate it, in the **Service connection name** textbox, type **SC** and click **Verify and save**. 
-1.  Back on the **Prepare Analysis Configuration** pane, in the **Organization** dropdown list, select the name of your SonarCloud organization. 
-1. On the **Prepare Analysis Configuration** pane, in the **SonarCloud Service Endpoint**, select the SC connection name.
+1.  On the **Prepare Analysis Configuration** pane, in the **SonarCloud Service Endpoint**, select the SC connection name.
+1.  On the **Prepare Analysis Configuration** pane, in the **Organization** dropdown list, select the name of your SonarCloud organization. 
 1.  On the **Prepare Analysis Configuration** pane, in the **Project Key** text box, type the name of the project key you recorded earlier in this lab.
 1.  On the **Prepare Analysis Configuration** pane, in the **Project Name** text box, type the name of the project name you recorded earlier in this lab (`SonarExamples`).
 1.  Optionally, On the **Prepare Analysis Configuration** pane, expand the **Control Options** section and clear the **Enabled** checkbox. 
