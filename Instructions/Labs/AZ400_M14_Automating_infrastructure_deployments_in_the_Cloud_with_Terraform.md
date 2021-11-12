@@ -38,6 +38,20 @@ After you complete this lab, you will be able to:
 
     ![Azure DevOps](images/m1-2.png)
 
+5. On the Azure Devops page click on **Azure DevOps** located at top left corner and then click on **Organization Setting** at the left down corner
+
+    ![Azure DevOps](images/agent1.png)
+
+6. In the **Organization Setting** window on the left menu click on **Billing** and select **Setup Billing** then click on save.
+
+    ![Azure DevOps](images/agent3.png)
+    ![Azure DevOps](images/agent4.png)    
+
+7. On the **MS Hosted CI/CD** section under **Paid parallel jobs** enter value **1** and at the end of the page click on **Save**.
+
+    ![Azure DevOps](images/agent2.png)
+
+    
 ### Exercise 0: Configure the lab prerequisites
 
 In this exercise, you will set up the prerequisites for the lab, which consist of the preconfigured Parts Unlimited team project based on an Azure DevOps Demo Generator template. 
@@ -46,11 +60,11 @@ In this exercise, you will set up the prerequisites for the lab, which consist o
 
 In this task, you will use Azure DevOps Demo Generator to generate a new project based on the **Terraform** template.
 
-1.  On your lab computer, start a web browser and navigate to [Azure DevOps Demo Generator](https://azuredevopsdemogenerator.azurewebsites.net). This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. 
+1.  In a new tab of Edge browser navigate to https://azuredevopsdemogenerator.azurewebsites.net. This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab. 
 
     > **Note**: For more information on the site, see https://docs.microsoft.com/en-us/azure/devops/demo-gen.
 
-1.  Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
+1.  Click **Sign in** and if prompted sign with the credentials provided in environment details tab.
 1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
 1.  On the **Create New Project** page, in the **New Project Name** textbox, type **Automating infrastructure deployments with Terraform**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
 1.  In the list of templates, in the toolbar, click **DevOps Labs**, select the **Terraform** template and click **Select Template**.
@@ -68,7 +82,7 @@ In this exercise, you will deploy Infrastructure as Code into Azure by using Ter
 
 In this task, you will examine the use of Terraform in provisioning Azure Resources required to deploy PartsUnlimited website.
 
-1.  On your lab computer, in the web browser window displaying the Azure DevOps portal with the **Automating infrastructure deployments with Terraform** project open, in the vertical menu bar at the far left of the Azure DevOps portal, click **Repos**.
+1.  On your lab VM, in the web browser window displaying the Azure DevOps portal with the **Automating infrastructure deployments with Terraform** project open, in the vertical menu bar at the far left of the Azure DevOps portal, click **Repos**.
 1.  On the **Files** pane, click the facing-down caret next to the **master** entry at the top and, in the dropdown list of branches, click the entry representing the **terraform** branch.
 
     > **Note**: Make sure that you are now on the **terraform** branch and **Terraform** folder appears within the content of the repo. 
@@ -165,31 +179,19 @@ In this task, you will create Azure resources using Terraform as part of your de
 1.  In the Azure portal, search for and select the **App Services** resources and, from the **App Services** blade, navigate to the web app which name starts with **pulterraformweb**. 
 1.  On the web app blade, click **Browse**. This will open another web browser tab, displaying the newly deployed web application.
 
-### Exercise 2: Remove the Azure lab resources
+### Exercise 2: Remove the Azure DevOps billing
 
-In this exercise, you will remove the Azure resources provisioned in this lab to eliminate unexpected charges. 
+In this exercise, you will remove the Azure DevOps billing enabled in this lab to eliminate unexpected charges.
 
->**Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
+#### Task 1: Remove the Azure DevOps billing
 
-#### Task 1: Remove the Azure lab resources
+In this task, you will remove pipeline billing to eliminate unnecessary charges.
 
-In this task, you will use Azure Cloud Shell to remove the Azure resources provisioned in this lab to eliminate unnecessary charges. 
+1. On the lab computer, switch to the browser window displaying Azure DevOps organization homepage and select **Organization Settings** at bottom left corner.
 
-1.  In the Azure portal, open the **Bash** shell session within the **Cloud Shell** pane.
-1.  List all resource groups created throughout the labs of this module by running the following command:
+1. Under **Organization Settings** select **Billing** and click on **Change billing** button to open Change billing pane.
 
-    ```sh
-    az group list --query '[?contains(`["terraformrg", "PULTerraform"]`, name)].name' --output tsv
-    ```
-
-1.  Delete all resource groups you created throughout the labs of this module by running the following command:
-
-    ```sh
-    az group list --query '[?contains(`["terraformrg", "PULTerraform"]`, name)].name' --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-    ```
-
-    >**Note**: The command executes asynchronously (as determined by the --nowait parameter), so while you will be able to run another Azure CLI command immediately afterwards within the same Bash session, it will take a few minutes before the resource groups are actually removed.
-
+1. In the **Change billing** pane, select **Remove billing** setting and click on Save.
 
 ## Review
 
