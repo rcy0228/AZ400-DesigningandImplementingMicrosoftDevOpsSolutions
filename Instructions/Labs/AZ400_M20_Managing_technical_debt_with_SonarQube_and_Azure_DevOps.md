@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab 20: Managing technical debt with SonarCloud and Azure DevOps'
-    module: 'Module 20: Validating Code Bases for Compliance'
----
-
 # Lab 20: Managing technical debt with SonarCloud and Azure DevOps
 # Student lab manual
 
@@ -65,12 +59,15 @@ In this exercise, you will set up the prerequisites for the lab, which consist o
 In this task, you will create a new Azure DevOps project based on the [Sonar Scanning Examples repository](https://github.com/SonarSource/sonar-scanning-examples.git) repository.
 
 1.  On your lab computer, start a web browser, navigate to the [**Azure DevOps portal**](https://dev.azure.com) and sign in to your Azure DevOps organization.
+
 1.  In the **Azure DevOps portal**, in the upper right corner, click **+ New project**. 
+
 1.  On the **Create new project** pane, in the **Project name** textbox, type **SonarExamples**, in the **Visibility** section, click **Public**, and then click **Create**. 
    
     > **Note**: Unless you intend to sign up for a paid plan with SonarCloud, make sure that you set your Azure DevOps project to be public. If you *do* intend to sign up for a paid plan, then you can create a private project.
 
 1.  On the **SonarExamples** pane, in the vertical menu bar at the far left of the Azure DevOps portal, click **Repos**, on the **SonarExamples is empty. Add some code!** pane, and, in the **Import a repository** section, click **Import**.
+
 1.  On the **Import a Git repository** pane, ensure that **Git** appears in the **Repository type** dropdown list, in the **Clone URL**, type **https://github.com/SonarSource/sonar-scanning-examples.git**, and click **Import**. 
 
     > **Note**: The scanning examples repository contains sample projects for a number of build systems and languages including C# with MSBuild, and Maven and Gradle with Java.
@@ -80,6 +77,7 @@ In this task, you will create a new Azure DevOps project based on the [Sonar Sca
 In this task, you will generate an Azure DevOps personal access token that will be used to authenticate from the Postman app you will install in the next task of this exercise.
 
 1.   On the lab computer, in the web browser window displaying the Azure DevOps portal, in the upper right corner of the Azure DevOps page, click the **User settings** icon, in the dropdown menu, click **Personal access tokens**, on the **Personal Access Tokens** pane, and click **+ New Token**.
+
 1.   On the **Create a new personal access token** pane, click the **Show all scopes** link and, specify the following settings and click **Create** (leave all others with their default values):
 
      | Setting | Value |
@@ -100,6 +98,7 @@ In this task, you will generate an Azure DevOps personal access token that will 
 In this task, you will install and configure the SonarCloud Azure DevOps extension in your Azure DevOps project.
 
 1.  On your lab computer, start a web browser, navigate to the [SonarCloud extension page](https://marketplace.visualstudio.com/items?itemName=SonarSource.sonarcloud) on the Visual Studio Marketplace, click **Get it free**, ensure that the name of your Azure DevOps organization appears in the **Select an Azure Devops organization** dropdown list, and click **Install**.
+
 1.  Once the installation completes, click **Proceed to organization**. This will redirect the browser to the Azure DevOps portal displaying your organization's home page. 
 
     > **Note**: If you do not have the appropriate permissions to install an extension from the marketplace, a request will be sent to the account administrator to ask them to approve the installation.
@@ -107,14 +106,19 @@ In this task, you will install and configure the SonarCloud Azure DevOps extensi
     > **Note**: The SonarCloud extension contains build tasks, build templates and a custom dashboard widget.
 
 1.  In the web browser window, navigate to the **SonarCloud home page** [https://sonarcloud.io/](https://sonarcloud.io/).
-1.  On the SonarCloud home page, click **Log in**.
-1.  On the **Log in or Sign up to SonarCloud**, click **With Azure DevOps**. 
+
+1.  On the SonarCloud home page, click **Azure DevOps**.
+
 1.  When prompted whether to **Let this app access your info?**, click **Yes**.
+
+1. on the Permission requestion page, click on **Accept**.
 
     > **Note**: In SonarCloud, you will create an organization and, within it, a new project. The organization and project you set up in SonarCloud will mirror the organization and project that you set up in Azure DevOps.
 
 1.  On the **Welcome to SonarCloud** page, click **Import an organization from Azure**.
+
 1.  On the **Create an organization** page, in the **Azure DevOps organization name** textbox, type the name of your Azure DevOps organization, in the **Personal Access Token** textbox, paste the value of the token you recorded in the previous exercise, and click **Continue**. 
+
 1.  In the **Import organization details** section, in the **Key** textbox, type a string of characters that will designate your organization and click **Continue**.
 
     > **Note**: The key must be unique within the SonarCloud system. Make sure that the green checkmark appears to the right of the **Key** textbox. This indicates that the key satisfies the uniqueness prerequisite.
@@ -126,9 +130,14 @@ In this task, you will install and configure the SonarCloud Azure DevOps extensi
     > **Note**: Next, within the newly created organization, you will create a SonarCloud project that will mirror the Azure DevOps project **SonarExamples**. 
 
 1.  On the **All set! Your organization is now ready to go** page, click **Analyze new project**.
+
 1.  On the **Analyze projects - Select repositories** page, in the list of Azure DevOps projects, select the checkbox next to the **SonarExamples / SonarExamples** entry and click **Set up**.
+
 1.  On the **Analyze your project** page, click **With Azure DevOps Pipeline** tile. 
+
 1.  On the **Analyze with Azure Pipelines** page, in the **Install our extension** section, click **Continue**.
+
+1.  On the **Analyze with Azure Pipelines** page, in the **Install our extension**, copy the Token and click on **Continue**.
 
     > **Note**: You can skip extension creation if you have already installed it. 
 
