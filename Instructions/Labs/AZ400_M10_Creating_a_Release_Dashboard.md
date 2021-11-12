@@ -146,7 +146,7 @@ In this task, you will generate an Azure DevOps personal access token that will 
 In this task, you will query release information via REST API by using Postman.
 
 1.  On the lab computer, start a web browser and navigate to https://www.postman.com/downloads/, click **Download the App** button, in the dropdown menu, click **Windows 64-bit**, click the downloaded file and run the installation. Once the installation completes, the Postman desktop app will start automatically. 
-1.  In the **Create Postman Account** pane, provide your email address, a username and password and click **Create free account**. 
+1.  In the **Create Postman Account** pane, provide your email address, a username and password and click **Create free account**. Complete the startup process.
 
     > **Note**: You will receive an email from Postman to activate your Postman account to complete the process of account provisioning.
 
