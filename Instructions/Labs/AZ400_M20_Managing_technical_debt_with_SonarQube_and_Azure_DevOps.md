@@ -252,7 +252,7 @@ In this task, you will create a pipeline by using the YAML editor.
 
     > **Note**: Skip the next task if you completed this task in YAML editor.
 
-1. Go to Azure Pipelines > Pipelines and click in **Sonarexample** pipeline, open latest run. You will see it queued, **Cancel** the pending one, click **Yes**. Now click on **Run new** > **Run** to trigger a new run (this time pipeline will have the proper agents assigned for private projects).
+1. Go to Azure Pipelines > Pipelines and click in **Sonarexample** pipeline, open latest run. You will see it queued, **Cancel** the pending one, click **Yes**.
 
 #### Task 3: Create a pipeline by using the classic editor
 
@@ -274,11 +274,6 @@ In this task, you will create a pipeline by using the classic editor.
 1.  On the **Prepare Analysis Configuration** pane, in the **Organization** dropdown list, select the name of your SonarCloud organization. 
 1.  On the **Prepare Analysis Configuration** pane, in the **Project Key** text box, type the name of the project key you recorded earlier in this lab.
 1.  On the **Prepare Analysis Configuration** pane, in the **Project Name** text box, type the name of the project name you recorded earlier in this lab (`SonarExamples`).
-1.  Optionally, On the **Prepare Analysis Configuration** pane, expand the **Control Options** section and clear the **Enabled** checkbox. 
-
-    > **Note**: This task is not required unless you want to use the pre-deployment gate along with Release Pipelines.
-
-    > **Note**: If this step is enabled, a summary of the analysis results will appear on the **Extensions** tab of the **Build Summary** page. However, this will delay the completion of the build until the processing on SonarCloud has finished.
 
 1.  On the build pipeline editor pane, click **Save & queue**, in the dropdown menu, click **Save & queue**, and, on the **Run pipeline** pane, click **Save and run**, and wait for the build to complete.
 
