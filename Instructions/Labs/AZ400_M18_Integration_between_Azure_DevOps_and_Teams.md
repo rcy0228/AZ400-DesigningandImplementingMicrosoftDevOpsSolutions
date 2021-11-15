@@ -220,7 +220,7 @@ In this task, you will use customize subscriptions to Azure Pipelines in Microso
 
 >**Note**: You can list and manage subscriptions by using `@Azure Pipelines subscriptions` command. This command lists all of the current subscriptions for the channel.
 
-1.  With the **Posts** tab selected, in the **General** channel of the **Tailwind Traders** team, click on **New Conversation** and type `@` and select **Azure Pipelines** then type **subscriptions** and press enter, `@Azure Pipelines subscriptions` command and, in the reply from the **Azure Pipelines** bot, select **Add Subscription**.
+1.  With the **Posts** tab selected, in the **General** channel of the **Tailwind Traders** team, click on **New Conversation** and type `@` and select **Azure Pipelines** then type **subscriptions** and press enter, which looks like `@Azure Pipelines subscriptions` command and, in the reply from the **Azure Pipelines** bot, select **Add Subscription**.
 1.  In the **Azure Pipelines** **Add subscription** panel, in the **Choose event** dropdown list, ensure that **Build completed** is selected and click **Next**.
 1.  In the **Azure Pipelines** **Add subscription** panel, in the **Choose pipeline** dropdown list, ensure that **Website-CI** is selected and click **Next**.
 1.  In the **Azure Pipelines** **Add subscription** panel, in the **Build status** dropdown list, ensure that **[Any]** is selected and click **Submit**.
