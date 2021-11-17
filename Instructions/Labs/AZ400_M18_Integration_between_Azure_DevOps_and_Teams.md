@@ -112,26 +112,22 @@ In this task, you will install and configure Azure Boards app in the newly creat
 
 1.  In the Microsoft Teams window, in the lower left corner, click the **Apps** icon. This will open the **Apps** pane.
 1.  On the **Apps** pane, in the **Search all apps** textbox, type **Azure Boards** and, in the list of apps, click **Azure Boards**.
+1.  Click **Add**, again go to **Apps**, in the **Search all apps** textbox, type **Azure Boards** and, in the list of apps, click **Azure Boards**.
 1.  Click the down facing arrowhead directly to the right of the **Open** button and, in the dropdown list, click the **Add to a team** entry.
 1.  On the **Set up Azure boards for a team** panel, in the **Search** text box, type **Tailwind Traders**, in the list of results, select the **Tailwind Traders > General** entry, and click **Set up a bot**.
-1.  In the list of posts in the **General** channel of the **Tailwind Traders** team, select the post titled **Azure Boards**, press the **Enter** key, and review additional messages posted by the bot:
+1.  In the list of posts in the **General** channel of the **Tailwind Traders** team, select the post titled **Azure Boards**, review messages posted by the bot:
 
     ```
-    Here are some of the things you can do:
-    link [project url] - Link to a project to create work items and receive notifications
-    subscriptions - Add or remove subscriptions for this channel
-    addAreapath [area path] - Add an area path from your project to this channel
-    signin - Sign in to your Azure Boards account
-    signout - Sign out from your Azure Boards account
-    unlink - Unlink a project from this channel
-    feedback - Report a problem or suggest a feature
+    👋  Hi! Let's get started with Azure Boards.
+    Sign in to your Azure Boards account with: @Azure Boards signin
+    To see what else you can do, type @Azure Boards help
     To know more see documentation.
     ```
-1.  Open **New conversation** and post: ´@Azure Boards signin´. Follow the steps to make sure you have access to the Azure DevOps organizations.
-1.  Copy the url of your Azure DevOps **Tailwind Traders** project. Example: https://dev.azure.com/myorg/myproject . Open **New conversation** in the Teams channel and post: ´@Azure Boards link https://dev.azure.com/myorg/myproject ´. Review message:
+1.  Open **New conversation** and click on **Azure Boards** icon in the chat menu it will popup **Azure boards** window, then click on sign in. Sign with the credentials provided in environmental details page. click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
+1.  In the same **Azure Boards** window click on **Setup** and in the popup window select your organization and project **Tailwind Traders** then click on continue. Once it is completed you will get the following response in General tab:
 
     ```
-    NAME has linked this channel to project  Tailwind Traders. Create work items using @Azure         Boards create.
+    NAME has linked this channel to project  Tailwind Traders. Create work items using @Azure Boards create.
     To monitor work items, please add subscription
     Add subscription
     ```
@@ -165,17 +161,16 @@ In this task, you will install and configure Azure Pipelines app in the designat
 
 1.  In the Microsoft Teams window, in the lower left corner, click the **Apps** icon. This will open the **Apps** pane.
 1.  On the **Apps** pane, in the **Search all apps** textbox, type **Azure Pipelines** and, in the list of apps, click **Azure Pipelines**.
-1.  On the **Azure Pipelines** panel, click the down facing arrowhead directly to the right of the **Add** button and, in the dropdown list, click the **Add to a team** entry.
+1.  Click **Add**, again go to **Apps**, in the **Search all apps** textbox, type **Azure Pipelines** and, in the list of apps, click **Azure Pipelines**.
+1.  On the **Azure Pipelines** panel, click the down facing arrowhead directly to the right of the **Open** button and, in the dropdown list, click the **Add to a team** entry.
 1.  On the **Set up Azure Pipelines for a team** panel, in the **Search** text box, type **Tailwind Traders**, in the list of results, select the **Tailwind Traders > General** entry, and click **Set up a bot**. You will be redirected automatically to the post view in the **General** channel of the **Tailwind Traders** team.
-1.  In the list of posts in the **General** channel of the **Tailwind Traders** team, open **New conversation** and post  **@Azure Pipelines**, press the **Enter** key, and review additional messages posted by the bot:
+1.  Open **New conversation** and click on **Azure Pipelines** icon in the chat menu it will popup **Azure Pipelines** window, then click on sign in. Sign with the credentials provided in environmental details page. click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
+1.  In the same **Azure Pipelines** window click on **Setup** and in the popup window select your organization and project **Tailwind Traders** then click on continue. Once it is completed you will get the following response in General tab:
 
     ```
-    Here are some of the things you can do:
-    subscribe [pipeline url/ project url] - Subscribe to a pipeline or all pipelines in a project to receive notifications
-    subscriptions - Add or remove subscriptions for this channel
-    feedback - Report a problem or suggest a feature
-    signin - Sign in to your Azure Pipelines account
-    signout - Sign out from your Azure Pipelines account
+    👋  Hi! Let's start monitoring your pipelines
+    Subscribe to one or more pipelines or all pipelines in a project with: @Azure Pipelines subscribe [pipeline url/ project url]
+    To see what else you can do, type @Azure Pipelines help
     To know more see documentation.
     ```
 #### Task 2: Subscribe to the Azure Pipeline notifications in Microsoft Teams
@@ -184,19 +179,18 @@ In this task, you will subscribe to the Azure Pipeline notifications in Microsof
 
 > **Note**: You can use the `@Azure Pipelines` handle to start interacting with the app.
 
-1.  Back in Teams, with the **Posts** tab selected, in the **General** channel of the **Tailwind Traders** team, post `@Azure Pipelines signin` to authenticate and, when prompted, click **Sign in**.
-1.  In the **Azure Pipelines Sign in** pane, click **Sign in**.
-1.  If prompted to grant **Service hooks (read and write)**, **Build (build an execute)**, **Release (read, write, execute, and manage)**, **Project and team (read)**, **Identity picker (read)**, and **Teams Integration** permissions, click **Accept** and then click **Close**.
-
-    >**Note**: Now you can run the `@azure pipelines subscribe [pipeline url]` command to subscribe to an Azure DevOps pipeline.
-
 1.  On your lab computer, switch to the web browser displaying the **Tailwind Traders** project in the Azure DevOps portal, in the vertical menu bar at the far left of the Azure DevOps portal, click **Pipelines**, on the **Pipelines** pane, click the **Website-CI** entry, and, while on the **Website-CI** pane, in the web browser window, copy its URL into Clipboard.
 
     >**Note**: The URL will be in the format `https://dev.azure.com/<organization_name>liveid2530565/Tailwind%20Traders/_build?definitionId=2`, where the `<organization_name>` is the placeholder representing the name of your DevOps organization.
 
     >**Note**: The pipeline URL can be to any page within your pipeline that has a *definitionId* or *buildId/releaseId* present in the URL.
 
-1.  With the **Posts** tab selected, in the **General** channel of the **Tailwind Traders** team, click on **New Conversation** and type `@` and select **Azure Pipelines** then type **subscribe** and paste url and press enter, which looks like `@Azure Pipelines subscribe https://dev.azure.com/<organization_name>/Tailwind%20Traders/_build?definitionId=2` to subscribe to the build pipeline (make sure to replace the `<organization_name>` placeholder with the name of your DevOps organization).
+1.  Back in Teams, With the **Posts** tab selected, in the **General** channel of the **Tailwind Traders** team, click on **New Conversation** and type `@` and select **Azure Pipelines** then type **subscribe** and paste url and press enter, which looks like `@Azure Pipelines subscribe https://dev.azure.com/<organization_name>/Tailwind%20Traders/_build?definitionId=2` to subscribe to the build pipeline (make sure to replace the `<organization_name>` placeholder with the name of your DevOps organization).
+
+    ![Azure DevOps](images/pipe1.png)
+
+    >**Note**: If you can't see **Azure Pipelines** after entering @ symbol start typing letters **az** it will start showing list.
+
 1.  Wait for the confirmation that the subscription has been successfully created.
  
     >**Note**: For Build pipelines, the channel is subscribed to the **Run stage state changed** and **Run stage waiting for approval** notifications.
@@ -205,7 +199,9 @@ In this task, you will subscribe to the Azure Pipeline notifications in Microsof
 
     >**Note**: The URL will be in the format `https://dev.azure.com/<organization_name>/Tailwind%20Traders/_release?_a=releases&view=mine&definitionId=2`, where the `<organization_name>` is the placeholder representing the name of your DevOps organization.
 
-1.  With the **Posts** tab selected, in the **General** channel of the **Tailwind Traders** team, click on **New Conversation** and type `@` and select **Azure Pipelines** then type **subscribe** and paste url and press enter, which looks like `@Azure Pipelines subscribe https://dev.azure.com/<organization_name>/Tailwind%20Traders/_release?_a=releases&view=mine&definitionId=2` to subscribe to the release pipeline (make sure to replace the `<organization_name>` placeholder with the name of your DevOps organization).
+1.  Back in Teams, With the **Posts** tab selected, in the **General** channel of the **Tailwind Traders** team, click on **New Conversation** and type `@` and select **Azure Pipelines** then type **subscribe** and paste url and press enter, which looks like `@Azure Pipelines subscribe https://dev.azure.com/<organization_name>/Tailwind%20Traders/_release?_a=releases&view=mine&definitionId=2` to subscribe to the release pipeline (make sure to replace the `<organization_name>` placeholder with the name of your DevOps organization).
+
+    ![Azure DevOps](images/pipe2.png)
 
     >**Note**: For Release pipelines, the channel is subscribed to the **Deployment started**, **Deployment completed** and **Deployment approval pending notifications**.
  
@@ -217,7 +213,7 @@ In this task, you will use customize subscriptions to Azure Pipelines in Microso
 
 >**Note**: You can list and manage subscriptions by using `@Azure Pipelines subscriptions` command. This command lists all of the current subscriptions for the channel.
 
-1.  With the **Posts** tab selected, in the **General** channel of the **Tailwind Traders** team, click on **New Conversation** and type `@` and select **Azure Pipelines** then type **subscriptions** and press enter, which looks like `@Azure Pipelines subscriptions` command and, in the reply from the **Azure Pipelines** bot, select **Add Subscription**.
+1.  Back in Teams, With the **Posts** tab selected, in the **General** channel of the **Tailwind Traders** team, click on **New Conversation** and type `@` and select **Azure Pipelines** then type **subscriptions** and press enter, which looks like `@Azure Pipelines subscriptions` command and, in the reply from the **Azure Pipelines** bot, select **Add Subscription**.
 1.  In the **Azure Pipelines** **Add subscription** panel, in the **Choose event** dropdown list, ensure that **Build completed** is selected and click **Next**.
 1.  In the **Azure Pipelines** **Add subscription** panel, in the **Choose pipeline** dropdown list, ensure that **Website-CI** is selected and click **Next**.
 1.  In the **Azure Pipelines** **Add subscription** panel, in the **Build status** dropdown list, ensure that **[Any]** is selected and click **Submit**.
