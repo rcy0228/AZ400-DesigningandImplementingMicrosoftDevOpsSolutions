@@ -76,9 +76,9 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 1.  Click **Sign in** and if prompted sign with the credentials provided in environment details tab.
 1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
 1.  On the **Create New Project** page, click **Choose template**.
-1.  In the list of templates, in the toolbar, click **Private**, ensure that the **Local Drive** option is selected, click **Choose File**, in the **Open File**, navigate to the location of labfiles, in the **C:\AllFiles\AZ400-DesigningandImplementingMicrosoftDevOpsSolutions-prod\Allfiles\Labs\18** folder, select **Tailwind Traders.zip**, click open, and then click **Submit**.
+1.  In the list of templates, in the toolbar, click **General**,  select **Tailwind Traders** and click **Select Template**.
 1.  Back on the **Create New Project** page, in the **New Project Name** textbox, type **Tailwind Traders** and, in the **Select organization** dropdown list, select your Azure DevOps organization.
-1.  On the **Create New Project** page, select the **Yes, I want to fork this repository**, click **Authorize**, when prompted, authenticate using your GitHub credentials, click **Authorize azuredevops-generator-bot**, if prompted to install a missing extension, select the checkbox below the **ARM Outputs** and click **Create Project**.
+1.  On the **Create New Project** page, if prompted to install a missing extension, select the checkbox below the **ARM Outputs** and click **Create Project** (Ignore GitHub forking).
 
     > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your DevOps organization, delete the project, and try again.
 
@@ -112,6 +112,7 @@ In this task, you will install and configure Azure Boards app in the newly creat
 
 1.  In the Microsoft Teams window, in the lower left corner, click the **Apps** icon. This will open the **Apps** pane.
 1.  On the **Apps** pane, in the **Search all apps** textbox, type **Azure Boards** and, in the list of apps, click **Azure Boards**.
+<<<<<<< Updated upstream
 1.  On the **Azure Boards** panel, click **Add**.
 2.  With the **Posts** tab selected, in the **General** channel of the **Tailwind Traders** team, Right below the post entry, click on **New Conversation** and in the list of icons, click the **Boards** icon. This will automatically display the **Azure Boards** pop-up window.
 3.  On the popup window of **Azure Boards** click on signin and sign in with credentials provided in environmental details page.
@@ -127,13 +128,33 @@ In this task, you will install and configure Azure Boards app in the newly creat
 
 
 1.  Back on the **Azure Boards** panel, click the down facing arrowhead directly to the right of the **Open** button and, in the dropdown list, click the **Add to a team** entry.
+=======
+1.  Click the down facing arrowhead directly to the right of the **Open** button and, in the dropdown list, click the **Add to a team** entry.
+>>>>>>> Stashed changes
 1.  On the **Set up Azure boards for a team** panel, in the **Search** text box, type **Tailwind Traders**, in the list of results, select the **Tailwind Traders > General** entry, and click **Set up a bot**.
-1.  In the list of posts in the **General** channel of the **Tailwind Traders** team, review the messages posted by the bot, including:
+1.  In the list of posts in the **General** channel of the **Tailwind Traders** team, select the post titled **Azure Boards**, press the **Enter** key, and review additional messages posted by the bot:
 
     ```
-    Sign in to your Azure Boards account with: @Azure Boards signin
-    To see what else you can do, type @Azure Boards help
+    Here are some of the things you can do:
+    link [project url] - Link to a project to create work items and receive notifications
+    subscriptions - Add or remove subscriptions for this channel
+    addAreapath [area path] - Add an area path from your project to this channel
+    signin - Sign in to your Azure Boards account
+    signout - Sign out from your Azure Boards account
+    unlink - Unlink a project from this channel
+    feedback - Report a problem or suggest a feature
+    To know more see documentation.
     ```
+1.  Open **New conversation** and post: ´@Azure Boards signin´. Follow the steps to make sure you have access to the Azure DevOps organizations.
+1.  Copy the url of your Azure DevOps **Tailwind Traders** project. Example: https://dev.azure.com/myorg/myproject . Open **New conversation** in the Teams channel and post: ´@Azure Boards link https://dev.azure.com/myorg/myproject ´. Review message:
+
+    ```
+    NAME has linked this channel to project  Tailwind Traders. Create work items using @Azure         Boards create.
+    To monitor work items, please add subscription
+    Add subscription
+    ```
+1.  Click on **Add subscription**. Select **works item created** as the listened event and click **Next**. Leave defaults and click **Submit**. click **OK** and close. Message will be post in the channel with details about the newly added susbcription.
+1.  Switch to the web browser displaying the **Tailwind Traders** project in the Azure DevOps portal, click on **Boards > Work items**. Click on **New work item** and choose **User Story** on the dropdown. Give the user story any title and **Save**. The Teams channel we recently set up will post a notification/card with information about the created user story.
 
 #### Task 2: Add Azure Boards Kanban boards to Microsoft Teams
 
@@ -146,7 +167,7 @@ In this task, you will add Azure Boards Kanban boards to tabs in Microsoft Teams
 1.  While on the **Tailwind Traders Team** pane, in the web browser window, copy its URL into Clipboard.
 1.  Switch to the Microsoft Teams window, ensure that the **General** channel of the newly created team **Tailwind Traders** is selected, and, in the upper section of the **General** pane, click the plus sign. This will display the **Add a tab** panel.
 1.  On the **Add a tab** panel, click **Website**, on the **Website** panel, set **Tab name** to **Tailwind Traders Team boards**, set the **URL** to the URL you just copied into Clipboards, and then click **Save**.
-1.  In the Microsoft Teams window, with the **General** channel of the **Tailwind Traders** team selected, in the list of tabs in the top menu, click the newly added **Tailwind Traders Team boards** tab and ensure that it contains the content matching the **Tailwind Traders Team** board available in the Azure DevOps portal.
+1.  In the Microsoft Teams window, with the **General** channel of the **Tailwind Traders** team selected, in the list of tabs in the top menu, click the newly added **Tailwind Traders Team boards** tab and ensure that it contains the content matching the **Tailwind Traders Team** board available in the Azure DevOps portal (you may need to Sign in).
 
 > **Note**: All the work can be monitored during the daily standup's and the updates are reflected in real-time, whenever the corresponding work items states change. You also have the option to modify the Kanban board from Microsoft Teams.
 
@@ -164,6 +185,7 @@ In this task, you will install and configure Azure Pipelines app in the designat
 1.  On the **Apps** pane, in the **Search all apps** textbox, type **Azure Pipelines** and, in the list of apps, click **Azure Pipelines**.
 1.  On the **Azure Pipelines** panel, click the down facing arrowhead directly to the right of the **Add** button and, in the dropdown list, click the **Add to a team** entry.
 1.  On the **Set up Azure Pipelines for a team** panel, in the **Search** text box, type **Tailwind Traders**, in the list of results, select the **Tailwind Traders > General** entry, and click **Set up a bot**. You will be redirected automatically to the post view in the **General** channel of the **Tailwind Traders** team.
+<<<<<<< Updated upstream
 1.  In the list of posts in the **General** channel of the **Tailwind Traders** team, review the messages posted by the bot, including:
 
     ```
@@ -172,22 +194,30 @@ In this task, you will install and configure Azure Pipelines app in the designat
     ```
 
 1.  In the list of posts in the **General** channel of the **Tailwind Traders** team, click on **New Conversation** and type `@` and select **Azure Pipelines**, press the **Enter** key, and review additional messages posted by the bot:
+=======
+1.  In the list of posts in the **General** channel of the **Tailwind Traders** team, open **New conversation** and post  **@Azure Pipelines**, press the **Enter** key, and review additional messages posted by the bot:
+>>>>>>> Stashed changes
 
     ```
+    Here are some of the things you can do:
     subscribe [pipeline url/ project url] - Subscribe to a pipeline or all pipelines in a project to receive notifications
     subscriptions - Add or remove subscriptions for this channel
     feedback - Report a problem or suggest a feature
     signin - Sign in to your Azure Pipelines account
     signout - Sign out from your Azure Pipelines account
+    To know more see documentation.
     ```
-   
 #### Task 2: Subscribe to the Azure Pipeline notifications in Microsoft Teams
 
 In this task, you will subscribe to the Azure Pipeline notifications in Microsoft Teams
 
 > **Note**: You can use the `@Azure Pipelines` handle to start interacting with the app.
 
+<<<<<<< Updated upstream
 1.  With the **Posts** tab selected, in the **General** channel of the **Tailwind Traders** team, click on **New Conversation** and type `@` and select **Azure Pipelines** then type **signin** and press enter. which looks like `@Azure Pipelines signin` to authenticate and, when prompted, click **Sign in**.
+=======
+1.  Back in Teams, with the **Posts** tab selected, in the **General** channel of the **Tailwind Traders** team, post `@Azure Pipelines signin` to authenticate and, when prompted, click **Sign in**.
+>>>>>>> Stashed changes
 1.  In the **Azure Pipelines Sign in** pane, click **Sign in**.
 1.  If prompted to grant **Service hooks (read and write)**, **Build (build an execute)**, **Release (read, write, execute, and manage)**, **Project and team (read)**, **Identity picker (read)**, and **Teams Integration** permissions, click **Accept** and then click **Close**.
 
@@ -226,6 +256,7 @@ In this task, you will use customize subscriptions to Azure Pipelines in Microso
 1.  In the **Azure Pipelines** **Add subscription** panel, in the **Build status** dropdown list, ensure that **[Any]** is selected and click **Submit**.
 1.  In the **Azure Pipelines** **Add subscription** panel, click **OK** to acknowledge the confirmation message.
 1.  In the **Azure Pipelines** **View subscriptions** panel, review the list of subscriptions and close the panel.
+<<<<<<< Updated upstream
 
 ### Exercise 3: Review Microsoft Teams collaboration features in DevOps scenarios
 
@@ -280,6 +311,10 @@ In this task, you will step through the process of sharing Azure DevOps wikis in
 
     - [Add a OneNote notebook to Teams](https://support.office.com/en-us/article/Add-a-OneNote-notebook-to-Teams-0ec78cc3-ba3b-4279-a88e-aa40af9865c2) to keep meeting notes such as **Sprint Planning Meetings** and **Retrospective Meetings**. 
     - [Connect Azure DevOps to Power BI ](https://docs.microsoft.com/en-us/azure/devops/report/powerbi/?view=azure-devops) and [add a Power BI tab ](https://support.office.com/en-us/article/add-a-powerbi-tab-to-teams-708ce6fe-0318-40fa-80f5-e9174f841918) that displays advanced reports from Azure DevOps or other data related to your project.
+=======
+1.  Switch to the web browser displaying the **Tailwind Traders** project in the Azure DevOps portal, in the vertical menu bar at the far left of the Azure DevOps portal, click **Pipelines**, on the Pipelines pane, click the **Website-CI** entry, and, while on the Website-CI pane, click **Run Pipeline > Run**. 
+1. The Teams channel will post notifications about the failed execution of the pipeline (the pipeline has missing setup).
+>>>>>>> Stashed changes
 
 ## Review
 
