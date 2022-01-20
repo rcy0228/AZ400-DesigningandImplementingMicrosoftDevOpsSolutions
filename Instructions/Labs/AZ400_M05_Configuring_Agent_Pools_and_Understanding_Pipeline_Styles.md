@@ -63,11 +63,14 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 
     > **Note**: For more information on the site, see https://docs.microsoft.com/en-us/azure/devops/demo-gen.
 
-1.  Click **Sign in** and if prompted sign with the credentials provided in environment details tab.
-1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
-1.  On the **Create New Project** page, in the **New Project Name** textbox, type **Configuring Agent Pools and Understanding Pipeline Styles**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
-1.  On the **Choose a template** page, click the **PartsUnlimited** template, and then click **Select Template**.
-1.  Click **Create Project**
+2.  Click **Sign in** and if prompted sign with the credentials provided in environment details tab.
+3.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
+4.  On the **Create New Project** page, in the **New Project Name** textbox, type **Configuring Agent Pools and Understanding Pipeline Styles**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
+    
+    ![Azure DevOps](images/AZ-4001.png)
+
+5.  On the **Choose a template** page, click the **PartsUnlimited** template, and then click **Select Template**.
+6.  Click **Create Project**
 
     > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your DevOps organization, delete the project, and try again.
 
@@ -98,7 +101,7 @@ In this task, you will convert a classic pipeline into a YAML pipeline
 
 1.  From the web browser displaying the Azure DevOps portal with the **Configuring Agent Pools and Understanding Pipeline Styles** project open, in the vertical navigational pane on the left side, click **Pipelines**. 
 1.  On the **Recent** tab of the **Pipelines** pane, hover with the mouse pointer over the right edge of the entry containing the **PartsUnlimitedE2E** entry to reveal the vertical ellipsis symbol designating the **More** menu, click the ellipsis symbol, and, in the dropdown menu, click **Edit**. This will display the build pipeline that is part of the project you generated at the beginning of the lab. 
-1.  On the **Tasks** tab of the **PartsUnlimitedE2E** edit pane, click **Triggers**, on the right side of the **PartsUnlimited** pane, uncheck the **Enable continuous integration** checkbox, click the down-facing caret next to the **Save & queue** button, in the dropdown menu, click **Save**, and in the **Save build pipeline** click **Save**.
+1.  On the **Tasks** tab of the **PartsUnlimitedE2E** edit pane, click **Triggers** tab, on the right side of the **PartsUnlimited** pane, uncheck the **Enable continuous integration** checkbox, click the down-facing caret next to the **Save & queue** button, in the dropdown menu, click **Save**, and in the **Save build pipeline** click **Save**.
 
     > **Note**: This will prevent from unintended execution of automatic build due to changes to the repository during this lab.
 
@@ -125,7 +128,7 @@ In this task, you will convert a classic pipeline into a YAML pipeline
 
     > **Note**: For more information regarding this functionality, refer to [Replacing "View YAML"](https://devblogs.microsoft.com/devops/replacing-view-yaml/)
 
-1.  On the lab computer, start Visual Studio Code and use it to open the file **PartsUnlimitedE2E.yml**. The file should have the following content:
+1.  On the lab computer, Select the file which you have downloaded and Select **open with Visual Studio Code** and the file **PartsUnlimitedE2E.yml**. The file should have the following content:
 
     ```yaml
     name: $(date:yyyyMMdd)$(rev:.r)
@@ -223,8 +226,8 @@ In this task, you will configure the LOD VM as an Azure DevOps self-hosting agen
     cd \
     mkdir agent ; cd agent
     $TARGET = Get-ChildItem "$Home\Downloads\vsts-agent-win-x64-*.zip"
-    Add-Type -AssemblyName System.IO.Compression.FileSystem
-    [System.IO.Compression.ZipFile]::ExtractToDirectory($TARGET, "$PWD")
+    Add-Type -AssemblyName System.IO.Compression.FileSystem ; 
+    [System.IO.Compression.ZipFile]::ExtractToDirectory("$HOME\Downloads\vsts-agent-win-x64-2.196.2.zip", "$PWD")
     ```
 
 1.  In the same **Administrator: Windows PowerShell** console, run the following to configure the agent:
@@ -250,6 +253,8 @@ In this task, you will configure the LOD VM as an Azure DevOps self-hosting agen
     > **Note**: You can run self-hosted agent as either a service or an interactive process. You might want to start with the interactive mode, since this simplifies verifying agent functionality. For production use, you should consider either running the agent as a service or as an interactive process with auto-logon enabled, since both persist their running state and ensure that the agent starts automatically if the operating system is restarted.
 
     > **Note**: Verify that the agent is reporting the **Listening for Jobs** status.
+
+    ![Azure DevOps](images/AZ-400-3.png)
 
 1.  Switch to the browser window displaying the Azure DevOps portal and close the **Get the agent** pane.
 1.  Back on the **Agents** tab of the **az400m05l05a-pool** pane, note that the newly configured agent is listed with the **Online** status.
