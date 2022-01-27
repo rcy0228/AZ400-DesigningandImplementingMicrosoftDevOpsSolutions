@@ -128,7 +128,7 @@ In this task, you will install and configure Ansible on the Azure VM you deploye
 1.  Run the following to install the dnspython package to allow the Ansible playbooks to verify DNS names before deployment:
 
     ```bash
-    sudo apt install python-pip
+    pip install dnspython
     ```
 
 1.  In the Bash session in the Cloud Shell pane, within the SSH session to the newly deployed Azure VM, run the following to install the **jq** JSON parsing tool (when prompted, type **y** and press the **Enter** key):
