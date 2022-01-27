@@ -128,7 +128,7 @@ In this task, you will install and configure Ansible on the Azure VM you deploye
 1.  Run the following to install the dnspython package to allow the Ansible playbooks to verify DNS names before deployment:
 
     ```bash
-    sudo -H pip3 install dnspython
+    sudo apt install python-pip
     ```
 
 1.  In the Bash session in the Cloud Shell pane, within the SSH session to the newly deployed Azure VM, run the following to install the **jq** JSON parsing tool (when prompted, type **y** and press the **Enter** key):
@@ -137,7 +137,7 @@ In this task, you will install and configure Ansible on the Azure VM you deploye
     sudo apt install jq
     ```
 
-1.  Run the following to install Azure CLI:
+1.  Run the following to install Azure CLI, (when prompted, type **y** and press the **Enter** key):
 
     ```bash
     curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
@@ -180,7 +180,6 @@ In this task, you will generate an Azure AD managed identity in order to facilit
 1.  When prompted, sign in with credentials you are using in this lab and close the browser tab.
 
 1.  Switch back to the Bash session in the Cloud Shell pane. Within the SSH session to the Azure VM configured as the Ansible control node, run the following to generate a system assigned managed identity:
-
 
     ```bash
     RG1NAME=az400m14l03rg
