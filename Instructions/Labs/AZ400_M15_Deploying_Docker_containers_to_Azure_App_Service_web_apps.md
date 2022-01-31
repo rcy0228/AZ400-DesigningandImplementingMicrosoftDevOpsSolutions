@@ -93,7 +93,7 @@ In this task, you will use Azure Cloud Shell to create Azure resources required 
     ```
 
     >**Note**: You can identify Azure region names by running `az account list-locations -o table`
-    >Replace $RANDOM$RANDOM with unique name
+    >Replace $RANDOM$RANDOM with **Deployment-id** given in environment details tab of lab guide.
 
 1.  Run the following to create all resources required Azure resources required for this lab:
 
@@ -111,7 +111,7 @@ In this task, you will use Azure Cloud Shell to create Azure resources required 
 
     >**Note**: Wait for the provisioning process to complete. This might take about 5 minutes.
 
-1.  Run the following to configure a connection string of the newly created Azure web app (replace the $SQLDB_SRV_NAME and $SQLDB_NAME placeholders with the values of the names of the Azure SQL Database logical server and its database instance, respectively):
+1.  Run the following to configure a connection string of the newly created Azure web app (In 1st Line replace the $SQLDB_SRV_NAME and $SQLDB_NAME placeholders with the values of the names of the Azure SQL Database server and its database Name, respectively and In 2nd Line replace $WEV_APP_Name and $RG_NAME with **App services** name and resource group name respectively):
    
     ```bash
     CONNECTION_STRING="Data Source=tcp:$SQLDB_SRV_NAME.database.windows.net,1433;Initial Catalog=$SQLDB_NAME;User Id=sqladmin;Password=Pa55w.rd1234;"
