@@ -152,7 +152,8 @@ Work items play a prominent role in Azure DevOps. Whether describing work to be 
 
     > **Note**: The work item form includes all of the relevant work item settings. This includes details about who it's assigned to, its status across many parameters, and all the associated information and history for how it has been handled since creation. One of the key areas to focus on is the **Related Work**. We will explore one of the ways to add a feature to this epic. 
 
-1.  In the **Related work** section, select the **Add link** entry and, in the dropdown list, select **New item**.
+1. In the **Related work** section on the lower right-side, select the **Add link** entry and, in the dropdown list, select **New item**.
+
 1.  On the **Add link** panel, in the **Work item type** dropdown list, select **Feature**, in the **Title** textbox, type **Training dashboard** and click **OK**.
 
     <!-- ![Training dashboard](images/m1/child_feature_v1.png) -->
@@ -242,6 +243,8 @@ The sprint backlog should contain all the information the team needs to successf
     ![In the "Boards">"Sprints" window, "PUL-Web" team, select "View options" icon and click on "Work details"](images/m1/work_details_v1.png)
 
     > **Note**: The current sprint has a pretty limited scope. There are two tasks in the **To do** stage. At this point, neither task has been assigned. Both show a numeric value to the right of **Unassigned** entry representing the remaining work estimate. 
+
+1.  In the rectangle representing the **Add page for most recent tutorial**, click the **Unassigned** entry and, in the list of user accounts, select your account to assign the task to yourself.
 
 1.  In the rectangle representing the **Add page for most recent tutorial**, click the **Unassigned** entry and, in the list of user accounts, select your account to assign the task to yourself.
 
@@ -477,7 +480,7 @@ Dashboards allow teams to visualize status and monitor progress across the proje
 
     ![If necessary, on the "Dashboards" pane, in the upper left corner, in the "Agile Planning and Portfolio Management with Azure Boards Team" section, select "Agile Planning and Portfolio Management with Azure Boards Team - Overview"](images/m1/dashboard_v1.png)
 
-1.  On the **Dashboards** pane, in the upper left corner, in the **Agile Planning and Portfolio Management with Azure Boards Team** section, select **+ New dashboard**.
+1. On the **Dashboards** pane, select the drop-down menu next to the **Agile Planning and Portfolio Management with Azure Boards Team - Overview** title, and select **+ New dashboard**.
 
     ![On the "Dashboards" pane, in the upper left corner, in the "Agile Planning and Portfolio Management with Azure Boards Team" section, select "+ New dashboard"](images/m1/new_dashboard_v1.png)
 
