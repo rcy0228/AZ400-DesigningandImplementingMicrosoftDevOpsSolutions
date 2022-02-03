@@ -69,7 +69,9 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 1.  Click **Sign in** and if prompted sign with the credentials provided in environment details tab.
 1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
 1.  On the **Create New Project** page, in the **New Project Name** textbox, type **Configuring Pipelines as Code with YAML**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
-1.  In the list of templates, locate the **PartsUnlimited** template and click **Select Template**.
+
+1.  In the list of templates, in the toolbar, click **General**, select the **PartsUnlimited-YAML** template and click **Select Template**.
+
 1.  Back on the **Create New Project** page, click **Create Project**
 
     > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your Azure DevOps organization, delete the project, and try again.
@@ -187,26 +189,33 @@ In this task, you will add a YAML build definition to the existing project.
 1.  On the **Select a repository** pane, click **PartsUnlimited**.
 2.  On the **Configure your pipeline** pane, click **ASP<nolink>.NET** to use this template as the starting point for your pipeline. This will open the **Review your pipeline YAML** pane.
 
-    > **Note**: The pipeline definition will be saved as a file named **azure-pipelines.yml** in the root of the repository. The file will contain the steps required to build and test a typical ASP<nolink>.NET solution. You can also customize the build as needed. In this scenario, you will update the **pool** to enforce the use of a VM running Visual Studio 2017.
+    > **Note**: The pipeline definition will be saved as a file named **azure-pipelines.yml** in the root of the repository. The file will contain the steps required to build and test a typical ASP<nolink>.NET solution. You can also customize the build as needed. In this scenario, you will update the **pool** to enforce the use of a VM running Windows 2019.
 
 3.  Make sure  `trigger` is **master**.
 
     > **Note**: Review in Repos if your repository has **master** or **main** branch, organizations could choose default branch name for new repos: [Change the default branch](https://docs.microsoft.com/en-us/azure/devops/repos/git/change-default-branch?view=azure-devops#choosing-a-name). 
 
-4.  On the **Review your pipeline YAML** pane, in line **10**, replace `vmImage: 'windows-latest'` with `vmImage: 'vs2017-win2016'`.
-5.  On the **Review your pipeline YAML** pane, click **Save and run**.
-6.  On the **Save and run** pane, accept the default settings and click **Save and run**.
-7.  On the pipeline run pane, in the **Jobs** section, click **Job** and monitor its progress and verify that it completes successfully. 
+4.  On the **Review your pipeline YAML** pane, in line **10**, replace `vmImage: 'windows-latest'` with `vmImage: 'windows-2019'`.	
+
+5.  Remove the **VSTest@2** task:	
+    ```yaml	
+    - task: VSTest@2	
+      inputs:	
+        platform: '$(buildPlatform)'	
+        configuration: '$(buildConfiguration)'	
+    ```	
+6.  On the **Review your pipeline YAML** pane, click **Save and run**.	
+
+    7.  On the **Save and run** pane, accept the default settings and click **Save and run**.	
+8.  On the pipeline run pane, in the **Jobs** section, click **Job** and monitor its progress and verify that it completes successfully. 
 
     > **Note**: Each task from the YAML file is available for review, including any warnings and errors.
-
-8.  Return to the pipeline run pane, switch from the **Summary** tab to the **Tests** tab, and review test statistics.
 
 #### Task 3: Add continuous delivery to the YAML definition
 
 In this task, you will add continuous delivery to the YAML-based definition of the pipeline you created in the previous task.
 
-> **Note**: Now that the build and test processes are successful but takes some time to finish the build, we can continue without waiting for build to be finished and now we can add delivery to the YAML definition. 
+> **Note**: Now that the build and test processes are successful, we can now add delivery to the YAML definition. 
 
 1.  On the pipeline run pane, click the ellipsis symbol in the upper right corner and, in the dropdown menu, click **Edit pipeline**.
 1.  On the pane displaying the content of the **azure-pipelines.yaml** file, in line **8**, following the `trigger` section, add the following content to define the **Build** stage in the YAML pipeline. 
@@ -231,7 +240,7 @@ In this task, you will add continuous delivery to the YAML-based definition of t
       jobs:
       - job: Deploy
         pool:
-          vmImage: 'vs2017-win2016'
+          vmImage: 'windows-2019'
         steps:
     ```
 
@@ -254,7 +263,7 @@ In this task, you will add continuous delivery to the YAML-based definition of t
 
     > **Note**: By default, these two stages run independently. As a result, the build output from the first stage might not be available to the second stage without additional changes. To implement these changes, we will use one task to publish the build output at the end of the build stage and another to download it in the beginning of the deploy stage. 
 
-1.  Place the cursor on a blank line at the end of the build stage to add another task. (right below  `task: VSTest@2` )
+1.  Place the cursor on a blank line at the end of the build stage to add another task. (right below  `task: VSBuild@1` )
 1.  On the **Tasks** pane, search for and select the **Publish build artifacts** task. 
 1.  On the **Publish build artifacts** pane, accept the default settings and click **Add**. 
 
@@ -292,7 +301,7 @@ In this task, you will add continuous delivery to the YAML-based definition of t
       jobs:
       - job: Build
         pool:
-            vmImage: 'vs2017-win2016'
+            vmImage: 'windows-2019'
 
         variables:
             solution: '**/*.sln'
@@ -312,12 +321,6 @@ In this task, you will add continuous delivery to the YAML-based definition of t
             msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
             platform: '$(buildPlatform)'
             configuration: '$(buildConfiguration)'
-
-        - task: VSTest@2
-          inputs:
-            platform: '$(buildPlatform)'
-            configuration: '$(buildConfiguration)'
-
         - task: PublishBuildArtifacts@1
           inputs:
             PathtoPublish: '$(Build.ArtifactStagingDirectory)'
@@ -328,7 +331,7 @@ In this task, you will add continuous delivery to the YAML-based definition of t
       jobs:
       - job: Deploy
         pool:
-            vmImage: 'vs2017-win2016'
+            vmImage: 'windows-2019'
         steps:
         - task: DownloadBuildArtifacts@0
           inputs:
