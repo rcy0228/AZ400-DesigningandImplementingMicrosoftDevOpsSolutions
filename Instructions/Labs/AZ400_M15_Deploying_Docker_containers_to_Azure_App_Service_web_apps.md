@@ -33,6 +33,15 @@ After you complete this lab, you will be able to:
 
     ![Azure DevOps](images/m1-2.png)
 
+5. In the **Organization Setting** window on the left menu click on **Billing** and select **Setup Billing** then click on save.
+
+    ![Azure DevOps](images/agent3.png)
+    ![Azure DevOps](images/agent4.png)    
+
+6. On the **MS Hosted CI/CD** section under **Paid parallel jobs** enter value **1** and at the end of the page click on **Save**.
+
+    ![Azure DevOps](images/agent2.png)
+
 ### Exercise 1: Configure the lab prerequisites
 
 In this exercise, you will set up the prerequisites for the lab, which consist of a team project based on an Azure DevOps Demo Generator template and Azure resources, including an Azure App Service web app, an Azure Container Registry instance, and an Azure SQL database. 
@@ -188,7 +197,7 @@ In this task, you will use the Azure DevOps project you generated in the previou
 
     >**Note**: Next you will need to configure the agent pool information required for deployment.
 
-1.  Select the **DB deployment** job, on the **Agent job** pane on the right side, in the **Agent pool** dropdown list, select **Azure Pipelines** and, next, in the **Agent Specification** dropdown list, select **vs2017-win2016**.
+1.  Select the **DB deployment** job, on the **Agent job** pane on the right side, in the **Agent pool** dropdown list, select **Azure Pipelines** and, next, in the **Agent Specification** dropdown list, select **windows-2019**.
 1.  Select the **Web App deployment** job, on the **Agent job** pane on the right side, in the **Agent pool** dropdown list, select **Azure Pipelines** and, next, in the **Agent Specification** dropdown list, select **ubuntu-18.04**.
 1.  At the top of the pane, click the **Variables** header.
 1.  In the list of pipeline variables, set the values of the following variables:
