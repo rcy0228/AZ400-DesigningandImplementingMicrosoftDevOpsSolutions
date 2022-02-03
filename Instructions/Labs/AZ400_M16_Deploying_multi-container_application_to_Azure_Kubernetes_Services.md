@@ -187,10 +187,10 @@ In this task, you will configure the build and release pipelines in the Azure De
 
     >**Note**: You will first modify the references to the Docker image.
 
-1.  On the **Docker** repository pane, in the list of files, select **docker-compos.ci.build.yml**.
-1.  On the **docker-compos.ci.build.yml** pane, click **Edit**, replace line **5** that references the target Docker image with `image: az400mp/aspnetcore-build:1.0-2.0`, select **Commit** and, when prompted for confirmation, click **Commit** again. 
+1.  On the **AKS** repository pane, in the list of files, select **docker-compose.ci.build.yml**.
+1.  On the **docker-compose.ci.build.yml** pane, click **Edit**, replace line **5** that references the target Docker image with `image: az400mp/aspnetcore-build:1.0-2.0`, select **Commit** and, when prompted for confirmation, click **Commit** again. 
 1.  On the **Docker** repository pane, in the list of files, naviagate to the **MyHealth.Web** folder and select **Dockerfile**.
-1.  On the **Dockerfile** pane, click **Edit**, replace line **1** that references the base Docker image with `FROM az400mp/aspnetcore1.0:1.0.4`, select **Commit** and, when prompted for confirmation, click **Commit** again. 
+1.  On the **AKS** repository pane, in the list of files, navigate to the **src/MyHealth.Web** folder and select **Dockerfile**.
 1.  In the web browser window displaying the Azure DevOps portal with the **Deploying a multi-container application to AKS** project open, in the vertical menu bar at the far left of the Azure DevOps portal, click **Pipelines**.
 
     ![Azure DevOps](images/module16_3.png)
@@ -240,7 +240,7 @@ In this task, you will configure the build and release pipelines in the Azure De
 
 1.  On the **Tasks** pane of the **Dev** stage of the **MyHealth.AKS.Release** release pipeline, click the **Variables** tab. 
 1.  In the list of the **Pipeline variables**, update the value of the **ACR** variable to the Azure Container Registry name you recorded at the end of the previous task. 
-1.  In the list of the **Pipeline variables**, update the values of the **SQLserver** variable to the name of the logical server you recorded at the end of the previous task. 
+1.  In the list of the **Pipeline variables**, update the values of the **SQLserver** variable to the name of the logical server you recorded at the end of the previous task (SQLPassword is **P2ssw0rd1234**, SQLuser is **sqladmin**, DatabaseName is **mhcdb**).  
 1.  In the upper right corner of the **All pipelines / MyHealth.AKS.Release** pane, click **Save**, and, when prompted, click **Save** again to save the changes.
 
     >**Note**: In the list of pipeline variables, **DatabaseName** is set to **mhcdb**, **SQLuser** is set to **sqladmin**, and **SQLpassword** is set to **P2ssw0rd1234**. If you entered different values when creating the Azure SQL database earlier in this lab, update the values of the variables accordingly.
@@ -250,7 +250,7 @@ In this task, you will configure the build and release pipelines in the Azure De
 In this task, you will trigger the build and release pipelines and validate their completion.
 
 1.  In the web browser window displaying the Azure DevOps portal, in the vertical menu bar at the far left of the Azure DevOps portal, in the **Pipelines** section, click **Pipelines**. 
-1.  On the **Pipelines** pane, select the **MyHealth.AKS.build** pipeline, on the **MyHealth.AKS.build** pane, click **Run pipeline**, and, on the **Run pipeline** pane, click **Run**.
+1.  On the **Pipelines** pane, **All** option, select the **MyHealth.AKS.build** pipeline, on the **MyHealth.AKS.build** pane, click **Run pipeline**, and, on the **Run pipeline** pane, click **Run**.
 1.  On the build pipeline run pane, in the **Jobs** section, click **Phase 1** and monitor the progress of the build process.
 
     >**Note**: The build will generate and push the Docker image to ACR. After the build completes, you can review the build summary. 
