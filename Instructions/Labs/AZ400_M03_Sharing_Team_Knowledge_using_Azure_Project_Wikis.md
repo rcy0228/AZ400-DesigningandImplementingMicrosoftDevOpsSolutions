@@ -71,8 +71,14 @@ In this task, you will publish a branch of an Azure DevOps repo as wiki.
 
 1.  On you lab computer, in the Azure DevOps portal displaying the **Sharing Team Knowledge using Azure Project Wikis** project, in the vertical menu on the left side, in the **Overview** section, click **Wiki** and review the existing content. 
 1.  In the vertical menu on the left side, click **Repos**, in the upper section of the **Files** pane, make sure you have  the **TailwindTraders-Website** repo selected (choose it from the dropdown on the top with Git icon). In the branch dropdown list (on top of "Files" with the branch icon), select **main**, and review the content of the main branch.
+
+    ![Azure DevOps](images/tailwind-traders-website.png)
+
 1.  To the left of the **Files** pane, in the listing of the repo folder and file hierarchy, expand the **Documents** folder and its **Images** subfolder, in the **Images** subfolder, locate the **Website.png** entry, hover with the mouse pointer over its right end to reveal the vertical ellipsis (three dots) symbol representing the **More** menu, click **More**, and, in the dropdown menu, click **Download** to download the **Website.png** file to the local **Downloads** folder on your lab computer. 
 
+
+    ![Azure DevOps](images/tailwind-traders-website-1.png)
+    
     >**Note**: You will use this image in the next exercise of this lab.
 
 1.  In the vertical menu on the left side, click **Overview**, in the **Overview** section, select **Wiki**, in the upper section of the pane, select the **Tailwind Traders** dropdown menu header, and, in the dropdown list, select **Publish code as wiki**. 
@@ -95,6 +101,9 @@ In this task, you will publish a branch of an Azure DevOps repo as wiki.
 In this task, you will manage content of the wiki you published in the previous task.
 
 1.  In the vertical menu on the left side, click **Repos**, ensure that the dropdown menu in the upper section of the **Files** pane displays the **TailwindTraders-Website** repo and **main** branch, in the repo folder hierarchy, select the **Documents** folder, in the upper right corner, click **+ New** and, in the dropdown menu, click **File**. 
+
+    ![Azure DevOps](images/file-01.png)
+
 1.  In the **New file** panel, in the **New file name**, after the **/Documents/** prefix, type **.order**, and click **Create**.
 1.  On the **Contents** tab of the **.order** pane, type the following and click **Commit**.
 
@@ -130,8 +139,14 @@ In this exercise, you will step through creating and managing a project wiki.
 In this task, you will create a project wiki and add to it a Mermaid diagram and an image.
 
 1.  On your lab VM, in the Azure DevOps portal displaying the Wiki pane of the **Sharing Team Knowledge using Azure Project Wikis** project, with the content of the **Tailwind Traders (Documents)** wiki selected, at the top of the pane, click the **Tailwind Traders (Documents)** dropdown list header, and, in the drop down list, select **Create new project wiki**. 
+
+    ![Azure DevOps](images/file-02.png)
+
 1.  In the **Page title** text box, type **Project Design**.
 1.  Place the cursor in the body of the page, click the left-most icon in the toolbar representing the header setting and, in the dropdown list, click **Header 1**. This will automatically add the hash character (**#**) at the beginning of the line.
+
+    ![Azure DevOps](images/file-03.png)
+
 1.  Directly after the newly added **#** character, type **Authentication and Authorization** and press the **Enter** key.
 1.  Click the left-most icon in the toolbar representing the header setting and, in the dropdown list, click **Header 2**. This will automatically add the hash character (**##**) at the beginning of the line.
 1.  Directly after the newly added **##** character, type **Azure DevOps OAuth 2.0 Authorization Flow** and press the **Enter** key.
@@ -164,12 +179,18 @@ In this task, you will create a project wiki and add to it a Mermaid diagram and
     >**Note**: The output should resemble the flowchart that illustrates how to [Authorize access to REST APIs with OAuth 2.0](https://docs.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/oauth?view=azure-devops)
 
 1.  In the upper right corner of the editor pane, click the down-facing caret next to the **Save** button and, in the dropdown menu, click **Save with revision message**. 
+
+    ![Azure DevOps](images/file-04.png)
+
 1.  In the **Save page** dialog box, type **Authentication and authorization section with the OAuth 2.0 Mermaid diagram** and click **Save**.
 1.  On the **Project Design** editor pane, place the cursor at the end of the Mermaid element you added earlier in this task, press the **Enter** key to add an extra line, click the left-most icon in the toolbar representing the header setting and, in the dropdown list, click **Header 2**. This will automatically add the double hash character (**##**) at the beginning of the line.
 1.  Directly after the newly added **##** character, type **User Interface** and press the **Enter** key.
 1.  On the **Project Design** editor pane, in the toolbar, click the paper clip icon representing the **Insert a file** action, in the **Open** dialog box, navigate to the **Downloads** folder, select the **Website.png** file you downloaded in the previous exercise, and click **Open**.
 1.  Back on the **Project Design** editor pane, review the preview pane and verify that the image is properly displayed.
 1.  In the upper right corner of the editor pane, click the down-facing caret next to the **Save** button and, in the dropdown menu, click **Save with revision message**. 
+
+    ![Azure DevOps](images/file-04.png)
+
 1.  In the **Save page** dialog box, type **User Interface section with the Tailwind Traders image** and click **Save**.
 1.  Back on the editor pane, in the upper right corner, click **Close**. 
 
@@ -180,6 +201,11 @@ In this task, you will manage the newly created project wiki.
 >**Note**: You will start by reverting the most recent change to the wiki page.
 
 1.  On you lab VM, in the Azure DevOps portal displaying the Wiki pane of the **Sharing Team Knowledge using Azure Project Wikis** project, with the content of the **Project Design** wiki selected, in the upper right corner, click the vertical ellipsis symbol and, in the dropdown menu, click **View revisions**.
+
+    ![Azure DevOps](images/view-revisions-01.png)
+
+    ![Azure DevOps](images/view-revisions-02.png)
+
 1.  On the **Revisions** pane, click the entry representing the most recent change. 
 1.  On the resulting pane, review the comparison between the previous and the current version of the document, click **Revert**, when prompted for the confirmation, click **Revert** again, and then click **Browse Page**. 
 1.  Back on the **Project Design** pane, verify that the change was successfully reverted.

@@ -257,7 +257,7 @@ Git keeps track of which branch you are working on and makes sure that, when you
 
 1.  In the **Visual Studio Code** window, with the **SOURCE CONTROL** tab selected, in the lower left corner of the Visual Studio Code window, click the **Publish changes** icon (directly to the right of the **dev** label representing your newly created branch).
 
-1.  Switch to the web browser window displaying the **Commits** pane of the **Azure DevOps** portal and select **Branches**.
+1.  Switch to the web browser window displaying the **Commits** pane of the **Azure DevOps** portal in the **Repos** section and select **Branches**.
 
 1.  On the **Mine** tab of the **Branches** pane, verify that the list of branches includes **dev**.
 
