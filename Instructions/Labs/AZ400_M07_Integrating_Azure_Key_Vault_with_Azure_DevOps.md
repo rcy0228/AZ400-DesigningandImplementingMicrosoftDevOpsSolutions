@@ -127,7 +127,7 @@ A service principal is automatically created by Azure Pipeline when you connect 
     ```
     az role assignment create --assignee appID \
                               --role Reader \
-                              --scope /subscriptions/mySubscriptionID/
+                              --scope /subscriptions/mySubscriptionID
     ```
 
 #### Task 2: Create an Azure Key vault
