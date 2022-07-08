@@ -122,6 +122,13 @@ A service principal is automatically created by Azure Pipeline when you connect 
 
     > **Note**: Copy both values to a text file. You will need them later in this lab.
 
+1. Now we will assign a **Reader** permission to the newly created service principal. Replace the **appID** with the App ID obtained from the JSON output and replace the **mySubscriptionID** with subscription ID obtained in the previous step.
+
+    ```
+    az role assignment create --assignee appID \
+                              --role Reader \
+                              --scope /subscriptions/mySubscriptionID/
+    ```
 
 #### Task 2: Create an Azure Key vault
 
@@ -219,11 +226,11 @@ This will open another browser tab displaying the **Service connections** pane i
 
     > **Note**: In the Azure subscription dropdown list, you will see **Available Azure service connections** for those susbcriptions that have already been authorized to be connected to Azure. If you select the authorized subscription again (from **Available Azure subscriptions** list) and try to **Authorize**, the process will fail.
 
-1.  On the **Variables** tab, change the **resourcegroup** variable to plain text (click on lock) and write **az400m07l01-RG** in the value field.
+1.  On the **Variables** tab, if the text is not visible, change the **resourcegroup** variable to plain text (click on lock)  and write **ODL-AZ400M07-DeploymentID-02** in the value field.
 
 1.  Finally, **Save** and click on **Create a new release** > **Create** (leave defaults) to start the deployment.
 
-1. Make sure your pipeline runs successfully and once finished, review the created resources by opening the resource group **az400m07l01-RG** in the Azure Portal . Open the **App Service** and browse it **(Overview -> Browse)**, to see the published website.
+1. Make sure your pipeline runs successfully and once finished, review the created resources by opening the resource group **ODL-AZ400M07-DeploymentID-02** in the Azure Portal . Open the **App Service** and browse it **(Overview -> Browse)**, to see the published website.
 
 ### Exercise 2: Remove the Azure DevOps billing
 
