@@ -89,7 +89,6 @@ In this task, you will create a template-based Azure DevOps YAML pipeline.
 1.  On the **Where is your code?** pane, click **Azure Repos Git**. 
 1.  On the **Select a repository** pane, click **PartsUnlimited**.
 1.  On the **Review your pipeline YAML** pane, review the sample pipeline, click the down-facing caret symbol next to the **Run** button, click **Save**.
-1.  On the **Configure your pipeline** pane, click **Starter pipeline**.
 
 ### Exercise 2: Manage Azure DevOps agent pools
 
@@ -127,11 +126,8 @@ In this task, you will configure the LOD VM as an Azure DevOps self-hosting agen
 1.  Start Windows PowerShell as administrator and in the **Administrator: Windows PowerShell** console run the following lines to create the **C:\\agent** directory and extract the content of the downloaded archive into it. 
 
     ```powershell
-    cd \
-    mkdir agent ; cd agent
-    $TARGET = Get-ChildItem "$Home\Downloads\vsts-agent-win-x64-*.zip"
-    Add-Type -AssemblyName System.IO.Compression.FileSystem
-    [System.IO.Compression.ZipFile]::ExtractToDirectory($TARGET, "$PWD")
+    cd C:\agent
+    
     ```
 
 1.  In the same **Administrator: Windows PowerShell** console, run the following to configure the agent:
