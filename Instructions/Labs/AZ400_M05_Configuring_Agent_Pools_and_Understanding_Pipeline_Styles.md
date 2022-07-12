@@ -155,12 +155,11 @@ In this task, you will configure the LOD VM as an Azure DevOps self-hosting agen
     | Enter User account to use for the service (press enter for NT AUTHORITY\NETWORK SERVICE) | **Enter** |
     | Enter whether to prevent service starting immediately after configuration is finished? (Y/N) (press enter for N) | **Enter** |
 
+    > **Note**: You can run self-hosted agent as either a service or an interactive process. You might want to start with the interactive mode, since this simplifies verifying agent functionality. For production use, you should consider either running the agent as a service or as an interactive process with auto-logon enabled, since both persist their running state and ensure that the agent starts automatically if the operating system is restarted.
 
-      > **Note**: You can run self-hosted agent as either a service or an interactive process. You might want to start with the interactive mode, since this simplifies verifying agent functionality. For production use, you should consider either running the agent as a service or as an interactive process with auto-logon enabled, since both persist their running state and ensure that the agent starts automatically if the operating system is restarted.
+    > **Note**: Verify that the agent is reporting the **Listening for Jobs** status.
 
-     > **Note**: Verify that the agent is reporting the **Listening for Jobs** status.
-
-       ![Azure DevOps](images/AZ-400-3.png)
+      ![Azure DevOps](images/AZ-400-3.png)
 
 1.  Switch to the browser window displaying the Azure DevOps portal and close the **Get the agent** pane.
 1.  Back on the **Agents** tab of the **az400m05l05a-pool** pane, note that the newly configured agent is listed with the **Online** status.
