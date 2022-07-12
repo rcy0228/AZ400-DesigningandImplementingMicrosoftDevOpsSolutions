@@ -160,7 +160,7 @@ In this task, you will configure the LOD VM as an Azure DevOps self-hosting agen
 
      > **Note**: Verify that the agent is reporting the **Listening for Jobs** status.
 
-     ![Azure DevOps](images/AZ-400-3.png)
+       ![Azure DevOps](images/AZ-400-3.png)
 
 1.  Switch to the browser window displaying the Azure DevOps portal and close the **Get the agent** pane.
 1.  Back on the **Agents** tab of the **az400m05l05a-pool** pane, note that the newly configured agent is listed with the **Online** status.
