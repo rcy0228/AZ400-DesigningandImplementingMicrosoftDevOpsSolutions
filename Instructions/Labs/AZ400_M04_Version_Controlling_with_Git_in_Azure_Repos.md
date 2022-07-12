@@ -143,13 +143,13 @@ In this task, you will create a branch by using the Azure DevOps portal and use 
 1.  Press **Ctrl+Shift+P** to open the **Command Palette**.
 1.  At the **Command Palette** prompt, start typing **Git: Fetch** and select **Git: Fetch** when it becomes visible. This command will update the origin branches in the local snapshot.
 1.  In the lower left corner of the Visual Studio Code window, click the **master** entry again.
-1.  In the list of branches, select **origin/release**. This will create a new local branch called **release** and check it out.
+1.  In the list of branches, select **+ Create a new branch** and enter **release** in the branch name bar. This will create a new local branch called **release**. Now in the lower left corner of the Visual Studio Code window next to the **Release** branch, select the publish branch option and push the branch.
 
 #### Task 2: Delete and restore a branch
 
 In this task, you will use the Azure DevOps portal to delete and restore the branch you created in the previous task.
 
-1.  Switch to the web browser displaying the **Mine** tab of the **Branches** pane in the Azure DevOps portal. 
+1.  Switch to the web browser, in the Azure DevOps portal (You might have to refresh your page in order to see the new branch), select the **Branches** pane and select the **Mine** tab.
 1.  On the **Mine** tab of the **Branches** pane, hover the mouse pointer over the **release** branch entry to reveal the ellipsis symbol on the right side.
 1.  Click the ellipsis, in the pop-up menu, select **Delete branch**, and, when prompted for confirmation, click **Delete**.
 1.  On the **Mine** tab of the **Branches** pane, select the **All** tab. 

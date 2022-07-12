@@ -108,7 +108,8 @@ A service principal is automatically created by Azure Pipeline when you connect 
 1.  From the **Bash** prompt, in the **Cloud Shell** pane, run the following command to create a service principal (replace the `{DeploymentID}` with its value):
 
     ```
-    az ad sp create-for-rbac --name odl{DeploymentID}
+    SUB_ID=$(az account show --query id --output tsv)
+    az ad sp create-for-rbac --name odl{DeploymentID} --role contributor --scope /subscriptions/$SUB_ID
     ```
 
     > **Note**: Deployment ID can be obtained from environment deatails page. The command will generate a JSON output. Copy the output to text file. You will need it later in this lab.
@@ -121,14 +122,6 @@ A service principal is automatically created by Azure Pipeline when you connect 
     ```
 
     > **Note**: Copy both values to a text file. You will need them later in this lab.
-
-1. Now we will assign a **Reader** permission to the newly created service principal. Replace the **appID** with the App ID obtained from the JSON output and replace the **mySubscriptionID** with subscription ID obtained in the previous step.
-
-    ```
-    az role assignment create --assignee appID \
-                              --role Reader \
-                              --scope /subscriptions/mySubscriptionID
-    ```
 
 #### Task 2: Create an Azure Key vault
 
