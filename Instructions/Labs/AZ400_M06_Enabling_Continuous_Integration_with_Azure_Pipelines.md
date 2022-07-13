@@ -65,7 +65,7 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 3.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
 4.  On the **Create New Project** page, in the **New Project Name** textbox, type **Enabling Continuous Integration with Azure Pipelines**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
 
-     ![Azure DevOps](images/mod6_task1image.png)
+     ![Azure DevOps](images/mod6-task1image.png)
      
 5.  In the list of templates, locate the **PartsUnlimited** template and click **Select Template**.
 
@@ -127,9 +127,9 @@ In this task, you will create and configure a build pipeline by using a predefin
 
 10. On the **Tasks** tab, look for **test Assemblies** task , right-click and **disable selected task(s)**.
 
-   ![Azure DevOps](images/mod6_7.1.png)
+   ![Azure DevOps](images/mod6-7.1.png)
   
-   ![Azure DevOps](images/mod6_7.2.png)
+   ![Azure DevOps](images/mod6-7.2.png)
 
 11.  Select the **Variables** tab and review its content.
 
