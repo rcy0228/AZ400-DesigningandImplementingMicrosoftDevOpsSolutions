@@ -58,6 +58,8 @@ In this task, you will create an Azure DevOps Starter project that automatically
 1.  In the Azure portal, search for and select the **DevOps Starter** resource type and, on the **DevOps Starter** blade, click either **+ Add**, **+ New**, or **+ Create**.
 1.  On the **Start fresh with a new application** page of the **DevOps Starter** blade, click the **here** link in the **Setting up DevOps starter with GitHub, click here** text. 
 
+    ![Github](images/az400img01.png)
+
     > **Note**: This will display the **DevOps starter settings** blade. 
 
 1.  On the **DevOps starter settings** blade, ensure that the **GitHub** tile is selected and click **Done**.
@@ -123,6 +125,8 @@ In this task, you will review the results of creating the DevOps Starter project
     - **.github\workflows** - containing the YAML-formatted workflow file
     - **Application** - containing the code of the sample web site
     - **ArmTemplates** - containing the Azure Resource Manager templates that the workflow uses to provision Azure resources
+
+    ![Github](images/az400img02.png)
 
 1.  On the GitHub repository page, click **.github/workflows** and then, click the **devops-starter-workflow.yml** entry.
 1.  On the GitHub repository page displaying the content of the **devops-starter-workflow.yml**, review its content and note that it contains the **build**, **deploy**, and **Functional tests** job definitions.
