@@ -21,7 +21,7 @@ After you complete this lab, you will be able to:
 
 #### Set up an Azure DevOps organization. 
 
-1. On your lab VM open **Edge Browser** on desktop and navigate to https://dev.azure.com. Then click on **Sign into Azure DevOps** and login with the credentials provided in environment details tab.
+1. On your lab VM open **Edge Browser** on desktop and navigate to https://dev.azure.com Then click on **Sign in to Azure DevOps** and login with the credentials provided in environment details tab.
 
     ![Azure DevOps](images/devops.png)
 2. On the next page accept defaults and click on continue.
@@ -59,19 +59,22 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 
     > **Note**: For more information on the site, see https://docs.microsoft.com/en-us/azure/devops/demo-gen.
 
-1.  Click **Sign in** and if prompted sign with the credentials provided in environment details tab.
+2.  Click **Sign in** and if prompted sign with the credentials provided in environment details tab.
 
      ![Azure DevOps Generator website. Clik on "Sign In" option](images/m1/demo_signin_v1.png)
-1.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
-1.  On the **Create New Project** page, in the **New Project Name** textbox, type **Enabling Continuous Integration with Azure Pipelines**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
-1.  In the list of templates, locate the **PartsUnlimited** template and click **Select Template**.
+3.  If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
+4.  On the **Create New Project** page, in the **New Project Name** textbox, type **Enabling Continuous Integration with Azure Pipelines**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
+
+     ![Azure DevOps](images/mod6_task1image.png)
+     
+5.  In the list of templates, locate the **PartsUnlimited** template and click **Select Template**.
 
     ![Azure DevOps Generator website. On the choose template window, select "PartsUnlimited"](images/m1/pu_template_v1.png)
-1.  Back on the **Create New Project** page, click **Create Project**
+6.  Back on the **Create New Project** page, click **Create Project**
 
     > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your DevOps organization, delete the project, and try again.
 
-1.  On the **Create New Project** page, click **Navigate to project**.
+7.  On the **Create New Project** page, click **Navigate to project**.
 
     ![Azure DevOps Generator website. Clik on "Navigate to Project"](images/m1/navigate_project_v1.png)
 
@@ -124,6 +127,10 @@ In this task, you will create and configure a build pipeline by using a predefin
 
 1. On the **Tasks** tab, look for **test Assemblies** task , right-click and **disable selected task(s)**.
 
+  ![Azure DevOps](images/mod6_7.1.png)
+  
+  ![Azure DevOps](images/mod6_7.2.png)
+
 1.  Select the **Variables** tab and review its content.
 
    ![Azure DevOps](images/mod6_8.png)
@@ -170,9 +177,6 @@ In this task, you will track and review the new build job.
 
     > **Note**: The summary view provides overview details about the build, including details about commits, tests, and artifacts.
 
-3.  Select the **Tests** tab to review tests for this build. 
-
-    > **Note**: You also have easy access to the pipeline editor, the ability to queue a new build, and download the artifacts of this build.
 
 #### Task 3: Invoking a continuous integration build
 
@@ -181,16 +185,16 @@ In this task, you will trigger a continuous integration build.
    > **Note**: In the first task of this exercise, you configured the build to support continuous integration. In this task, you will test its functionality.
 
 1.  In the web browser window displaying your project settings in the Azure DevOps portal, in the vertical navigational pane, select the **Repos** section and ensure that the **Files** view is displayed.
-1.  In the middle pane, navigate to the file **PartsUnlimited-aspnet45/src/PartsUnlimitedWebsite/Views/Home/Index.cshtml** and select it. 
-1.  On the **Index.cshtml** pane, click **Edit**.
-1.  On the **Index.cshtml** pane, make a minor update by changing the line `ViewBag.Title = "Home Page";` to `ViewBag.Title = "Lab Project Home Page";` and click **Commit**.
-1.  On the **Commit** pane, accept the default commit details and click **Commit**.
+2.  In the middle pane, navigate to the file **PartsUnlimited-aspnet45/src/PartsUnlimitedWebsite/Views/Home/Index.cshtml** and select it. 
+3.  On the **Index.cshtml** pane, click **Edit**.
+4.  On the **Index.cshtml** pane, make a minor update by changing the line `ViewBag.Title = "Home Page";` to `ViewBag.Title = "Lab Project Home Page";` and click **Commit**.
+5.  On the **Commit** pane, accept the default commit details and click **Commit**.
 
     > **Note**: This will automatically trigger a build. 
 
-1.  In the vertical navigational pane, select the **Pipelines** section and ensure that the **Pipelines** view is displayed.
-1.  On the **Pipelines** pane, verify that it contains the entry representing a new build (note that its number contains the trailing **.2**) which was triggered by your change. 
-1.  Click the build entry to display its details and verify that it completed successfully. 
+6.  In the vertical navigational pane, select the **Pipelines** section and ensure that the **Pipelines** view is displayed.
+7.  On the **Pipelines** pane, verify that it contains the entry representing a new build (note that its number contains the trailing **.2**) which was triggered by your change. 
+8.  Click the build entry to display its details and verify that it completed successfully. 
 
 #### Review
 
