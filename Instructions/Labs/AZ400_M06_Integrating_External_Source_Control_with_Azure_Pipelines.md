@@ -27,19 +27,19 @@ After you complete this lab, you will be able to:
 
 1. If you already have a GitHub account that you can use for this lab, else follow the instructions to create an account.
 
-1. Navigate to the https://github.com/ Click on Signup.
+2. Navigate to the https://github.com/ Click on Signup.
 
    ![Github](images/mod6_21.png)
    
-1. Provide the email address and click on continue.
+3. Provide the email address and click on continue.
 
  ![Github](images/mod6_22.png)
  
-1. Provide the password and enter the valid username and click on continue.
+4. Provide the password and enter the valid username and click on continue.
 
   ![Github](images/mod6_26.png)
 
-1. Provide the confirmation and verify your account and click on create account. This would take 2 minutes to create.
+5. Provide the confirmation and verify your account and click on create account. This would take 2 minutes to create.
 
  ![Github](images/mod6_25.png)
 
@@ -51,43 +51,44 @@ In this exercise, you will integrate a GitHub project with Azure DevOps by using
 
 In this task, you will fork a GitHub repo and install Azure Pipelines in your GitHub account.
 
-1.  On your lab computer, start a web browser, navigate to the https://github.com/actionsdemos/calculator and, if you're not already signed in to GitHub, sign in now.
+1.  On your lab computer, start a web browser, navigate to the https://github.com/actionsdemos/calculator 
+    If you're not already signed in to GitHub, sign in now.
 
     > **Note**: This is the baseline project we will fork and use for this lab.
 
-1.  On the **actionsdemos/calculator site** page, click **Fork**, to fork the repository to your own GitHub account. If prompted, select the account to fork the repository into.
+2.  On the **actionsdemos/calculator site** page, click **Fork**, to fork the repository to your own GitHub account. If prompted, select the account to fork the repository into.
     
     ![Azure DevOps](images/mod6_13.png)
 
-1.  On the page displaying the forked repo, at the top menu, click **Marketplace**.
+3.  On the page displaying the forked repo, at the top menu, click **Marketplace**.
 
    ![Azure DevOps](images/mod6_14.png)
    
    > **Note**: The **GitHub Marketplace** provides a variety of tools from Microsoft and 3rd parties that help you extend your project workflows. 
-1.  In the **Search for apps and actions**, type **Azure Pipelines**, press the **Enter** key, and, in the list of results, click **Azure Pipelines**.
+4.  In the **Search for apps and actions**, type **Azure Pipelines**, press the **Enter** key, and, in the list of results, click **Azure Pipelines**.
 
   ![Azure DevOps](images/mod6_15.png)
 
-1.  On the **Azure Pipelines** page, click **Read more** and read through the benefits of Azure Pipelines.
+5.  On the **Azure Pipelines** page, click **Read more** and read through the benefits of Azure Pipelines.
 
     > **Note**: The Azure Pipelines offering is free for anyone to use for public repositories, and free for a single build queue if you're using a private repository. 
 
-1.  On the **Azure Pipelines** page, click **Install it for free**. If you have multiple **GitHub** accounts, select the one you forked the calculator to from the **Switch billing account** dropdown.
+6.  On the **Azure Pipelines** page, click **Install it for free**. If you have multiple **GitHub** accounts, select the one you forked the calculator to from the **Switch billing account** dropdown.
 
   ![Azure DevOps](images/mod6_16.png)
-1.  On the **Review your order** page, click **Complete order and begin installation**.
+7.  On the **Review your order** page, click **Complete order and begin installation**.
 
    ![Azure DevOps](images/mod6_17.png)
-1.  On the **Install Azure Pipelines** page, use the default option **All repositories** and click **Install**.
+8.  On the **Install Azure Pipelines** page, use the default option **All repositories** and click **Install**.
 
    ![Azure DevOps](images/mod6_18.png)
 
    > **Note**: You have the option to specify repositories to include, but for the purposes of this lab, just include all of them. Note that Azure DevOps requires the listed set of permissions to fulfill its services. 
 
-1.  If prompted, authenticate with your GitHub password to continue.
-1.  When prompted, on the **Setup your Azure Pipelines project** page, in the **Select your Azure DevOps organization** dropdown list, select your Azure DevOps account and click **Create a new project**.
-1.  When prompted, on the **Setup your Azure Pipelines project** page, in the **Project name** textbox, type **Integrating External Source Control with Azure Pipelines**, leave the **Project visibility** set to **Private**, and click **Continue**.
-1. On the **Azure Pipelines by Microsoft would like permission to** page, click **Authorize Azure Pipelines**.
+9.  If prompted, authenticate with your GitHub password to continue.
+10.  When prompted, on the **Setup your Azure Pipelines project** page, in the **Select your Azure DevOps organization** dropdown list, select your Azure DevOps account and click **Create a new project**.
+11.  When prompted, on the **Setup your Azure Pipelines project** page, in the **Project name** textbox, type **Integrating External Source Control with Azure Pipelines**, leave the **Project visibility** set to **Private**, and click **Continue**.
+12. On the **Azure Pipelines by Microsoft would like permission to** page, click **Authorize Azure Pipelines**.
 
 ### Task 2: Configuring your Azure Pipelines project
 
@@ -97,19 +98,19 @@ In this task, you will configure the Azure Pipelines project based on the fork o
 
 1. In the Azure DevOps portal, click on **Pipelines** in the navigation panel on the left.
 
-1. Click on the **New pipeline** button at top right then select **Git Hub** in the **Connect** page. If prompted for authorize completed the process.
+2. Click on the **New pipeline** button at top right then select **Git Hub** in the **Connect** page. If prompted for authorize completed the process.
 
-1.  On the **Select a repository** pane of the **Pipelines** view in the Azure DevOps portal, select the fork of the GitHub calculator repository you created in the previous task.
+3.  On the **Select a repository** pane of the **Pipelines** view in the Azure DevOps portal, select the fork of the GitHub calculator repository you created in the previous task.
 
    > **Note**: Azure Pipelines will analyze your project in an attempt to determine if any existing templates would be a good fit. In this case, the recommended template is for **Node.js**, which is perfect for our needs. Some alternative templates are also suggested, although the recommended one is the best for this lab. 
-1.  On the **Configure your pipeline**, select **Node.js**.
+4.  On the **Configure your pipeline**, select **Node.js**.
 
   ![Azure DevOps](images/mod6_19.png)
 
    > **Note**: The build pipeline is defined as **YAML**, a markup syntax well-suited to defining processes like this because it allows you to manage the configuration of the pipeline like any other file in the repo. It's a pretty simple template that identifies the pool to pull a VM from for building, the process to install Node.js for building, and the actual build itself. 
 
-1.  On the **Review your pipeline YAML**, click **Save and run** to save the pipeline and queue a new build.
-1.  On the **Save and run** pane, accept the default settings and click **Save and run**.
+5.  On the **Review your pipeline YAML**, click **Save and run** to save the pipeline and queue a new build.
+6.  On the **Save and run** pane, accept the default settings and click **Save and run**.
 
   ![Azure DevOps](images/mod6_20.png)
 
@@ -117,7 +118,7 @@ In this task, you will configure the Azure Pipelines project based on the fork o
 
    > **Note**: It will take a moment for the pipeline to complete. During this time it will configure the build agent, pull in the source from GitHub, and build it according to the pipeline definition.
 
-1.  On the **Summary** tab of the build job's pane, verify that the build completed successfully.
+7.  On the **Summary** tab of the build job's pane, verify that the build completed successfully.
 
 ### Task 3: Modifying a YAML build pipeline definition
 
@@ -129,25 +130,27 @@ In this task, you will modify the YAML build definition in the forked GitHub rep
 
     > **Note**: Since this lab will involve stepping back and forth between GitHub and Azure DevOps, it'll be easier to keep a browser tab open to each.
 
-1.  On the GitHub page displaying the content of the fork, locate and click the entry representing the file **azure-pipelines.yml**. This will automatically open the file and display its content. 
-1.  On the **master/calculator/azure-pipelines.yml** page, in the upper right corner of the pane displaying the file content, click the **Edit this file** icon in the shape of a pencil. 
+2.  On the GitHub page displaying the content of the fork, locate and click the entry representing the file **azure-pipelines.yml**. This will automatically open the file and display its content. 
+3.  On the **master/calculator/azure-pipelines.yml** page, in the upper right corner of the pane displaying the file content, click the **Edit this file** icon in the shape of a pencil. 
 
     > **Note**: Our project already contains tests written using Mocha so we just need to execute them in our pipeline. 
 
-1.  To add the test run, add the `npm test` command directly below the `npm run build` command, with the same indentation. In addition, update the `displayName` entry to `'npm install, build, and test'` to clearly indicate what each task of the build is doing: 
+4.  To add the test run, add the `npm test` command directly below the `npm run build` command, with the same indentation. In addition, update the `displayName` entry to `'npm install, build, and test'` to clearly indicate what each task of the build is doing: 
 
     ```
       npm test
     displayName: 'npm install, build, and test'
     ```
+    
+    ![Azure DevOps](images/mod6_21.png)
 
-1.  Scroll to the bottom of the page, replace the default commit message with **Adding npm test**, and click **Commit changes**. 
+5.  Scroll to the bottom of the page, replace the default commit message with **Adding npm test**, and click **Commit changes**. 
 
-    > **Note**: Again, it's acceptable to commit this change directly to the master branch considering that this is a lab environment.
+    > **Note**: It is acceptable to commit this change directly to the master branch considering that this is a lab environment.
 
-1.  Switch back to the browser tab displaying the **Azure DevOps** portal and use the breadcrumb navigation to navigate to the **Pipelines** pane of the **Pipelines** view.
-1.  Verify that the new build triggered by the update already appears on the **Recent** tab in the **Recently run pipelines** list. Click the entry corresponding to the pipeline, on the **Runs** tab, select the most recent run, and, in the **Jobs** section, click the **Job** entry.
-1.  On the pane displaying job details, click on individual tasks of the job and follow it through to completion.
+6.  Switch back to the browser tab displaying the **Azure DevOps** portal and use the breadcrumb navigation to navigate to the **Pipelines** pane of the **Pipelines** view.
+7.  Verify that the new build triggered by the update already appears on the **Recent** tab in the **Recently run pipelines** list. Click the entry corresponding to the pipeline, on the **Runs** tab, select the most recent run, and, in the **Jobs** section, click the **Job** entry.
+8.  On the pane displaying job details, click on individual tasks of the job and follow it through to completion.
 
 ### Task 4: Proposing a change via GitHub pull request
 
@@ -156,31 +159,31 @@ In this task, you will propose an invalid change and review the results of a bui
 > **Note**: One of the great benefits of this pipeline setup is that we now have a quality gate that's automatically run every time someone commits a change. This makes it much easier to manage a project that could have any number of contributions coming in at various levels of quality. 
 
 1.  Switch back to the browser tab displaying the GitHub page displaying the content of the **azure-pipelines.yml** file, navigate back to the page listing content of the forked repo and click **Go to file**.
-1.  At the **calculator/** prompt, type **arithmeticController.js** and, in the list of results click **api/controllers/arithmeticController.js**. This will automatically redirect the browser session to the **master/calculator/api/controllers/arithmeticController.js** page, displaying the content of that file.
+2.  At the **calculator/** prompt, type **arithmeticController.js** and, in the list of results click **api/controllers/arithmeticController.js**. This will automatically redirect the browser session to the **master/calculator/api/controllers/arithmeticController.js** page, displaying the content of that file.
 
     > **Note**: This controller contains the core functionality of the app. However, the code for the **add** operation isn't completely clear. Put yourself in the position of someone with good intentions, but a lack of experience with JavaScript. They might identify this as an opportunity to help out by cleaning up the code to make it better.
 
-1.  On the **master/calculator/api/controllers/arithmeticController.js** page, in the upper right corner of the pane displaying the file content, click the **Edit this file** icon in the shape of a pencil. 
-1.  Change the line `    'add':      function(a,b) { return +a + +b },` to `    'add':      function(a,b) { return a + b },`.
+3.  On the **master/calculator/api/controllers/arithmeticController.js** page, in the upper right corner of the pane displaying the file content, click the **Edit this file** icon in the shape of a pencil. 
+4.  Change the line `    'add':      function(a,b) { return +a + +b },` to `    'add':      function(a,b) { return a + b },`.
 
     > **Note**: This is an incorrect change that would result in invalid outcome.
 
-1.  Scroll to the bottom of the page, replace the default commit message with **Modifying the add function**, select **Create a new branch**, set its name to **addition-cleanup**, and click **Propose file change**.
-1.  On the **Open a pull request** page, click **Create pull request** to initiate the process of getting your untested changes into production code. 
+5.  Scroll to the bottom of the page, replace the default commit message with **Modifying the add function**, select **Create a new branch**, set its name to **addition-cleanup**, and click **Propose file change**.
+6.  On the **Open a pull request** page, click **Create pull request** to initiate the process of getting your untested changes into production code. 
 
     > **Note**: Azure DevOps will detect the change and start the build pipeline. This will result in failed checks, triggering an update the GitHub UI. 
 
     > **Note**: Return to your original mindset of "project owner".
 
-1.  On the **Modifying the add function #1** pull request page, in the **All checks have failed** section, click **Details** to learn more.
-1.  Review the **ANNOTATIONS** section and click the link **View more details on Azure Pipelines** directly below it. This will open a new browser tab displaying the failed run of the job in the Azure DevOps portal.
-1.  On the failed job pane in the Azure portal, click the **Job** entry to display its details. 
-1.  In the list of job tasks, click the **npm install, build, and test** task to view its output.
-1.  Locate the section that lists out failing tests. 
+7.  On the **Modifying the add function #1** pull request page, in the **All checks have failed** section, click **Details** to learn more.
+8.  Review the **ANNOTATIONS** section and click the link **View more details on Azure Pipelines** directly below it. This will open a new browser tab displaying the failed run of the job in the Azure DevOps portal.
+9.  On the failed job pane in the Azure portal, click the **Job** entry to display its details. 
+10.  In the list of job tasks, click the **npm install, build, and test** task to view its output.
+11.  Locate the section that lists out failing tests. 
 
     > **Note**: It might not be immediately clear why the tests failed, but all of the history we've accrued in the pipeline makes it easy to identify that something from this new pull request is the cause. The next step will be to figure out why "21 + 21" produced "2121" instead of the expected "42".
 
-1.  Close the tab displaying the failed run of the job in the Azure DevOps portal.
+12.  Close the tab displaying the failed run of the job in the Azure DevOps portal.
 
 ### Task 5: Using the broken pull request to improve the project
 
@@ -189,19 +192,19 @@ In this task, you will correct the invalid changes introduced in the pull reques
 > **Note**: Return to your original mindset of "project owner".
 
 1.  Return to the browser tab displaying the **Modifying the add function #1** GitHub page and return to the main page listing the content of the forked repo. 
-1.  At the top of the pane containing the listing of the repo files, **Pull requests** and then click the entry representing the most recent pull request.
-1.  On the **Modifying the add function #1** GitHub page, click the **File changed** tab and review its content.
+2.  At the top of the pane containing the listing of the repo files, **Pull requests** and then click the entry representing the most recent pull request.
+3.  On the **Modifying the add function #1** GitHub page, click the **File changed** tab and review its content.
 
     > **Note**: It appears that the changes were made by someone who didn't realize that the plus signs before each variable were necessary to coerce those variables to their number representations. By removing them, JavaScript interpreted the middle plus sign as the string concatenation operator, which explains why 21 + 21 = 2121 in the failed test. 
 
-1.  On the **Modifying the add function #1** GitHub page, click the ellipsis symbol directly under the **Review changes** button and, in the drop-down menu, click **Edit file**. 
-1.  Revert the original changes by adding the plus signs in front of the **a** and **b** variables, resulting in 'add':      function(a,b) { return +a + +b },`. In addition, include a comment on the preceding line stating `// Using + operator to type cast variables as integers in order to prevent string concatenation`.
-1.  Scroll to the bottom of the page, replace the default commit message with **Fixing the add function**, ensure that the option to **Commit directly to the addition-cleanup branch** is selected, and click **Commit changes**.
-1.  On the **Modifying the add function #1** GitHub page, select the **Conversation** tab.
+4.  On the **Modifying the add function #1** GitHub page, click the ellipsis symbol directly under the **Review changes** button and, in the drop-down menu, click **Edit file**. 
+5.  Revert the original changes by adding the plus signs in front of the **a** and **b** variables, resulting in 'add':      function(a,b) { return +a + +b },`. In addition, include a comment on the preceding line stating `// Using + operator to type cast variables as integers in order to prevent string concatenation`.
+6.  Scroll to the bottom of the page, replace the default commit message with **Fixing the add function**, ensure that the option to **Commit directly to the addition-cleanup branch** is selected, and click **Commit changes**.
+7.  On the **Modifying the add function #1** GitHub page, select the **Conversation** tab.
 
     > **Note**: Azure DevOps will again detect the change and start the build pipeline. Wait for all checks to pass. 
 
-1.  Once all checks have passed, click **Merge pull request** and then click **Confirm merge**.
+8.  Once all checks have passed, click **Merge pull request** and then click **Confirm merge**.
 
 ### Task 6: Adding a build status badge
 
@@ -210,16 +213,16 @@ In this task, you will add a build status badge to your GitHub repo.
 > **Note**: An important sign for a quality project is its build status badge. When someone finds a project that has a badge indicating that the project is currently in a successful build state, it's a sign that the project is maintained effectively. 
 
 1.  Switch back to the browser tab displaying the **Azure DevOps** portal and use the breadcrumb navigation to navigate to the **Recent** tab of the **Pipelines** pane of the **Pipelines** view.
-1.  On the **Recent** tab in the **Recently run pipelines** list, click the entry corresponding to the pipeline you used in this lab. 
-1.  On the pipeline pane, click the ellipsis symbol in the upper right corner and, in the dropdown list, select **Status badge**. 
+2.  On the **Recent** tab in the **Recently run pipelines** list, click the entry corresponding to the pipeline you used in this lab. 
+3.  On the pipeline pane, click the ellipsis symbol in the upper right corner and, in the dropdown list, select **Status badge**. 
 
     > **Note**: The **Status badge** UI provides a quick and easy way to reference the build status. Often, you'll want to use the provided URLs in your own dashboards, or you can use the Markdown snippet to add the status badge to locations such as Wiki pages. 
 
-1.  On the **Status badge** pane, click the **Copy to clipboard** button for **Sample Markdown**.
-1.  Switch back to the browser tab displaying the GitHub page displaying the content of the forked repo and, if needed, click the **<> Code** tab.
-1.  In the list of repo files, click **README<nolink>.md** and, on the **master/calculator/README.md** page, in the upper right corner of the pane displaying the file content, click the **Edit this file** icon in the shape of a pencil. 
-1.  Add an extra line above line 6 and paste into it the content of Clipboard.
-1.  Scroll to the bottom of the page, replace the default commit message with **Add an Azure Pipelines status badge**, and click **Commit changes**. 
+4.  On the **Status badge** pane, click the **Copy to clipboard** button for **Sample Markdown**.
+5.  Switch back to the browser tab displaying the GitHub page displaying the content of the forked repo and, if needed, click the **<> Code** tab.
+6.  In the list of repo files, click **README<nolink>.md** and, on the **master/calculator/README.md** page, in the upper right corner of the pane displaying the file content, click the **Edit this file** icon in the shape of a pencil. 
+7.  Add an extra line above line 6 and paste into it the content of Clipboard.
+8.  Scroll to the bottom of the page, replace the default commit message with **Add an Azure Pipelines status badge**, and click **Commit changes**. 
 
     > **Note**: You now have a dynamic build status badge on your project's front page that allows everyone to know that you're effectively managing your project.
 
