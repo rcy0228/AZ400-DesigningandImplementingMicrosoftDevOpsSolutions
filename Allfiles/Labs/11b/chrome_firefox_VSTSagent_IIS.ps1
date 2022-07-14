@@ -14,6 +14,8 @@ $ProgressPreference = "SilentlyContinue"
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 ###################################################################################################
 
+Start-Transcript -Path C:\WindowsAzure\Logs\CloudLabsCustomScriptExtension.txt -Append
+
 #Set Execution Policy
 Set-ExecutionPolicy Unrestricted -Force
 
@@ -62,10 +64,6 @@ Start-Process -FilePath "$workdir\firefox.exe" -ArgumentList "/S"
 # Wait XX Seconds for the installation to finish
 
 Start-Sleep -s 35
-
-# Remove the installer
-
-rm -Force $workdir\firefox*
 
 #copy geckodriver
 Invoke-WebRequest https://github.com/Microsoft/almvm/blob/master/labs/vstsextend/selenium/armtemplate/geckodriver.exe?raw=true -OutFile "C:\Program Files\Mozilla Firefox\geckodriver.exe"
