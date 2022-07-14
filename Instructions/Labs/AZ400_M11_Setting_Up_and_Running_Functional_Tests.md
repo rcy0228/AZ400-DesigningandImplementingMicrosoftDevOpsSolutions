@@ -175,7 +175,7 @@ In this task, you will configure a self-hosted agent by using the VM you deploye
 
     | Setting | Value |
     | --- | --- |
-    | Name | **Setting Up and Running Functional Tests lab** |
+    | Name | **Setting Up and Running Functional Tests lab** or **Setting** |
     | Scopes | **Custom Defined** |
     | Scopes | Click **Show all scopes** (at the bottom of the window) |
     | Scopes | **Agent Pools** - **Read & Manage** |
