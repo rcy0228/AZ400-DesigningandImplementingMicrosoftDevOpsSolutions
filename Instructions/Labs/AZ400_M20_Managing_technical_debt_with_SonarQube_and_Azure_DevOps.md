@@ -3,7 +3,7 @@
 
 ## Lab overview
 
-In the context of Azure DevOps, the term *technical debt* represents suboptimal means of reaching tactical goals, which affect negatively the ability to reach strategic objectives in the area of software development and deployment. Technical debt affects productivity by making code hard to understand, prone to failures, time-consuming to change, and difficult to validate. Without proper oversight and management, technical debt can accumulate over time and significantly impact the overall quality of the software and the productivity of development teams in the longer term.
+In the context of Azure DevOps, the term *technical debt* represents suboptimal means of reaching tactical goals, which negatively affects the ability to achieve strategic objectives in the area of software development and deployment. Technical debt affects productivity by making code hard to understand, prone to failures, time-consuming to change, and difficult to validate. Without proper oversight and management, technical debt can accumulate over time and significantly impact the overall quality of the software and the productivity of development teams in the longer term.
 
 [SonarCloud](https://sonarcloud.io/){:target="\_blank"} is a cloud-based code quality and security service. The main features of SonarCloud include:
 
@@ -123,7 +123,7 @@ In this task, you will install and configure the SonarCloud Azure DevOps extensi
 
 1.  On the SonarCloud home page, click **Azure DevOps**.
 
-1.  When prompted whether to **Let this app access your info?**, click **Yes**.
+1.  When prompted whether to **Let this app access your info?**, click **Yes**. If prompted, select Consent of behalf of your organization and **Accept**.
 
 1. on the Permission requestion page, click on **Accept**.
 
@@ -137,7 +137,7 @@ In this task, you will install and configure the SonarCloud Azure DevOps extensi
 
     > **Note**: The key must be unique within the SonarCloud system. Make sure that the green checkmark appears to the right of the **Key** textbox. This indicates that the key satisfies the uniqueness prerequisite.
 
-1.  In the **Choose a plan** section, select the plan that you intend to use for this lab and click **Create Organization**.
+1.  In the **Choose a plan** section, select the plan that you intend to use for this lab (free suggested) and click **Create Organization**.
 
     > **Note**: You have now created the SonarCloud organization that mirrors your Azure DevOps organization.
 
@@ -154,6 +154,8 @@ In this task, you will install and configure the SonarCloud Azure DevOps extensi
 1.  On the **Analyze with Azure Pipelines** page, in the **Install our extension**, copy the Token and click on **Continue**.
 
     > **Note**: You can skip extension creation if you have already installed it. 
+
+1. On the Add a new Sonarcloud Service Endpoint, follow the steps mentioned on your Azure DevOps project, give the name SonarSC to the service connection, check the box for granting access to all pipelines and click Verify and save. Back on Sonarcloud website, click on continue.
 
 1.  On the **Analyze with Azure Pipelines** page, in the **Configure Azure Pipelines** section, click **.NET**. This will display a sequence of steps required to **Prepare Analysis Configuration**, **Run Code Analysis**, and **Publish Quality Gate Result**. 
 
