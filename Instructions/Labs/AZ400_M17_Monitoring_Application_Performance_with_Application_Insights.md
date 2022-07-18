@@ -399,7 +399,7 @@ In this task, you will use Application Insights to investigate performance of th
 
 11.   On the **Workbooks** blade, in the vertical menu on the left side, in the **Monitoring** section, select **User Retention Analysis** under Usage.
 
-    ![Azure DevOps](images/mod17_img12.png)
+   ![Azure DevOps](images/mod17_img12.png)
 
     > **Note**: The retention feature in Application Insights helps you analyze how many users return to your app, and how often they perform particular tasks or achieve goals. For example, if you run a game site, you could compare the numbers of users who return to the site after losing a game with the number who return after winning. This knowledge can help you improve both your user experience and your business strategy.
 
