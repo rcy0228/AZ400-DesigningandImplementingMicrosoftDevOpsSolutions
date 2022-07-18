@@ -60,7 +60,7 @@ In this task, you will create a new Azure DevOps project based on the [Sonar Sca
 
 1.  On your lab computer, start a web browser, navigate to the [**Azure DevOps portal**](https://dev.azure.com) and sign in to your Azure DevOps organization.
 
-1. Select the **organization settings**.
+1. On the Azure Devops page click on Azure DevOps located at top left corner and then click on **Organization Setting** at the left down corner
 
 1. On the **organization settings** page, under **Security tab**, select **Policies** and select the **allow public projects** toggle as **On**.
 
