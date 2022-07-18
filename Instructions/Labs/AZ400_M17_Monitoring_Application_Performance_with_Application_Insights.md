@@ -395,7 +395,7 @@ In this task, you will use Application Insights to investigate performance of th
 
 10.  On the **More \| Gallery** blade, in the **Usage** section, click **Analysis of Page Views** and review the content of the corresponding blade.
 
-    > **Note**: This particular report offers insight regarding the page views. There are many other reports available by default, and you can customize and save new ones.
+   > **Note**: This particular report offers insight regarding the page views. There are many other reports available by default, and you can customize and save new ones.
 
 11.   On the **Workbooks** blade, in the vertical menu on the left side, in the **Monitoring** section, select **User Retention Analysis** under Usage.
 
