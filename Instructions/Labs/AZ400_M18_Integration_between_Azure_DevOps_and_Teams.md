@@ -40,26 +40,10 @@ After you complete this lab, you will be able to:
 4. On the **Almost Done...** page fill the captcha and click on continue. 
 
     ![Azure DevOps](images/m1-2.png)
+    
+1. On the **Azure Devops** page, select the **organization settings**.
 
-#### Set up a GitHub account
-
-1. If you already have a GitHub account that you can use for this lab, else follow the instructions to create an account.
-
-1. Navigate to the https://github.com/ Click on Signup.
-
-   ![Github](images/mod6_21.png)
-   
-1. Provide the email address and click on continue.
-
- ![Github](images/mod6_22.png)
- 
-1. Provide the password and enter the valid username and click on continue.
-
-  ![Github](images/mod6_26.png)
-
-1. Provide the confirmation and verify your account and click on create account. This would take 2 minutes to create.
-
- ![Github](images/mod6_25.png)
+1. On the **organization settings** page, under Security tab, select **Policies** and select the **Third-party application access via oAuth** toggle as **ON**.
 
 ### Exercise 0: Configure the lab prerequisites
 
@@ -78,7 +62,11 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 1.  On the **Create New Project** page, click **Choose template**.
 1.  In the list of templates, in the toolbar, click **General**,  select **Tailwind Traders** and click **Select Template**.
 1.  Back on the **Create New Project** page, in the **New Project Name** textbox, type **Tailwind Traders** and, in the **Select organization** dropdown list, select your Azure DevOps organization.
-1.  On the **Create New Project** page, if prompted to install a missing extension, select the checkbox below the **ARM Outputs** and click **Create Project** (Ignore GitHub forking).
+1.  On the **Create New Project** page, if prompted to install a missing extension, select the checkbox below the **ARM Outputs**. Make sure you have installed the requirements.
+
+    > **Note**: If the requirement has not been installed, Navigate the given link for **ARM Outputs** and click on **Get it free** and click on **Install**.
+  
+1.  Back to the **Azure DevOps Demo Generator** page and on click **Create Project** (Ignore GitHub forking).
 
     > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your DevOps organization, delete the project, and try again.
 
@@ -90,7 +78,9 @@ In this task, you will create a team in Microsoft Teams.
 
 1.  On the lab VM, launch **Microsoft Teams** by using the desktop app.
 
-    > **Note**: Alternatively, you can use a web browser and navigate to the [Microsoft Teams launch page](https://teams.microsoft.com/dl/launcher/launcher.html?url=/_%23/l/home/0/0&type=home)
+    > **Note**: Alternatively, you can use a web browser and navigate to the [Microsoft Teams launch page](https://www.microsoft.com/en-us/microsoft-365/microsoft-teams/download-app)
+
+1. On the lab computer, launch Microsoft Teams by using the desktop app.
 
 1.  When prompted to sign in, sign with the credentials provided in environment details tab.
 1.  In Microsoft Teams, in the toolbar on the left side of the page, click **Teams** and then, at the bottom of the teams list, click **Join or create a team**.
@@ -118,9 +108,14 @@ In this task, you will install and configure Azure Boards app in the newly creat
 1.  In the list of posts in the **General** channel of the **Tailwind Traders** team, select the post titled **Azure Boards**, review messages posted by the bot:
 
     ```
-    👋  Hi! Let's get started with Azure Boards.
-    Sign in to your Azure Boards account with: @Azure Boards signin
-    To see what else you can do, type @Azure Boards help
+    Here are some of the things you can do:
+    link [project url] - Link to a project to create work items and receive notifications
+    subscriptions - Add or remove subscriptions for this channel
+    addAreapath [area path] - Add an area path from your project to this channel
+    signin - Sign in to your Azure Boards account
+    signout - Sign out from your Azure Boards account
+    unlink - Unlink a project from this channel
+    feedback - Report a problem or suggest a feature
     To know more see documentation.
     ```
 1.  Open **New conversation** and click on **Azure Boards** icon in the chat menu it will popup **Azure boards** window, then click on sign in. Sign with the credentials provided in environmental details page. click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
