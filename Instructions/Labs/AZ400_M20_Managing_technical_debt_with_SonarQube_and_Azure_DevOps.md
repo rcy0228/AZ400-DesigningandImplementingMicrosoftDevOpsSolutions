@@ -174,12 +174,9 @@ In this exercise, you will set up an Azure DevOps pipeline that integrates with 
 
 In this task, you will begin creating the build pipeline for our project.
 
-1.  Switch to the web browser window displaying the **SonarExamples** pane in the Azure DevOps portal, in the vertical menu bar at the far left of the Azure DevOps portal, click **Pipelines** and then click **Create Pipeline**.
-1.  On the **Where is your code?** pane, review the available options.
+1.  Switch to the web browser window displaying the SonarExamples pane in the Azure DevOps portal. Go to Project settings and change Visibility to private and Save.
 
-    > **Note**: You have two options. You can configure the pipeline with either the **YAML editor** or with the **classic editor**. With the classic editor, you can take advantage of the pre-defined templates that were installed as part of the SonarCloud Extension, above. With the YAML editor you need to use a separately provided YAML file. We will step through each of these two options. 
-
-    > **Note**: Skip the next task if you intend to use the classic editor.
+    > **Note**: This need to be done if you followed the steps in Mod 00 to setup a parallel job for private projects only and your organization currently has no jobs available for public project.
 
 #### Task 2: Create a pipeline by using the YAML editor
 
@@ -259,41 +256,19 @@ In this task, you will create a pipeline by using the YAML editor.
 
     > **Note**: The YAML pipeline needs to be modified by following the remaining steps in this task. 
 
-1.  In the **NuggetCommand@2** task, replace `restoreSolution: 'SomeConsoleApplication.sln'` with `restoreSolution: '**\SomeConsoleApplication.sln'` to account for the fact that our solution is not located in the root of the repo.
-1.  In the **VSBuild@1** task, replace `solution: 'SomeConsoleApplication.sln'` with `solution: '**\SomeConsoleApplication.sln'` to account for the fact that our solution is not located in the root of the repo.
-1.  In the **SonarCloudPrepare@1** task, replace the value of the `myorga` placeholder in the `organization: 'myorga'` entry with the name of your SonarCloud organization.
-1.  In the **SonarCloudPrepare@1** task, replace the value of the `dotnet-framework-on-azdo` placeholder in the `projectKey: 'dotnet-framework-on-azdo'` entry with the name of your SonarCloud project key.
-1.  In the **SonarCloudPrepare@1** task, replace the value of the `Sample .NET Framework project with Azure DevOps` placeholder in the `projectName: 'Sample .NET Framework project with Azure DevOps'` entry with the name of your SonarCloud project name (`SonarExamples`).
+1.  In the NuGetCommand@2 task, replace restoreSolution: 'SomeConsoleApplication.sln' with restoreSolution: '**\SomeConsoleApplication.sln' to account for the fact that our solution is not located in the root of the repo.
+1.  In the **SonarCloudPrepare@1** task, click **Settings** option to open visual helper, choose the created sonarSC service connection from the dropdown and replace the value of the fields as proposed on the **Sonarcloud website > Configure Azure Pipeline section**. Click Add to include the changes to pipeline.
+1.  In the **VSBuild@1** task, replace solution: 'SomeConsoleApplication.sln' with solution: '**\SomeConsoleApplication.sln' to** account for the fact that our solution is not located in the root of the repo.
+1.  In the **SonarCloudPrepare@1** task, click Settings option to open visual helper, choose the created sonarSC service connection from the dropdown and replace the value of the fields as proposed on the **Sonarcloud website > Configure Azure Pipeline** section. Click Add to include the changes to pipeline.
+1.  In the **VSBuild@1** task, replace solution: 'SomeConsoleApplication.sln' with solution: '**\SomeConsoleApplication.sln' to** account for the fact that our solution is not located in the root of the repo.
 1.  On the **Review your pipeline YAML** pane, click **Save and Run** and, on the **Save and run** pane, click **Save and run**.
 
     > **Note**: Skip the next task if you completed this task in YAML editor.
 
-1. Go to Azure Pipelines > Pipelines and click in **Sonarexample** pipeline, open latest run. You will see it queued, **Cancel** the pending one, click **Yes**.
+1. Go to Azure Pipelines > Pipelines and click in **Sonarexample** pipeline, wait for the pipeline to finish.
 
-#### Task 3: Create a pipeline by using the classic editor
 
-In this task, you will create a pipeline by using the classic editor.
-
-1.  On the **Where is your code?** pane, click **Use the classic editor**.
-1.  On the **Select a source** pane, ensure that the **Azure Repos Git** option is selected, the **SonarExamples** entry appears in the **Repository** dropdown list, and the **master** branch appears in the **Default branch for manual and scheduled builds**, and click **Continue**.
-
-    > **Note**: The SonarCloud extension installed earlier provides SonarCloud-enabled custom build templates for Maven, Gradle, .NET Core and .NET Desktop applications. The templates are based on the standard Azure DevOps templates but with additional analysis-specific tasks and some pre-configured settings.
-
-1.  On the **Select a template** pane, scroll down to the **Others** section and click the **.NET Desktop with SonarCloud** template entry and click **Apply**.
-
-    > **Note**: The template contains all of the necessary tasks and most of the required settings. You will need to provide the remaining ones.
-
-1.  On the **Tasks** tab of the build pipeline definition, ensure that the **Pipeline** entry is selected, on the right side, in the **Agent pool** dropdown list, select the **Azure Pipelines** entry and, in the **Agent Specification** dropdown list, select the **vs2017-win2016** entry.
-1.  In the list of pipeline tasks, select the **Prepare analysis on SonarCloud** task and click **+New**, ignore this and next step, if performed Exercise 1 Task 2 Steps 3 and 4.
-1.  On the **New service connection** pane, in the **SonarCloud Token** textbox, paste the value of the token you recorded earlier in this lab, click **Verify** to validate it, in the **Service connection name** textbox, type **SC** and click **Verify and save**. 
-1.  On the **Prepare Analysis Configuration** pane, in the **SonarCloud Service Endpoint**, select the SC connection name.
-1.  On the **Prepare Analysis Configuration** pane, in the **Organization** dropdown list, select the name of your SonarCloud organization. 
-1.  On the **Prepare Analysis Configuration** pane, in the **Project Key** text box, type the name of the project key you recorded earlier in this lab.
-1.  On the **Prepare Analysis Configuration** pane, in the **Project Name** text box, type the name of the project name you recorded earlier in this lab (`SonarExamples`).
-
-1.  On the build pipeline editor pane, click **Save & queue**, in the dropdown menu, click **Save & queue**, and, on the **Run pipeline** pane, click **Save and run**, and wait for the build to complete.
-
-#### Task 4: Check pipeline results
+#### Task 3: Check pipeline results
 
 In this task, you will check pipeline results.
 
@@ -310,11 +285,11 @@ In this task, you will check pipeline results.
     > **Note**: To be able to see the Quality gate result, after running he first report we need to set **New Code Definition**. This way, subsequent pipeline runs will include Quality Gate results.
 
 1.  On the **Overview** tab of the SonarCloud project, click **Set New Code definition**. 
-1.  On the **Administration** tab of the SonarCloud project, click **Previous version**.
+1.  On the **NewCode** tab of the SonarCloud project, click **Previous version**.
 1.  Switch to the web browser window displaying the **SonarExamples** project pane in the Azure DevOps portal with the most recent build run, click **Run new** and, on the **Run pipeline** pane, click **Run**.
 1.  On the build run pane, review the content of the **Summary** tab and then click the **Extensions** tab header.
 1.  On the **Extensions** tab, click the **Detailed SonarCloud report**. This will automatically open a new browser tab displaying the report on your SonarCloud project page.
-1.  Verify that the report now includes the Quality Gate result.
+1.  Verify that the report and Azure DevOps extension tab now includes the **Quality Gate result**.
 
     > **Note**: We have now created a new organization on SonarCloud and configured an Azure DevOps build to perform analysis and push the results of the build to SonarCloud.
 
