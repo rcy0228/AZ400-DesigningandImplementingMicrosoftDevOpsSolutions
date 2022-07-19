@@ -161,8 +161,14 @@ In this task, you will create and publish a NuGet package.
 1.  Switch back to the **Visual Studio** window, in the **Solution Explorer** pane, expand the **PartsUnlimited.Shared\Properties** node, click **AssemblyInfo.cs** to open it in the central pane of the window, and review its content.
 
     > **Note**: The **AssemblyVersion** attribute specifies the version number to build into the assembly. Each NuGet release requires a unique version number, so if we continue to use this method for creating packages, we need to increment this before the build.
+    
+1. Now, switch back to Azure DevOps portal, click on the **user setting** gear from upper right corner of portal and then click on personal access token. 
+    
+1. On Personal Access Token page click on `+ New Token`. On **Create a new personal access toekn** popup window, provide name as **odluser-<inject key="DeploymentID" enableCopy="false" />**, leave other ooptions default and then select **Create**. 
+    
+1. On next page, copy the personal access token with copy button icon and save in a notepad to use in next step. 
 
-1.  Switch to the **Administrator: Windows PowerShell** window and run the following to publish the package to the **PartsUnlimitedShared** feed:
+1.  Switch to the **Administrator: Windows PowerShell** window and run the following to publish the package to the **PartsUnlimitedShared** feed, when it will prompt for the UserName and Password then use the Personal Access token name in Username and token in Password. 
 
     > **Note**: You need to provide an **API Key**, which can be any non-empty string. We're using **AzDO** here. When prompted, sign in to your Azure DevOps organization. 
 
