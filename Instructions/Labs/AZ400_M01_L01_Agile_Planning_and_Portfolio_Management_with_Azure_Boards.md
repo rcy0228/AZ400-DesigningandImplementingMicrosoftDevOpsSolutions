@@ -41,13 +41,13 @@ In this exercise, you will set up the prerequisite for the lab, which consists o
 
 In this task, you will use Azure DevOps Demo Generator to generate a new project based on the **Parts Unlimited** template.
 
-1. On your lab computer, start a web browser and navigate to <[Azure DevOps Demo Generator](https://azuredevopsdemogenerator.azurewebsites.net). This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab.
+1. On your lab computer, start a web browser and navigate to [Azure DevOps Demo Generator](https://azuredevopsdemogenerator.azurewebsites.net). This utility site will automate the process of creating a new Azure DevOps project within your account that is prepopulated with content (work items, repos, etc.) required for the lab.
 
     > **Note**: For more information on the site, see <https://docs.microsoft.com/en-us/azure/devops/demo-gen>.
 
 1. Click **Sign in** and sign in using the Microsoft account associated with your Azure DevOps subscription.
 
-    ![Azure DevOps Generator website. Clik on "Sign In" option](images/m1/demo_signin_v1.png)
+    ![Azure DevOps Generator website. Click on "Sign In" option](images/m1/demo_signin_v1.png)
 
 1. If required, on the **Azure DevOps Demo Generator** page, click **Accept** to accept the permission requests for accessing your Azure DevOps subscription.
 1. On the **Create New Project** page, in the **New Project Name** textbox, type **Agile Planning and Portfolio Management with Azure Boards**, in the **Select organization** dropdown list, select your Azure DevOps organization, and then click **Choose template**.
@@ -57,13 +57,13 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 
 1. Back on the **Create New Project** page, click **Create Project**
 
-    ![Azure DevOps Generator website. Clik on "Create project"](images/m1/create_project_v1.png)
+    ![Azure DevOps Generator website. Clcik on "Create project"](images/m1/create_project_v1.png)
 
     > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your Azure DevOps organization, delete the project, and try again.
 
 1. On the **Create New Project** page, click **Navigate to project**.
 
-    ![Azure DevOps Generator website. Clik on "Navigate to Project"](images/m1/navigate_project_v1.png)
+    ![Azure DevOps Generator website. Click on "Navigate to Project"](images/m1/navigate_project_v1.png)
 
 ### Exercise 1: Manage Agile project
 
@@ -79,7 +79,7 @@ Each new project is configured with a default team, which name matches the proje
 
     > **Note**: Alternatively, you can access the project page directly by navigating to the [<https://dev.azure.com/>`<your-Azure-DevOps-account-name>`/Agile%20Planning%20and%20Portfolio%20Management%20with%20Azure%20Boards) URL, where the `<your-Azure-DevOps-account-name>` placeholder, represents your account name.
 
-1. Click the cogwheel icon labeled **Project settings** located in the lower left corner of the page to open the **Project settings** page.
+1. Click the cogwheel icon labelled **Project settings** located in the lower left corner of the page to open the **Project settings** page.
 
     ![Azure DevOps project window. Click on "Project settings" option](images/m1/project_settings_v1.png)
 
@@ -101,7 +101,7 @@ Each new project is configured with a default team, which name matches the proje
 
 1. At the top of the **Boards** pane, select the **Iterations** tab and then click **+ Select iteration(s)**.
 
-    ![In the "interations" tab, click on "Select Iteration"](images/m1/select_iteration_v1.png)
+    ![In the "interactions" tab, click on "Select Iteration"](images/m1/select_iteration_v1.png)
 
 1. Select **Agile Planning and Portfolio Management with Azure Boards\Sprint 1** and click **Save and close**. Note that this first sprint has already passed. This is because the demo data generator is designed to build out project history so that this sprint occurs in the past.
 
@@ -114,7 +114,7 @@ Each new project is configured with a default team, which name matches the proje
 1. Back on the **Boards** pane, at the top of the pane, select the **Areas** tab. You will find there an automatically generated area with the name matching the name of the team.
 1. Click the ellipsis symbol next to the **default area** entry and, in the dropdown list, select **Include sub areas**.
 
-    ![In the "Areas" tab, clik on the ellipsis icon for "PUL-Web" area and select "Include sub areas"](images/m1/sub_areas_v1.png)
+    ![In the "Areas" tab, click on the ellipsis icon for "PUL-Web" area and select "Include sub areas"](images/m1/sub_areas_v1.png)
 
     > **Note**: The default setting for all teams is to exclude sub-area paths. We will change it to include sub-areas so that the team gets visibility into all of the work items from all teams. Optionally, the management team could also choose to not include sub-areas, which automatically removes work items from their view as soon as they are assigned to one of the teams.
 
@@ -189,8 +189,8 @@ Work items play a prominent role in Azure DevOps. Whether describing work to be 
 
     > **Note**: You can also expand work item cards to get to conveniently editable details.
 
-1. Hover with the mouse pointer over the rectangle representing the work item you moved to the **Approved** stage. This will reveal the down facing caret symbol.
-1. Click the down facing caret symbol to expand the work item card, select the **Unassigned** entry, and in the list of user accounts, select your account to assign the moved PBI to yourself.
+1. Hover with the mouse pointer over the rectangle representing the work item you moved to the **Approved** stage. This will reveal the down-facing caret symbol.
+1. Click the down-facing caret symbol to expand the work item card, select the **Unassigned** entry, and in the list of user accounts, select your account to assign the moved PBI to yourself.
 1. On the **Board** tab of the **PUL-Web** panel, drag the second work item named **As a customer, I want to see tutorials I recently viewed** from the **New** to the **Committed** stage.
 1. On the **Board** tab of the **PUL-Web** panel, drag the third work item named **As a customer,  I want to request new tutorials** from the **New** to the **Done** stage.
 
@@ -217,7 +217,7 @@ Work items play a prominent role in Azure DevOps. Whether describing work to be 
 
     ![Fill in "New task" fields and click "Save and Close"](images/m1/save_task_v1.png)
 
-1. Repeat the last five steps to add another task named **Optimize data query for most recent tutorials**. Set its **Remaining Work** to **3** and its **Activity** to **Design**. Click **Save & Close** once completed.
+1. Repeat the last five steps to add another task named **Optimize data query for most recent tutorials**. Set it's **Remaining Work** to **3** and it's **Activity** to **Design**. Click **Save & Close** once completed.
 
 #### Task 3: Manage sprints and capacity
 
@@ -230,7 +230,7 @@ Planning meetings typically consist of two parts. In the first part, the team an
 The sprint backlog should contain all the information the team needs to successfully plan and complete work within the time allotted without having to rush at the end. Before planning the sprint, you'd want to have created, prioritized, and estimated the backlog and defined the sprints.
 
 1. In the vertical navigational pane of the Azure DevOps portal, select the **Boards** icon and, in the list of the **Boards** items, select **Sprints**.
-1. On the **Taskboard** tab of the **Sprints** view, in the toolbar, on the right hand side, select the **View options** symbol (directly to the left of the funnel icon) and, in the **View options** dropdown list, select the **Work details** entry.
+1. On the **Taskboard** tab of the **Sprints** view, in the toolbar, on the right-hand side, select the **View options** symbol (directly to the left of the funnel icon) and, in the **View options** dropdown list, select the **Work details** entry.
 
     ![In the "Boards">"Sprints" window, "PUL-Web" team, select "View options" icon and click on "Work details"](images/m1/work_details_v1.png)
 
@@ -252,7 +252,7 @@ The sprint backlog should contain all the information the team needs to successf
     > **Note**: Let's assume you're going to take some vacation.
 
 1. On the **Capacity** tab of the **Sprints** view, directly next to the entry representing your user account, in the **Days off** column, click the **0 days** entry. This will display a panel where you can set your days off.
-1. In the displayed panel, use the calendar view to set your vacation to span five work days during the current sprint (within the next three weeks) and, once completed, click **OK**.
+1. In the displayed panel, use the calendar view to set your vacation to span five workdays during the current sprint (within the next three weeks) and, once completed, click **OK**.
 
     ![Enter "Start", "End" and "Days Off" as mentioned](images/m1/days_off_v1.png)
 
@@ -277,7 +277,7 @@ The sprint backlog should contain all the information the team needs to successf
 
     ![In the "Boards">"Sprints" window, "PUL-Web" team, select "View options" icon and click on "People"](images/m1/people_v1.png)
 
-    > **Note**: This adjusts your view such that you can review the progress of tasks by person instead of by backlog item.
+    > **Note**: This adjusts your view such that you can review the progress of tasks by a person instead of by backlog item.
 
     > **Note**: There is also a lot of customization available.
 
@@ -356,7 +356,7 @@ To maximize a team's ability to consistently deliver high quality software, Kanb
 1. On the **Settings** panel, on the **Columns** tab, drag and drop the newly created tab between **Committed** and **Done**.
 1. On the **Settings** panel, click **Save and close**.
 
-    ![On the "Settings" panel, clikc "Save & Close"](images/m1/qa_column_v1.png)
+    ![On the "Settings" panel, click "Save & Close"](images/m1/qa_column_v1.png)
 
     > **Note**: Verify that you now see the new stage in the workflow.
 
