@@ -7,6 +7,7 @@ Application Insights is an extensible Application Performance Management (APM) s
 
 In this lab, you'll learn about how you can add Application Insights to an existing web application, as well as how to monitor the application via the Azure portal.
 
+
 ## Objectives
 
 After you complete this lab, you will be able to:
