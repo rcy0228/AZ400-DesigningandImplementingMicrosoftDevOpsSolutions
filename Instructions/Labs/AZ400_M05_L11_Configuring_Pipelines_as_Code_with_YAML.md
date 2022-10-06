@@ -177,33 +177,33 @@ In this task, you will delete the existing pipeline.
 In this task, you will add a YAML build definition to the existing project.
 
 1.  Navigate back to the **Pipelines** pane in of the **Pipelines** hub. 
-1.  In the **Create your first Pipeline** window, click **Create pipeline**. 
+2.  In the **Create your first Pipeline** window, click **Create pipeline**. 
 
     > **Note**: We will use the wizard to automatically create the YAML definition based on our project.
 
-1.  On the **Where is your code?** pane, click **Azure Repos Git (YAML)** option.
-1.  On the **Select a repository** pane, click **PartsUnlimited**.
-2.  On the **Configure your pipeline** pane, click **ASP<nolink>.NET** to use this template as the starting point for your pipeline. This will open the **Review your pipeline YAML** pane.
+3.  On the **Where is your code?** pane, click **Azure Repos Git (YAML)** option.
+4.  On the **Select a repository** pane, click **PartsUnlimited**.
+5.  On the **Configure your pipeline** pane, click **ASP<nolink>.NET** to use this template as the starting point for your pipeline. This will open the **Review your pipeline YAML** pane.
 
     > **Note**: The pipeline definition will be saved as a file named **azure-pipelines.yml** in the root of the repository. The file will contain the steps required to build and test a typical ASP<nolink>.NET solution. You can also customize the build as needed. In this scenario, you will update the **pool** to enforce the use of a VM running Windows 2019.
 
-3.  Make sure  `trigger` is **master**.
+6.  Make sure  `trigger` is **master**.
 
     > **Note**: Review in Repos if your repository has **master** or **main** branch, organizations could choose default branch name for new repos: [Change the default branch](https://docs.microsoft.com/en-us/azure/devops/repos/git/change-default-branch?view=azure-devops#choosing-a-name). 
 
-4.  On the **Review your pipeline YAML** pane, in line **10**, replace `vmImage: 'windows-latest'` with `vmImage: 'windows-2019'`.	
+7.  On the **Review your pipeline YAML** pane, in line **10**, replace `vmImage: 'windows-latest'` with `vmImage: 'windows-2019'`.	
 
-5.  Remove the **VSTest@2** task:	
+8.  Remove the **VSTest@2** task:	
     ```yaml	
     - task: VSTest@2	
       inputs:	
         platform: '$(buildPlatform)'	
         configuration: '$(buildConfiguration)'	
     ```	
-6.  On the **Review your pipeline YAML** pane, click **Save and run**.	
+9.  On the **Review your pipeline YAML** pane, click **Save and run**.	
 
-    7.  On the **Save and run** pane, accept the default settings and click **Save and run**.	
-8.  On the pipeline run pane, in the **Jobs** section, click **Job** and monitor its progress and verify that it completes successfully. 
+10.  On the **Save and run** pane, accept the default settings and click **Save and run**.	
+11.  On the pipeline run pane, in the **Jobs** section, click **Job** and monitor its progress and verify that it completes successfully. 
 
     > **Note**: Each task from the YAML file is available for review, including any warnings and errors.
 
