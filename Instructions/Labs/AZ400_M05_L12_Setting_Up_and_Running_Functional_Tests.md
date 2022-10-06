@@ -148,9 +148,7 @@ In this task, you will configure a self-hosted agent by using the VM you deploye
     ```cmd
     cd C:\AzAgent
     Config.cmd
-    .\run --diagnostics
-    .\run.cmd
-    ```
+     ```
 
 1.  In the **Administrator: Command Prompt** window, when prompted to **Enter server URL**, type **https://dev.azure.com/(your-DevOps-organization-name)/**, where **(your-DevOps-organization-name)** represents the name of your Azure DevOps Organization, and press the **Enter** key.
 
@@ -165,7 +163,7 @@ In this task, you will configure a self-hosted agent by using the VM you deploye
     | Name | **Setting Up and Running Functional Tests lab** or **Setting** |
     | Scopes | **Custom Defined** |
     | Scopes | Click **Show all scopes** (at the bottom of the window) |
-    | Scopes | Click radio button for **Full access** |
+    | Scopes | **Agent Pools** - **Read & Manage** |
 
 1.  On the **Success** pane, copy the value of the personal access token to Clipboard.
 
