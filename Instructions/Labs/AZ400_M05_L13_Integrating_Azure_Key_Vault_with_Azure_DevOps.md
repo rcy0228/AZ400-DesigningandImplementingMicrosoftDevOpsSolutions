@@ -96,11 +96,9 @@ A service principal is automatically created by Azure Pipeline when you connect 
 
    ![Screenshot of Azure Portal Azure Cloud Shell icon.](images/cloud_shell.png)
    
-1. When prompted to select either **Bash** or **PowerShell**, select **Bash**.
+1. If prompted to select either **Bash** or **PowerShell**, select **Bash**.
 
-1. When prompted, select **Show advanced settings** and then select **Use existing** and choose **ODL-AZ400M07-{DeploymentID}-02** resource group. Then select **Create new** against Storage account as well as File Share and provide a unique value in both of the fields and then click on **Create storage**, and wait for the Azure Cloud Shell to initialize.
-
-    > **Note**: Deployment ID can be obtained from environment deatails page.
+   >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**.
 
 1.  From the **Bash** prompt, in the **Cloud Shell** pane, run the following command to create a service principal (replace the `{DeploymentID}` with its value):
 
